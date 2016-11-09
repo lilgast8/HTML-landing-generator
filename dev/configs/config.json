@@ -23,6 +23,16 @@
 								"fr",
 								"en"
 							],
+	"HTMLIFY":				{
+								"fr": [
+									"cube",
+									"osmose"
+								],
+								"en": [
+									"ramon",
+									"osmose"
+								]
+							},
 	"GENERATE_JS_VIEW_ID":	[],
 	"HAS_MOBILE_VERSION":	true,
 	"TABLET_VERSION":		"desktop",

@@ -15,7 +15,9 @@ include_once 'server/core/routes/Router.php';
 include_once 'server/core/controllers/PagesController.php';
 include_once 'server/core/controllers/Page.php';
 
+include_once 'server/core/utils/Caller.php';
 include_once 'server/core/utils/Helpers.php';
+include_once 'server/core/utils/HTMLify.php';
 include_once 'server/core/utils/Strings.php';
 include_once 'server/core/utils/TwigHelpers.php';
 
@@ -32,6 +34,7 @@ class Main
 	private $lang				= null;
 	private $router				= null;
 	private $pagesController	= null;
+	private $HTMLify			= null;
 	
 	
 	protected function __construct()
@@ -43,6 +46,7 @@ class Main
 		$this->setLang();
 		$this->setRoutes();
 		$this->setPagesController();
+		$this->HTMLify();
 	}
 	
 	
@@ -96,8 +100,14 @@ class Main
 	
 	private function setPagesController()
 	{
-		$this->pagesController	= PagesController::getInstance();
+		$this->pagesController = PagesController::getInstance();
 		$this->pagesController->init();
+	}
+	
+	
+	private function HTMLify()
+	{
+		$this->HTMLify = HTMLify::getInstance();
 	}
 	
 	

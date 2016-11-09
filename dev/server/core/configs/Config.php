@@ -24,6 +24,7 @@ class Config
 	static $IS_PREPROD			= null;
 	static $IS_PROD				= null;
 	static $NEED_PAGE_ID		= null;
+	static $HTMLIFY				= null;
 	
 	private $jsFiles			= null;
 	

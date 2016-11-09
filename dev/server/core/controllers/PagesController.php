@@ -76,10 +76,19 @@ class PagesController
 	{
 		$this->page = Page::getInstance();
 		
-		$this->page->id		= 'home';
-		$this->page->js		= $this->page->id;
-		$this->page->twig	= $this->page->id;
-		$this->page->ctrl	= $this->page->id;
+		if ( Router::$CONTENT_TYPE != '404' ) {
+			$this->page->id		= 'home';
+			$this->page->js		= $this->page->id;
+			$this->page->twig	= $this->page->id;
+			$this->page->ctrl	= $this->page->id;
+		}
+		else {
+			$this->page->id		= 'error-404';
+			$this->page->js		= $this->page->id;
+			$this->page->twig	= $this->page->id;
+			$this->page->ctrl	= $this->page->id;
+		}
+		
 		
 		/*$this->page->id		= $page->available ? $page->id : 'not-available';
 		$this->page->name	= Strings::camelCase( $this->page->id );

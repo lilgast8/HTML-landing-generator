@@ -26,6 +26,9 @@ class Router
 	
 	protected function __construct()
 	{
+		$this->path = Path::getInstance();
+		
+		
 		// $this->setRoutes();
 		$this->setPage();
 	}
@@ -130,7 +133,7 @@ class Router
 		$this->lang				= Lang::getInstance();
 		$this->pagesController	= PagesController::getInstance();
 		
-		// $this->setContentType();
+		$this->setContentType();
 		// $this->setCurrentPage();
 		// $this->setLinks();
 		// if ( self::$CONTENT_TYPE == 'firstLoad' && Config::$NEED_PAGE_ID )
@@ -140,13 +143,53 @@ class Router
 	}
 	
 	
-	/*private function setContentType()
+	private function setContentType()
 	{
-		if ( isset( $_POST['ajax'] ) && $_POST['ajax'] == 'true' && isset( $_POST['type'] ) && $_POST['type'] == 'pageChange' )
+		/*if ( isset( $_POST['ajax'] ) && $_POST['ajax'] == 'true' && isset( $_POST['type'] ) && $_POST['type'] == 'pageChange' )
 			self::$CONTENT_TYPE = 'pageChange';
 		else
-			self::$CONTENT_TYPE = 'firstLoad';
-	}*/
+			self::$CONTENT_TYPE = 'firstLoad';*/
+		
+		// echo self::$URL->full.'<br>';
+		// echo self::$URL->path.'<br>';
+		
+		// echo '<pre>';
+		// print_r( self::$URL );
+		// echo '</pre>';
+		
+		self::$CONTENT_TYPE = '404';
+		
+		// echo '<pre>';
+		// print_r( self::$URL );
+		// echo '</pre>';
+		// echo count( self::$URL->pathParams );
+		// echo strpos( self::$URL->pathParams[ 0 ], 'htmlify' );
+		// if ( self::$URL->path == 'htmlify' )
+		// if ( strpos( self::$URL->path, 'htmlify' ) !== null )
+		if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) == 1 )
+			self::$CONTENT_TYPE = 'htmlify';
+		
+		else if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) > 1 )
+			self::$CONTENT_TYPE = 'view-prod';
+		
+		else {
+			for ( $i = 0; $i < count( Lang::$ALL_LANG ); $i++ ) {
+				$lg = Lang::$ALL_LANG [ $i ];
+				
+				if ( $lg == self::$URL->path ) {
+					self::$CONTENT_TYPE = 'view';
+					
+					break;
+				}
+			}
+		}
+		
+		// echo Config::$ENV.'<br>';
+		// echo self::$CONTENT_TYPE.'<br>';
+		
+		
+		$this->path->setJsFilesUrl();
+	}
 	
 	
 	/*private function setCurrentPage()
@@ -343,7 +386,7 @@ class Router
 	}*/
 	
 	
-	private function redirectToFullPathWithoutLang()
+	/*private function redirectToFullPathWithoutLang()
 	{
 		$fullPath = str_replace( Path::$URL->base . Lang::$LANG, '', self::$URL->full );
 		$fullPath = Strings::removeFirstSpecificChar( $fullPath, '/' );
@@ -351,7 +394,7 @@ class Router
 		header( 'Status: 301 Moved Permanently', true, 301 );
 		header( 'Location: ' . Path::$URL->base . $fullPath );
 		exit();
-	}
+	}*/
 	
 	
 	/*private function setLinks()

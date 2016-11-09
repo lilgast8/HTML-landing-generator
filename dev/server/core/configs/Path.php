@@ -24,9 +24,9 @@ class Path
 		
 		$this->setDeviceDir();
 		$this->setPaths();
-		$this->setJsFilesUrl();
+		// $this->setJsFilesUrl();
 		
-		$this->setParams();
+		// $this->setParams();
 	}
 	
 	
@@ -118,7 +118,7 @@ class Path
 	}
 	
 	
-	private function setJsFilesUrl()
+	public function setJsFilesUrl()
 	{
 		self::$JS_FILES	= array();
 		$jsFiles		= $this->config->getJsFilesFile();
@@ -127,7 +127,9 @@ class Path
 			$listFiles	= '';
 			
 			// dev
-			/*if ( Config::$IS_DEV ) {*/
+			// echo Router::$CONTENT_TYPE;
+			// echo '⚡️ SLP ⚡️ '.Router::$CONTENT_TYPE.'<br>';
+			if ( Router::$CONTENT_TYPE == 'view' ) {
 				$files = $jsFiles->$fileId->files;
 				
 				foreach ( $files as $filePath ) { // parse files list
@@ -140,10 +142,10 @@ class Path
 					else
 						$listFiles .= '<script src="' . self::$URL->js . $filePath . '"></script>' . "\n";
 				}
-			/*}*/
+			}
 			
 			// preprod-local, preprod or prod
-			/*else {
+			else {
 				$fileName = $jsFiles->$fileId->name;
 				$fileDest = $jsFiles->$fileId->dest;
 				
@@ -153,14 +155,18 @@ class Path
 				}
 				else
 					$listFiles .= '<script src="' . self::$URL->js . $fileDest . $fileName . '"></script>' . "\n";
-			}*/
+			}
 			
 			self::$JS_FILES[ $fileId ] = $listFiles;
 		}
+		
+		
+		$this->setParams();
 	}
 	
 	
 	private function setParams()
+	// public function setParams()
 	{
 		$this->params = new stdClass();
 		
