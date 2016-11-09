@@ -127,7 +127,7 @@ class Path
 			$listFiles	= '';
 			
 			// dev
-			if ( Config::$IS_DEV ) {
+			/*if ( Config::$IS_DEV ) {*/
 				$files = $jsFiles->$fileId->files;
 				
 				foreach ( $files as $filePath ) { // parse files list
@@ -140,10 +140,10 @@ class Path
 					else
 						$listFiles .= '<script src="' . self::$URL->js . $filePath . '"></script>' . "\n";
 				}
-			}
+			/*}*/
 			
 			// preprod-local, preprod or prod
-			else {
+			/*else {
 				$fileName = $jsFiles->$fileId->name;
 				$fileDest = $jsFiles->$fileId->dest;
 				
@@ -153,7 +153,7 @@ class Path
 				}
 				else
 					$listFiles .= '<script src="' . self::$URL->js . $fileDest . $fileName . '"></script>' . "\n";
-			}
+			}*/
 			
 			self::$JS_FILES[ $fileId ] = $listFiles;
 		}

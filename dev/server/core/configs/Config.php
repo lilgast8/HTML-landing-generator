@@ -33,7 +33,7 @@ class Config
 	protected function __construct()
 	{
 		$this->setConfig();
-		$this->setEnvInfos();
+		// $this->setEnvInfos();
 	}
 	
 	
@@ -55,7 +55,7 @@ class Config
 	}
 	
 	
-	private function setEnvInfos()
+	/*private function setEnvInfos()
 	{
 		self::$IS_DEV			= false;
 		self::$IS_PREPROD_LOCAL	= false;
@@ -71,7 +71,7 @@ class Config
 			self::$IS_PREPROD = true;
 		else if ( self::$ENV == 'prod' || strpos( self::$ENV, 'prod-' ) !== false )
 			self::$IS_PROD = true;
-	}
+	}*/
 	
 	
 	private function getConfigFile()
@@ -89,18 +89,18 @@ class Config
 	
 	public function init()
 	{
-		$this->setComplexTransition();
+		// $this->setComplexTransition();
 		$this->setParams();
 	}
 	
 	
-	private function setComplexTransition()
+	/*private function setComplexTransition()
 	{
 		if ( in_array( Device::$DEVICE, self::$GENERATE_JS_VIEW_ID ) )
 			self::$NEED_PAGE_ID = true;
 		else
 			self::$NEED_PAGE_ID = false;
-	}
+	}*/
 	
 	
 	public function getJsFilesFile()

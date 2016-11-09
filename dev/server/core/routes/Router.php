@@ -7,7 +7,7 @@ class Router
 	
 	protected static $instance;
 	
-	static $ROUTES				= null;
+	// static $ROUTES				= null;
 	static $URL					= null;
 	static $ALT_LANG_URL		= null;
 	static $LINK				= null;
@@ -26,7 +26,7 @@ class Router
 	
 	protected function __construct()
 	{
-		$this->setRoutes();
+		// $this->setRoutes();
 		$this->setPage();
 	}
 	
@@ -40,7 +40,7 @@ class Router
 	}
 	
 	
-	private function setRoutes()
+	/*private function setRoutes()
 	{
 		$filePath = Path::$FILE->routesFile;
 		
@@ -49,7 +49,7 @@ class Router
 		
 		$routes			= file_get_contents( $filePath );
 		self::$ROUTES	= json_decode( $routes );
-	}
+	}*/
 	
 	
 	private function setPage()
@@ -130,26 +130,26 @@ class Router
 		$this->lang				= Lang::getInstance();
 		$this->pagesController	= PagesController::getInstance();
 		
-		$this->setContentType();
-		$this->setCurrentPage();
-		$this->setLinks();
-		if ( self::$CONTENT_TYPE == 'firstLoad' && Config::$NEED_PAGE_ID )
-			$this->setJsViewId();
+		// $this->setContentType();
+		// $this->setCurrentPage();
+		// $this->setLinks();
+		// if ( self::$CONTENT_TYPE == 'firstLoad' && Config::$NEED_PAGE_ID )
+		// 	$this->setJsViewId();
 		
 		$this->setParams();
 	}
 	
 	
-	private function setContentType()
+	/*private function setContentType()
 	{
 		if ( isset( $_POST['ajax'] ) && $_POST['ajax'] == 'true' && isset( $_POST['type'] ) && $_POST['type'] == 'pageChange' )
 			self::$CONTENT_TYPE = 'pageChange';
 		else
 			self::$CONTENT_TYPE = 'firstLoad';
-	}
+	}*/
 	
 	
-	private function setCurrentPage()
+	/*private function setCurrentPage()
 	{
 		$aliasParams	= null;
 		
@@ -188,20 +188,20 @@ class Router
 			$this->setPageView();
 		else // 404
 			$this->set404();
-	}
+	}*/
 	
 	
-	private function setUniquePage( $pageId, $pageParams )
+	/*private function setUniquePage( $pageId, $pageParams )
 	{
 		$this->page->exist	= true;
 		$this->page->id		= $pageId;
 		$this->page->urls	= $pageParams->{ 'url-page' };
 		
 		$this->page			= $this->setSpecificOptions( $this->page, $pageParams, null );
-	}
+	}*/
 	
 	
-	private function setMultipleStaticPage( $path, $searchPath, $pageId, $pageParams )
+	/*private function setMultipleStaticPage( $path, $searchPath, $pageId, $pageParams )
 	{
 		foreach ( $pageParams->subs as $aliasId => $aliasParams ) {
 			
@@ -216,10 +216,10 @@ class Router
 				break;
 			}
 		}
-	}
+	}*/
 	
 	
-	private function setMultipleDynamicPage( $path, $searchPath, $pageId, $pageParams )
+	/*private function setMultipleDynamicPage( $path, $searchPath, $pageId, $pageParams )
 	{
 		$dynamicUrl = Strings::removeFirstSpecificChar( str_replace( $searchPath, '', $path ), '/' );
 		
@@ -238,10 +238,10 @@ class Router
 			
 			$this->page				= $this->setSpecificOptions( $this->page, $pageParams, null );
 		}
-	}
+	}*/
 	
 	
-	private function setSpecificOptions( $page, $pageParams, $aliasParams )
+	/*private function setSpecificOptions( $page, $pageParams, $aliasParams )
 	{
 		$page->js	= isset( $pageParams->js ) ? $pageParams->js : null;
 		$page->twig	= isset( $pageParams->twig ) ? $pageParams->twig : null;
@@ -255,10 +255,10 @@ class Router
 		
 		
 		return $page;
-	}
+	}*/
 	
 	
-	private function getAltPageUrl( $page, $alias )
+	/*private function getAltPageUrl( $page, $alias )
 	{
 		$urls = new stdClass();
 		
@@ -267,10 +267,10 @@ class Router
 		
 		
 		return $urls;
-	}
+	}*/
 	
 	
-	private function getPageAvailability( $pageParams, $aliasParams )
+	/*private function getPageAvailability( $pageParams, $aliasParams )
 	{
 		$pageAvailability = true;
 		
@@ -287,10 +287,10 @@ class Router
 		
 		
 		return $pageAvailability;
-	}
+	}*/
 	
 	
-	private function setPageView()
+	/*private function setPageView()
 	{
 		$this->setIsHomepage( $this->page->id );
 		
@@ -302,10 +302,10 @@ class Router
 			$this->redirectToFullPathWithoutLang();
 		
 		$this->pagesController->setPageInfos( $this->page );
-	}
+	}*/
 	
 	
-	private function set404()
+	/*private function set404()
 	{
 		$this->page->id	= 'error-404';
 		
@@ -315,16 +315,16 @@ class Router
 			header( $_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found' );
 		
 		$this->pagesController->setPageInfos( $this->page );
-	}
+	}*/
 	
 	
-	private function setIsHomepage( $pageId )
+	/*private function setIsHomepage( $pageId )
 	{
 		$this->isHomepage = $pageId == 'home' ? true : false;
-	}
+	}*/
 	
 	
-	private function setAltLangUrl( $urls )
+	/*private function setAltLangUrl( $urls )
 	{
 		foreach ( Lang::$ALL_LANG as $lang ) {
 			$currentUrl = $urls->$lang;
@@ -340,7 +340,7 @@ class Router
 			
 			self::$ALT_LANG_URL[ $lang ] = $altLangUrl;
 		}
-	}
+	}*/
 	
 	
 	private function redirectToFullPathWithoutLang()
@@ -354,14 +354,14 @@ class Router
 	}
 	
 	
-	private function setLinks()
+	/*private function setLinks()
 	{
 		self::$LINK = new stdClass();
 			
 		foreach ( Router::$ROUTES as $pageId => $routeParams ) { // parse all pages
 			$pageName	= Strings::camelCase( $pageId );
 			
-			/* unique page */
+			/* unique page *
 			if ( !isset( $routeParams->subs ) ) {
 				if ( $pageId == 'home' )
 					self::$LINK->$pageName = Path::$URL->base . Lang::$LANG_LINK_ROOT . $routeParams->{ 'url-page' }->{ Lang::$LANG };
@@ -370,7 +370,7 @@ class Router
 					self::$LINK->$pageName = Path::$URL->base . Lang::$LANG_LINK . $routeParams->{ 'url-page' }->{ Lang::$LANG };
 			}
 			
-			/* multiple page */
+			/* multiple page *
 			else {
 				self::$LINK->$pageName = new stdClass();
 				
@@ -381,10 +381,10 @@ class Router
 				}
 			}
 		}
-	}
+	}*/
 	
 	
-	private function setJsViewId()
+	/*private function setJsViewId()
 	{
 		self::$JS_VIEWS_ID = new stdClass();
 		
@@ -426,10 +426,10 @@ class Router
 				}
 			}
 		}
-	}
+	}*/
 	
 	
-	private function getDynamicSubPath()
+	/*private function getDynamicSubPath()
 	{
 		$dynamicSubPath = new stdClass();
 		
@@ -446,7 +446,7 @@ class Router
 		
 		
 		return $dynamicSubPath;
-	}
+	}*/
 	
 	
 	private function setParams()
@@ -468,7 +468,7 @@ class Router
 	}
 	
 	
-	public function updateFurtherToAPIResponse( $response )
+	/*public function updateFurtherToAPIResponse( $response )
 	{
 		if ( $response->pageExist ) {
 			$this->setAltLangUrl( $response->urls );
@@ -482,7 +482,7 @@ class Router
 			
 			$this->pagesController->init();
 		}
-	}
+	}*/
 	
 }
 

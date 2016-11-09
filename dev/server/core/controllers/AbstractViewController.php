@@ -45,14 +45,14 @@ class AbstractViewController
 		$this->setStaticViewsInfos();
 		$this->setParams();
 		
-		if ( Router::$CONTENT_TYPE == 'firstLoad' )
+		// if ( Router::$CONTENT_TYPE == 'firstLoad' )
 			$this->getStaticViewsData();
 		
 		$this->getGlobalData();
 		$this->getPageViewData();
 		
-		if ( $this->page->dynamic != null )
-			$this->getPageViewDynamicData();
+		// if ( $this->page->dynamic != null )
+		// 	$this->getPageViewDynamicData();
 		
 		$this->initExtras();
 		
@@ -93,7 +93,7 @@ class AbstractViewController
 		$this->getParamsFromClass( 'Device' );
 		$this->getParamsFromClass( 'Path' );
 		$this->getParamsFromClass( 'Lang' );
-		$this->getParamsFromClass( 'Router' );
+		// $this->getParamsFromClass( 'Router' );
 		$this->getParamsFromClass( 'Page' );
 	}
 	

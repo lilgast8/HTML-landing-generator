@@ -18,7 +18,7 @@ class PagesController
 	private $pageController		= null;
 	
 	private $page				= null;
-	private $router				= null;
+	// private $router				= null;
 	
 	
 	protected function __construct()
@@ -71,11 +71,17 @@ class PagesController
 	}
 	
 	
-	public function setPageInfos( $page )
+	// public function setPageInfos( $page )
+	public function setPageInfos()
 	{
 		$this->page = Page::getInstance();
 		
-		$this->page->id		= $page->available ? $page->id : 'not-available';
+		$this->page->id		= 'home';
+		$this->page->js		= $this->page->id;
+		$this->page->twig	= $this->page->id;
+		$this->page->ctrl	= $this->page->id;
+		
+		/*$this->page->id		= $page->available ? $page->id : 'not-available';
 		$this->page->name	= Strings::camelCase( $this->page->id );
 		if ( $page->available ) {
 			$this->page->js			= $page->js === null ? $page->id : $page->js;
@@ -89,14 +95,21 @@ class PagesController
 			$this->page->twig	= $this->page->id;
 			$this->page->ctrl	= $this->page->id;
 			$this->page->alias	= null;
-		}
+		}*/
 	}
 	
 	
 	public function init()
 	{
-		$this->router = Router::getInstance();
+		// $this->router = Router::getInstance();
 		
+		// echo '⚡️ SLP ⚡️';
+		// echo '<pre>"';
+		// print_r( $this->page );
+		// echo '"</pre>';
+		// exit();
+		
+		$this->setPageInfos();
 		$this->page->setParams();
 		
 		$this->setPageViewController();
@@ -123,12 +136,14 @@ class PagesController
 	
 	private function initPageController()
 	{
+		$this->pageController->init( $this->twig );
+		
 		/* static page */
-		if ( $this->page->dynamic == null )
-			$this->pageController->init( $this->twig );
+		/*if ( $this->page->dynamic == null )
+			$this->pageController->init( $this->twig );*/
 		
 		/* dynamic page */
-		else {
+		/*else {
 			$pageExist = $this->pageController->getPageExistence();
 			
 			if ( $pageExist ) {
@@ -140,7 +155,7 @@ class PagesController
 				
 				return;
 			}
-		}
+		}*/
 	}
 	
 	

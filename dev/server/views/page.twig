@@ -1,14 +1,15 @@
 
 
 {# Header #}
-{% if Router.CONTENT_TYPE == 'firstLoad' %}
+{# {% if Router.CONTENT_TYPE == 'firstLoad' %} #}
 {% include 'header.twig' %}
-{% endif %}
+{# {% endif %} #}
 
 
 {# Content #}
 <!-- {% block commentedPageName %}{% endblock %} -->
-<section id="page" class="{% block cssClassName %}{% endblock %}" data-js-id="{{ Page.js }}" data-title="{{ metas.title }}" {% for lang, url in Router.ALT_LANG_URL %}data-lang-{{ lang }}="{{ url }}" {% endfor %}>
+{# <section id="page" class="{% block cssClassName %}{% endblock %}" data-js-id="{{ Page.js }}" data-title="{{ metas.title }}" {% for lang, url in Router.ALT_LANG_URL %}data-lang-{{ lang }}="{{ url }}" {% endfor %}> #}
+<section id="page" class="{% block cssClassName %}{% endblock %}">
 
 {% block content %}{% endblock %}
 
@@ -16,6 +17,6 @@
 
 
 {# Footer #}
-{% if Router.CONTENT_TYPE == 'firstLoad' %}
+{# {% if Router.CONTENT_TYPE == 'firstLoad' %} #}
 {% include 'footer.twig' %}
-{% endif %}
+{# {% endif %} #}

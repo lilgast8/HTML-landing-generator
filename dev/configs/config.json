@@ -21,8 +21,7 @@
 							},
 	"ALL_LANG":				[
 								"fr",
-								"en",
-								"ex"
+								"en"
 							],
 	"GENERATE_JS_VIEW_ID":	[],
 	"HAS_MOBILE_VERSION":	true,

@@ -31,7 +31,7 @@ class Lang
 		$this->router->setUrl();
 		$this->setCurrentLang();
 		$this->checkDefaultLang();
-		$this->router->setPageUrl();
+		// $this->router->setPageUrl();
 		$this->setLangLinks();
 		
 		$this->path->setFileLangVar();
