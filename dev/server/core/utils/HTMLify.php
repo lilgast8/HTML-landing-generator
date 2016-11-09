@@ -67,13 +67,13 @@ class HTMLify
 	
 	private function htmlify( $lg, $type )
 	{
-		// echo $lg.' - '.$type.'<br>';
-		
 		$url	= Path::$URL->base . $lg;
 		
-		// echo $url.' - <br>';
 		$caller	= new Caller( $url );
 		$html	= $caller->dispatch();
+		
+		$str	= 'LANDING_TYPE';
+		$html	= preg_replace( '/' . $str . '/', $type, $html );
 		
 		file_put_contents ( '../www/template-' . $lg . '-' . $type . '.html' , $html );
 	}

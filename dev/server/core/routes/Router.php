@@ -92,8 +92,8 @@ class Router
 		$pathParams	= explode( '?', $path );
 		$path		= $pathParams[0];
 		
-		Strings::removeFirstSpecificChar( $path, '/' );
-		Strings::removeLastSpecificChar( $path, '/' );
+		$path = Strings::removeFirstSpecificChar( $path, '/' );
+		$path = Strings::removeLastSpecificChar( $path, '/' );
 		
 		
 		return $path;
@@ -162,6 +162,7 @@ class Router
 		// echo '<pre>';
 		// print_r( self::$URL );
 		// echo '</pre>';
+		// exit();
 		// echo count( self::$URL->pathParams );
 		// echo strpos( self::$URL->pathParams[ 0 ], 'htmlify' );
 		// if ( self::$URL->path == 'htmlify' )
