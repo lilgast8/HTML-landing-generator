@@ -19,10 +19,6 @@
 									"base_url":			"http://www.SITE_URL.COM/"
 								}
 							},
-	"ALL_LANG":				[
-								"fr",
-								"en"
-							],
 	"HTMLIFY":				{
 								"fr": [
 									"cube",

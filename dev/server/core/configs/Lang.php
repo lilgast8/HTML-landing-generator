@@ -52,7 +52,7 @@ class Lang
 	private function setGlobalInfos()
 	{
 		// all lang
-		self::$ALL_LANG = Config::$ALL_LANG;
+		$this->setAllLang();
 		
 		// default lang
 		self::$DEFAULT_LANG = self::$ALL_LANG[0];
@@ -62,6 +62,16 @@ class Lang
 			self::$MULTI_LANG = false;
 		else
 			self::$MULTI_LANG = true;
+	}
+	
+	
+	private function setAllLang()
+	{
+		self::$ALL_LANG = array();
+		
+		foreach ( Config::$HTMLIFY as $lg => $value )
+			array_push( self::$ALL_LANG, $lg );
+		
 	}
 	
 	
@@ -103,7 +113,7 @@ class Lang
 	{
 		$this->params = new stdClass();
 		
-		$this->params->ALL_LANG			= self::$ALL_LANG;
+		// $this->params->ALL_LANG			= self::$ALL_LANG;
 		$this->params->MULTI_LANG		= self::$MULTI_LANG;
 		$this->params->DEFAULT_LANG		= self::$DEFAULT_LANG;
 		$this->params->LANG				= self::$LANG;

@@ -12,6 +12,7 @@ class Config
 	static $ENV					= null;
 	static $ENVS				= null;
 	static $ALL_LANG			= null;
+	static $HTMLIFY				= null;
 	static $GENERATE_JS_VIEW_ID	= null;
 	static $HAS_MOBILE_VERSION	= null;
 	static $TABLET_VERSION		= null;
@@ -24,7 +25,7 @@ class Config
 	static $IS_PREPROD			= null;
 	static $IS_PROD				= null;
 	static $NEED_PAGE_ID		= null;
-	static $HTMLIFY				= null;
+	// static $HTMLIFY				= null;
 	
 	private $jsFiles			= null;
 	
