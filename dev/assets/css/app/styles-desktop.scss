@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+
+/****************************************/
+/* -------- SHARED - UTILITIES -------- */
+/****************************************/
+
+
+@import 'shared/utilities/_reset';
+@import 'shared/utilities/_fonts';
+@import 'shared/utilities/_variables';
+@import 'shared/utilities/_easing';
+@import 'shared/utilities/_functions';
+
+
+
+
+
+/**************************************/
+/* -------- SHARED - STATICS -------- */
+/**************************************/
+
+
+@import 'shared/statics/_svg';
+@import 'shared/statics/_alt';
+@import 'shared/statics/_global';
+
+
+
+
+
+/***************************************/
+/* -------- SHARED - PARTIALS -------- */
+/***************************************/
+
+
+// @import 'shared/partials/_PARTIAL';
+
+
+
+
+
+/*****************************/
+/* -------- STATICS -------- */
+/*****************************/
+
+
+@import 'desktop/statics/_global';
+@import 'desktop/statics/_containers';
+@import 'desktop/statics/_main-loader';
+@import 'desktop/statics/_header';
+@import 'desktop/statics/_footer';
+
+
+
+
+
+/******************************/
+/* -------- PARTIALS -------- */
+/******************************/
+
+
+// @import 'desktop/partials/_PARTIAL';
+
+
+
+
+
+/***************************/
+/* -------- PAGES -------- */
+/***************************/
+
+
+@import 'desktop/pages/_error-404';
+@import 'desktop/pages/_not-available';
+@import 'desktop/pages/_legal-notices';
+@import 'desktop/pages/_home';
+@import 'desktop/pages/_about';
+
+

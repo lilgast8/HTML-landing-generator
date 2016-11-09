@@ -1,0 +1,7 @@
+/node_modules
+**/server/vendor
+
+**/.DS_Store
+Thumbs.db
+.sass-cache
+*.log

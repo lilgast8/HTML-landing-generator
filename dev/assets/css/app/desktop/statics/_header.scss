@@ -1,0 +1,25 @@
+
+
+
+/****************************/
+/* -------- HEADER -------- */
+/****************************/
+
+
+#header {
+	
+}
+
+
+#menu {
+	
+}
+
+.menu-link {
+	color: $alt4;
+	@include transition(all 0.5s $easeOutQuart); 
+	
+	&:hover, &.active { color: $alt3; }
+}
+
+
