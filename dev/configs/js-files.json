@@ -39,8 +39,6 @@
 			"app/shared/abstracts/views/AbstractMainView.js",
 			"app/shared/abstracts/views/AbstractMainLoader.js",
 			
-			"app/shared/routes/Router.js",
-			
 			"app/desktop/models/Assets.js",
 			
 			"app/shared/loaders/Loader.js",
@@ -62,11 +60,7 @@
 			"app/desktop/views/statics/Footer.js",
 			
 			"app/desktop/abstracts/views/AbstractPageView.js",
-			"app/desktop/views/pages/Error404.js",
 			"app/desktop/views/pages/Home.js",
-			"app/desktop/views/pages/Projects.js",
-			"app/desktop/views/pages/Project.js",
-			"app/desktop/views/pages/LegalNotices.js",
 			
 			"app/Main.js"
 		]

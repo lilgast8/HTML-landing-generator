@@ -94,10 +94,10 @@ WLD.AbstractMainView = ( function( window ) {
 	};
 	
 	
-	AbstractMainView.prototype.disableScrollRestoration = function() {
+	/*AbstractMainView.prototype.disableScrollRestoration = function() {
 		if ( 'scrollRestoration' in history )
 			history.scrollRestoration = 'manual';
-	};
+	};*/
 	
 	
 	AbstractMainView.prototype.resize = function() {

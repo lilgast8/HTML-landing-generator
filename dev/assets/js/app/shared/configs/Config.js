@@ -27,8 +27,8 @@ WLD.Config = ( function( window ) {
 	
 	Config.prototype.init = function() {
 		_setConfig.call( this );
-		_setJsViewsId.call( this );
-		_showCreditsLog.call( this );
+		// _setJsViewsId.call( this );
+		// _showCreditsLog.call( this );
 	};
 	
 	
@@ -38,29 +38,29 @@ WLD.Config = ( function( window ) {
 	};
 	
 	
-	var _setJsViewsId = function() {
+	/*var _setJsViewsId = function() {
 		this.JS_VIEWS_ID = STF_JS_VIEWS_ID;
-	};
+	};*/
 	
 	
-	var _showCreditsLog = function() {
+	/*var _showCreditsLog = function() {
 		console.log(
 			'%cmade by %c— ' + this.CREDITS.author + ' —%c ' + this.CREDITS.authorUrl,
 			'padding:8px 5px; color:' + this.CREDITS.color1 + '; line-height:25px;',
 			'padding:8px 15px; color:' + this.CREDITS.color2 + '; background-color:' + this.CREDITS.color3 + '; line-height:25px;',
 			'padding:8px 5px; color:' + this.CREDITS.color3 + '; line-height:25px;'
 		);
-	};
+	};*/
 	
 	
-	Config.prototype.setFPSStats = function( isSet ) {
+	/*Config.prototype.setFPSStats = function( isSet ) {
 		this.HAS_FPS_STATS = isSet;
-	};
+	};*/
 	
 	
-	Config.prototype.setMemoryStats = function( isSet ) {
+	/*Config.prototype.setMemoryStats = function( isSet ) {
 		this.HAS_MEMORY_STATS = isSet;
-	};
+	};*/
 	
 	
 	return new Config();

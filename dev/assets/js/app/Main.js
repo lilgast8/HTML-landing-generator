@@ -16,17 +16,18 @@ WLD.Main = ( function( window ) {
 		WLD.Path.init();
 		WLD.Lang.init();
 		
-		_initDebug.call( this );
+		// _initDebug.call( this );
 		
 		WLD.PagesController.init();
 		WLD.MainView.init();
-		WLD.Router.init();
+		// WLD.Router.init();
+		WLD.PagesController.initFirstPage();
 		
 		// this.$window.on( 'load', $.proxy( _windowLoad, this ) );
 	};
 	
 	
-	var _initDebug = function() {
+	/*var _initDebug = function() {
 		_initFPSStats.call( this, false );
 		_initMemoryStats.call( this, false );
 		_initDatGUI.call( this, false );
@@ -52,7 +53,7 @@ WLD.Main = ( function( window ) {
 	var _initDatGUI = function( isSet ) {
 		if ( isSet && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
 			WLD.Utils.DatGUI.init();
-	};
+	};*/
 	
 	
 	return new Main();

@@ -22,7 +22,7 @@ WLD.Router = ( function( window ) {
 	Router.prototype.constructor	= Router;
 	
 	
-	Router.prototype.setUrl = function( isInit, url )
+	/*Router.prototype.setUrl = function( isInit, url )
 	{
 		this.URL.full			= _getFullUrl.call( this, url );
 		this.URL.path			= STF_str_getPath( this.URL.full );
@@ -53,23 +53,23 @@ WLD.Router = ( function( window ) {
 		
 		
 		return fullGaUrl;
-	};
+	};*/
 	
 	
 	Router.prototype.init = function() {
-		_bindEvents.call( this );
+		// _bindEvents.call( this );
 		
-		WLD.PagesController.initFirstPage();
+		// WLD.PagesController.initFirstPage();
 	};
 	
 	
-	var _bindEvents = function() {
+	/*var _bindEvents = function() {
 		WLD.MainView.$window.on( 'popstate', $.proxy( _onPopState, this ) );
 		WLD.MainView.$window.on( 'hashchange', $.proxy( _onHashChange, this ) );
-	};
+	};*/
 	
 	
-	var _getLangExistence = function() {
+	/*var _getLangExistence = function() {
 		var langExist = true;
 		
 		if ( WLD.Lang.ALL_LANG.indexOf( WLD.Lang.LANG ) == -1 ) {
@@ -80,16 +80,16 @@ WLD.Router = ( function( window ) {
 		
 		
 		return langExist;
-	};
+	};*/
 	
 	
-	var _setIsHomepage = function( pageId )
+	/*var _setIsHomepage = function( pageId )
 	{
 		this.isHomepage = pageId == 'home' ? true : false;
-	};
+	};*/
 	
 	
-	Router.prototype.checkUrlCorrespondence = function() {
+	/*Router.prototype.checkUrlCorrespondence = function() {
 		if ( this.URL.full != _getFullUrl.call( this, null ) )
 			_onPopState.call( this );
 	};
@@ -177,10 +177,10 @@ WLD.Router = ( function( window ) {
 	var _isHashChanged = function( url ) {
 		var nextHash		= STF_str_getHash( url );
 		this.isHashChange	= this.URL.hash != nextHash;
-	};
+	};*/
 	
 	
-	Router.prototype.setAltLangUrl = function( $page ) {
+	/*Router.prototype.setAltLangUrl = function( $page ) {
 		var lang;
 		
 		for ( var i = 0; i < WLD.Lang.ALL_LANG.length; i++ ) {
@@ -189,10 +189,10 @@ WLD.Router = ( function( window ) {
 			if ( lang != WLD.Lang.LANG )
 				this.ALT_LANG_URL[ lang ] = $page[0].getAttribute( 'data-lang-' + lang );
 		}
-	};
+	};*/
 	
 	
-	Router.prototype.updateGA = function() {
+	/*Router.prototype.updateGA = function() {
 		if ( WLD.Config.IS_PROD && Object.keys( WLD.Config.GA_ID ).length > 0 ) {
 			for ( var gaName in WLD.Config.GA_ID ) {
 				if ( gaName == 'default' )
@@ -201,7 +201,7 @@ WLD.Router = ( function( window ) {
 					ga( gaName + '.send', 'pageview', '/' + this.URL.fullGA );
 			}
 		}
-	};
+	};*/
 	
 	
 	return new Router();

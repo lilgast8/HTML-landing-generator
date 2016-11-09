@@ -12,19 +12,19 @@
 	<meta name="description" content="{{ metas.desc }}" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="index, follow" />
-	<meta name="author" content="{{ metas.author }}" />
+	{# <meta name="author" content="{{ metas.author }}" />
 	<meta name="designer" content="{{ metas.designer }}" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> #}
 	
-	{% for lang, altLangUrl in Router.ALT_LANG_URL %}
+	{# {% for lang, altLangUrl in Router.ALT_LANG_URL %}
 	<link rel="alternate" href="{{ altLangUrl }}" hreflang="{{ lang }}" />
-	{% endfor %}
+	{% endfor %} #}
 	
 	{# Social share #}
-	{% include 'social-share.twig' %}
+	{# {% include 'social-share.twig' %} #}
 	
 	{# Favicons #}
-	{% include 'favicons.twig' %}
+	{# {% include 'favicons.twig' %} #}
 	
 	<link media="screen" rel="stylesheet" type="text/css" href="{{ Path.URL.css }}styles-desktop.min.css" />
 	

@@ -18,9 +18,9 @@ WLD.MainView = ( function( window ) {
 	};*/
 	
 	
-	MainView.prototype.initEl = function() {
+	/*MainView.prototype.initEl = function() {
 		this.disableScrollRestoration();
-	};
+	};*/
 	
 	
 	/*MainView.prototype.bindEvents = function() {

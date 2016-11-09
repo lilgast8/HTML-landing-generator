@@ -42,7 +42,7 @@ WLD.PagesController = ( function( window ) {
 	};*/
 	
 	
-	PagesController.prototype.manageMenuLinks = function() {
+	/*PagesController.prototype.manageMenuLinks = function() {
 		this.updateMenuLinks( WLD.Views.Statics.Header.$menuLink );
 		this.updateMenuLinks( WLD.Views.Statics.Footer.$footerLink );
 	};
@@ -51,7 +51,7 @@ WLD.PagesController = ( function( window ) {
 	PagesController.prototype.manageLangLinks = function() {
 		this.changeLangLinks( WLD.Views.Statics.Header.$headerLgLink );
 		this.changeLangLinks( WLD.Views.Statics.Footer.$footerLgLink );
-	};
+	};*/
 	
 	
 	return new PagesController();

@@ -34,12 +34,12 @@ WLD.AbstractPagesController = ( function( window ) {
 	
 	
 	AbstractPagesController.prototype.init = function() {
-		this.initPages();
+		// this.initPages();
 		this.initEl();
 	};
 	
 	
-	AbstractPagesController.prototype.initPages = function() {
+	/*AbstractPagesController.prototype.initPages = function() {
 		this.pages = {
 			'error-404':		WLD.Views.Pages.Error404,
 			'legal-notices':	WLD.Views.Pages.LegalNotices,
@@ -48,7 +48,7 @@ WLD.AbstractPagesController = ( function( window ) {
 			'projects':			WLD.Views.Pages.Projects,
 			'project':			WLD.Views.Pages.Project,
 		};
-	};
+	};*/
 	
 	
 	AbstractPagesController.prototype.initEl = function() {
@@ -61,8 +61,11 @@ WLD.AbstractPagesController = ( function( window ) {
 	
 	AbstractPagesController.prototype.initFirstPage = function() {
 		this.bindEvents();
-		_setPageInfos.call( this );
-		this.manageMenuLinks();
+		
+		this.page = new WLD.Views.Pages.Home();
+		
+		// _setPageInfos.call( this );
+		// this.manageMenuLinks();
 		_loadAssets.call( this );
 	};
 	
@@ -73,7 +76,7 @@ WLD.AbstractPagesController = ( function( window ) {
 	};
 	
 	
-	var _setPageId = function( url ) {
+	/*var _setPageId = function( url ) {
 		var path	= WLD.Router.URL.path === '' ? 'index' : WLD.Router.URL.path;
 		var id		= WLD.Config.JS_VIEWS_ID[ path ];
 		
@@ -82,10 +85,10 @@ WLD.AbstractPagesController = ( function( window ) {
 		
 		this.prevPageInfos.id	= this.pageInfos.id;
 		this.pageInfos.id		= id;
-	};
+	};*/
 	
 	
-	var _setPageInfos = function() {
+	/*var _setPageInfos = function() {
 		var $page	= $( document.getElementById( 'page' ) );
 		var id		= $page[0].getAttribute( 'data-js-id' );
 		var title	= $page[0].getAttribute( 'data-title' );
@@ -100,10 +103,10 @@ WLD.AbstractPagesController = ( function( window ) {
 		_setPage.call( this );
 		
 		WLD.Router.setAltLangUrl( $page );
-	};
+	};*/
 	
 	
-	var _setPage = function() {
+	/*var _setPage = function() {
 		if ( this.pages[ this.pageInfos.id ] === undefined) {
 			if ( !WLD.Config.IS_PROD )
 				console.warn( 'PagesController: no specific page view for the "' + this.pageInfos.id + '" ID. If you need one, create it and then set the view in the PagesController.pages object.' );
@@ -112,17 +115,17 @@ WLD.AbstractPagesController = ( function( window ) {
 		}
 		else
 			this.page = new this.pages[ this.pageInfos.id ]();
-	};
+	};*/
 	
 	
-	AbstractPagesController.prototype.initPageChangeValues = function() {
+	/*AbstractPagesController.prototype.initPageChangeValues = function() {
 		this.isContentLoaded	= false;
 		this.isAssetsLoaded		= false;
 		this.isPageHidden		= false;
 		this.isPageShown		= false;
 		this.isMainLoaderShown	= false;
 		this.isMainLoaderHidden	= false;
-	};
+	};*/
 	
 	
 	var _loadAssets = function() {
@@ -182,12 +185,12 @@ WLD.AbstractPagesController = ( function( window ) {
 		}
 		
 		
-		// page change load
+		/*// page change load
 		else if ( !this.isFirstLoad && ( this.LOADING_MODE == 'byPageStatic' || this.LOADING_MODE == 'byPageDynamic' ) ) {
 			this.isAssetsLoaded = true;
 			
 			this.checkPageHiding();
-		}
+		}*/
 	};
 	
 	
@@ -202,7 +205,7 @@ WLD.AbstractPagesController = ( function( window ) {
 	};
 	
 	
-	AbstractPagesController.prototype.changePage = function( url ) {
+	/*AbstractPagesController.prototype.changePage = function( url ) {
 		WLD.Router.updateGA();
 		
 		if ( WLD.Config.NEED_PAGE_ID )
@@ -217,20 +220,20 @@ WLD.AbstractPagesController = ( function( window ) {
 		_loadContent.call( this, url );
 		
 		this.managePageHidingTransitions();
-	};
+	};*/
 	
 	
-	AbstractPagesController.prototype.changeSearch = function() {
+	/*AbstractPagesController.prototype.changeSearch = function() {
 		this.page.updateSearch();
 	};
 	
 	
 	AbstractPagesController.prototype.changeHash = function() {
 		this.page.updateHash();
-	};
+	};*/
 	
 	
-	var _loadContent = function( url ) {
+	/*var _loadContent = function( url ) {
 		// setTimeout( function() { // simulate a very slow connection = very long load
 		
 		$.ajax({
@@ -273,10 +276,10 @@ WLD.AbstractPagesController = ( function( window ) {
 		var url		= WLD.Path.URL.base + lang + '404';
 		
 		_loadContent.call( this, url );
-	};
+	};*/
 	
 	
-	AbstractPagesController.prototype.managePageHidingTransitions = function() {
+	/*AbstractPagesController.prototype.managePageHidingTransitions = function() {
 		this.page.bind( this.page.E.HIDDEN, this.onPageHidden, this );
 		this.page.hide();
 		
@@ -342,7 +345,7 @@ WLD.AbstractPagesController = ( function( window ) {
 		}
 		
 		this.data = null;
-	};
+	};*/
 	
 	
 	AbstractPagesController.prototype.showPage = function() {
@@ -355,13 +358,13 @@ WLD.AbstractPagesController = ( function( window ) {
 	};
 	
 	
-	AbstractPagesController.prototype.managePageShowingTransitions = function() {
+	/*AbstractPagesController.prototype.managePageShowingTransitions = function() {
 		this.page.bind( this.page.E.SHOWN, this.onPageShown, this );
 		this.page.show();
 		
 		this.mainLoader.bind( this.mainLoader.E.HIDDEN, this.onMainLoaderHidden, this );
 		this.mainLoader.hide();
-	};
+	};*/
 	
 	
 	AbstractPagesController.prototype.onPageShown = function() {
@@ -391,7 +394,7 @@ WLD.AbstractPagesController = ( function( window ) {
 	};
 	
 	
-	AbstractPagesController.prototype.updateMenuLinks = function( $link ) {
+	/*AbstractPagesController.prototype.updateMenuLinks = function( $link ) {
 		var $linkToInactivate	= $link.filter( '.active' );
 		var $linkToActivate		= $link.filter( '[ data-link-id="' + this.pageInfos.id + '" ]' );
 		
@@ -419,7 +422,7 @@ WLD.AbstractPagesController = ( function( window ) {
 	
 	var _updateTitle = function() {
 		document.title = this.pageInfos.title;
-	};
+	};*/
 	
 	
 	AbstractPagesController.prototype.enablePageChange = function() {
@@ -428,13 +431,13 @@ WLD.AbstractPagesController = ( function( window ) {
 		if ( this.isFirstLoad )
 			this.isFirstLoad = false;
 		
-		WLD.Router.checkUrlCorrespondence();
+		// WLD.Router.checkUrlCorrespondence();
 	};
 	
 	
-	var _disablePageChange = function() {
+	/*var _disablePageChange = function() {
 		this.isPageChange = true;
-	};
+	};*/
 	
 	
 	return AbstractPagesController;

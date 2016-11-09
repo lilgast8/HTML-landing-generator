@@ -11,10 +11,10 @@ WLD.Lang = ( function( window ) {
 	
 	Lang.prototype.init = function() {
 		_setGlobalInfos.call( this );
-		WLD.Router.setUrl( true, null );
-		_setCurrentLang.call( this );
-		_checkDefaultLang.call( this );
-		_setLangLinks.call( this );
+		// WLD.Router.setUrl( true, null );
+		// _setCurrentLang.call( this );
+		// _checkDefaultLang.call( this );
+		// _setLangLinks.call( this );
 	};
 	
 	
@@ -33,24 +33,24 @@ WLD.Lang = ( function( window ) {
 	};
 	
 	
-	var _setCurrentLang = function() {
+	/*var _setCurrentLang = function() {
 		if ( !this.MULTI_LANG || WLD.Router.URL.path.length === 0 )
 			this.LANG = this.DEFAULT_LANG;
 		else
 			this.LANG = WLD.Router.URL.pathParams[0];
-	};
+	};*/
 	
 	
-	var _checkDefaultLang = function() {
+	/*var _checkDefaultLang = function() {
 		if ( this.ALL_LANG.indexOf( this.LANG ) < 0 )
 			this.LANG = this.DEFAULT_LANG;
-	};
+	};*/
 	
 	
-	var _setLangLinks = function() {
+	/*var _setLangLinks = function() {
 		this.LANG_LINK_ROOT	= this.LANG == this.DEFAULT_LANG ? '' : this.LANG;
 		this.LANG_LINK		= this.MULTI_LANG ? this.LANG + '/' : '';
-	};
+	};*/
 	
 	
 	return new Lang();
