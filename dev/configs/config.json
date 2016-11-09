@@ -28,18 +28,6 @@
 									"ramon",
 									"osmose"
 								]
-							},
-	"GENERATE_JS_VIEW_ID":	[],
-	"HAS_MOBILE_VERSION":	true,
-	"TABLET_VERSION":		"desktop",
-	"FORCE_DEVICE":			false,
-	"GA_ID":				{},
-	"CREDITS":				{
-								"author":		"Gaston Bouchayer",
-								"authorUrl":	"www.gastonbouchayer.com",
-								"color1":		"#000",
-								"color2":		"#fff",
-								"color3":		"#fe7373"
 							}
 	
 }

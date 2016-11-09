@@ -48,14 +48,14 @@ class PagesController
 			Path::$FILE->svgSprite
 		) );
 		
-		if ( Config::$IS_DEV ) {
+		// if ( Config::$IS_DEV ) {
 			$this->twig	= new Twig_Environment( $loader, array(
 				'debug' => true
 			) );
 			$this->twig->addExtension( new Twig_Extension_Debug() );
-		}
-		else
-			$this->twig	= new Twig_Environment( $loader );
+		// }
+		// else
+		// 	$this->twig	= new Twig_Environment( $loader );
 	}
 	
 	

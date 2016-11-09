@@ -13,19 +13,18 @@ class Config
 	static $ENVS				= null;
 	static $ALL_LANG			= null;
 	static $HTMLIFY				= null;
-	static $GENERATE_JS_VIEW_ID	= null;
-	static $HAS_MOBILE_VERSION	= null;
-	static $TABLET_VERSION		= null;
-	static $FORCE_DEVICE		= null;
-	static $GA_ID				= null;
-	static $CREDITS				= null;
+	// static $GENERATE_JS_VIEW_ID	= null;
+	// static $HAS_MOBILE_VERSION	= null;
+	// static $TABLET_VERSION		= null;
+	// static $FORCE_DEVICE		= null;
+	// static $GA_ID				= null;
+	// static $CREDITS				= null;
 	
-	static $IS_DEV				= null;
-	static $IS_PREPROD_LOCAL	= null;
-	static $IS_PREPROD			= null;
-	static $IS_PROD				= null;
-	static $NEED_PAGE_ID		= null;
-	// static $HTMLIFY				= null;
+	// static $IS_DEV				= null;
+	// static $IS_PREPROD_LOCAL	= null;
+	// static $IS_PREPROD			= null;
+	// static $IS_PROD				= null;
+	// static $NEED_PAGE_ID		= null;
 	
 	private $jsFiles			= null;
 	
@@ -128,14 +127,14 @@ class Config
 		$this->params->ENV				= self::$ENV;
 		$this->params->ENVS				= self::$ENVS->{ $this->params->ENV };
 		$this->params->ALL_LANG			= self::$ALL_LANG;
-		$this->params->FORCE_DEVICE		= self::$FORCE_DEVICE;
-		$this->params->GA_ID			= self::$GA_ID;
-		$this->params->CREDITS			= self::$CREDITS;
-		$this->params->IS_DEV			= self::$IS_DEV;
-		$this->params->IS_PREPROD_LOCAL	= self::$IS_PREPROD_LOCAL;
-		$this->params->IS_PREPROD		= self::$IS_PREPROD;
-		$this->params->IS_PROD			= self::$IS_PROD;
-		$this->params->NEED_PAGE_ID		= self::$NEED_PAGE_ID;
+		// $this->params->FORCE_DEVICE		= self::$FORCE_DEVICE;
+		// $this->params->GA_ID			= self::$GA_ID;
+		// $this->params->CREDITS			= self::$CREDITS;
+		// $this->params->IS_DEV			= self::$IS_DEV;
+		// $this->params->IS_PREPROD_LOCAL	= self::$IS_PREPROD_LOCAL;
+		// $this->params->IS_PREPROD		= self::$IS_PREPROD;
+		// $this->params->IS_PROD			= self::$IS_PROD;
+		// $this->params->NEED_PAGE_ID		= self::$NEED_PAGE_ID;
 	}
 	
 	

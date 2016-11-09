@@ -52,7 +52,7 @@ class Device
 	}
 	
 	
-	private function getConfig()
+	/*private function getConfig()
 	{
 		self::$HAS_MOBILE_VERSION	= Config::$HAS_MOBILE_VERSION;
 		self::$TABLET_VERSION		= Config::$TABLET_VERSION;
@@ -121,7 +121,7 @@ class Device
 		$this->params->IS_OLD_BROWSER		= self::$IS_OLD_BROWSER;
 		$this->params->IS_IE				= self::$IS_IE;
 		$this->params->IS_EDGE				= self::$IS_EDGE;
-	}
+	}*/
 	
 	
 	/*public function getParams()
