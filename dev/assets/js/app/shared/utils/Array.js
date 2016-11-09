@@ -1,9 +1,9 @@
 
 
-STF.Utils = STF.Utils || {};
+WLD.Utils = WLD.Utils || {};
 
 
-STF.Utils.Array = ( function( window ) {
+WLD.Utils.Array = ( function( window ) {
 	'use strict';
 	
 	

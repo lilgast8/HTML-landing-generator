@@ -1,11 +1,11 @@
 
 
-STF.AbstractPagesController = ( function( window ) {
+WLD.AbstractPagesController = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractPagesController() {
-		STF.CustomEvent.call( this );
+		WLD.CustomEvent.call( this );
 		
 		this.LOADING_MODE			= 'byPageStatic'; // can be allStatic, byPageStatic, byPageDynamic
 		this.DYNAMIC_IMG_TO_LOAD	= 'img'; // used when LOADING_MODE == 'byPageDynamic', can be img.class for selective preload
@@ -29,7 +29,7 @@ STF.AbstractPagesController = ( function( window ) {
 	}
 	
 	
-	AbstractPagesController.prototype				= Object.create( STF.CustomEvent.prototype );
+	AbstractPagesController.prototype				= Object.create( WLD.CustomEvent.prototype );
 	AbstractPagesController.prototype.constructor	= AbstractPagesController;
 	
 	
@@ -41,21 +41,21 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	AbstractPagesController.prototype.initPages = function() {
 		this.pages = {
-			'error-404':		STF.Views.Pages.Error404,
-			'legal-notices':	STF.Views.Pages.LegalNotices,
-			'home':				STF.Views.Pages.Home,
-			// 'about':			STF.Views.Pages.About,
-			'projects':			STF.Views.Pages.Projects,
-			'project':			STF.Views.Pages.Project,
+			'error-404':		WLD.Views.Pages.Error404,
+			'legal-notices':	WLD.Views.Pages.LegalNotices,
+			'home':				WLD.Views.Pages.Home,
+			// 'about':			WLD.Views.Pages.About,
+			'projects':			WLD.Views.Pages.Projects,
+			'project':			WLD.Views.Pages.Project,
 		};
 	};
 	
 	
 	AbstractPagesController.prototype.initEl = function() {
-		this.assetsModel = STF.Models.Assets;
+		this.assetsModel = WLD.Models.Assets;
 		this.assetsModel.init();
 		
-		this.mainLoader = STF.Views.Statics.MainLoader;
+		this.mainLoader = WLD.Views.Statics.MainLoader;
 	};
 	
 	
@@ -74,8 +74,8 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	
 	var _setPageId = function( url ) {
-		var path	= STF.Router.URL.path === '' ? 'index' : STF.Router.URL.path;
-		var id		= STF.Config.JS_VIEWS_ID[ path ];
+		var path	= WLD.Router.URL.path === '' ? 'index' : WLD.Router.URL.path;
+		var id		= WLD.Config.JS_VIEWS_ID[ path ];
 		
 		if ( id === undefined )
 			id = 'error-404';
@@ -90,7 +90,7 @@ STF.AbstractPagesController = ( function( window ) {
 		var id		= $page[0].getAttribute( 'data-js-id' );
 		var title	= $page[0].getAttribute( 'data-title' );
 		
-		if ( !STF.Config.NEED_PAGE_ID )
+		if ( !WLD.Config.NEED_PAGE_ID )
 			this.prevPageInfos.id	= this.pageInfos.id;
 		this.prevPageInfos.title	= this.pageInfos.title;
 		
@@ -99,16 +99,16 @@ STF.AbstractPagesController = ( function( window ) {
 		
 		_setPage.call( this );
 		
-		STF.Router.setAltLangUrl( $page );
+		WLD.Router.setAltLangUrl( $page );
 	};
 	
 	
 	var _setPage = function() {
 		if ( this.pages[ this.pageInfos.id ] === undefined) {
-			if ( !STF.Config.IS_PROD )
+			if ( !WLD.Config.IS_PROD )
 				console.warn( 'PagesController: no specific page view for the "' + this.pageInfos.id + '" ID. If you need one, create it and then set the view in the PagesController.pages object.' );
 			
-			this.page = new STF.AbstractPageView();
+			this.page = new WLD.AbstractPageView();
 		}
 		else
 			this.page = new this.pages[ this.pageInfos.id ]();
@@ -165,7 +165,7 @@ STF.AbstractPagesController = ( function( window ) {
 		
 		// first load
 		if ( this.isFirstLoad ) {
-			STF.MainView.initAfterAssetsLoaded();
+			WLD.MainView.initAfterAssetsLoaded();
 			
 			this.page.init();
 			
@@ -192,7 +192,7 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	
 	var _showNonLoadedImages = function() {
-		var $imgsCont = this.isFirstLoad ? STF.MainView.$body : STF.MainView.$pageCont;
+		var $imgsCont = this.isFirstLoad ? WLD.MainView.$body : WLD.MainView.$pageCont;
 		
 		var $imgs = $imgsCont.find( 'img' ).filter( function() {
 			return this.getAttribute( 'data-lazyload' ) != 'true' && this.getAttribute( 'data-src' ) != 'preloaded';
@@ -203,9 +203,9 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	
 	AbstractPagesController.prototype.changePage = function( url ) {
-		STF.Router.updateGA();
+		WLD.Router.updateGA();
 		
-		if ( STF.Config.NEED_PAGE_ID )
+		if ( WLD.Config.NEED_PAGE_ID )
 			_setPageId.call( this, url );
 		
 		_disablePageChange.call( this );
@@ -269,8 +269,8 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	
 	var _force404Load = function() {
-		var lang	= STF.Lang.MULTI_LANG ? STF.Lang.LANG + '/' : '';
-		var url		= STF.Path.URL.base + lang + '404';
+		var lang	= WLD.Lang.MULTI_LANG ? WLD.Lang.LANG + '/' : '';
+		var url		= WLD.Path.URL.base + lang + '404';
 		
 		_loadContent.call( this, url );
 	};
@@ -332,12 +332,12 @@ STF.AbstractPagesController = ( function( window ) {
 	
 	
 	AbstractPagesController.prototype.setContent = function() {
-		STF.MainView.$pageCont[0].innerHTML = this.data;
+		WLD.MainView.$pageCont[0].innerHTML = this.data;
 		
 		_setPageInfos.call( this );
 		
 		if ( this. LOADING_MODE != 'allStatic' ) {
-			STF_resetImgs( STF.MainView.$pageCont.find( 'img' ) );
+			STF_resetImgs( WLD.MainView.$pageCont.find( 'img' ) );
 			setTimeout( function() { _loadAssets.call( this ); }.bind( this ), 0 );
 		}
 		
@@ -412,7 +412,7 @@ STF.AbstractPagesController = ( function( window ) {
 		
 		for ( var i = 0; i < $links.length; i++ ) {
 			$link		= $links[ i ];
-			$link.href	= STF.Router.ALT_LANG_URL[ $link.getAttribute( 'data-lang' ) ];
+			$link.href	= WLD.Router.ALT_LANG_URL[ $link.getAttribute( 'data-lang' ) ];
 		}
 	};
 	
@@ -428,7 +428,7 @@ STF.AbstractPagesController = ( function( window ) {
 		if ( this.isFirstLoad )
 			this.isFirstLoad = false;
 		
-		STF.Router.checkUrlCorrespondence();
+		WLD.Router.checkUrlCorrespondence();
 	};
 	
 	

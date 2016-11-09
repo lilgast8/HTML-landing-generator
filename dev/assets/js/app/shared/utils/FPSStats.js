@@ -1,9 +1,9 @@
 
 
-STF.Utils = STF.Utils || {};
+WLD.Utils = WLD.Utils || {};
 
 
-STF.Utils.FPSStats = ( function( window ) {
+WLD.Utils.FPSStats = ( function( window ) {
 	'use strict';
 	
 	

@@ -1,18 +1,18 @@
 
 
-STF.Models = STF.Models || {};
+WLD.Models = WLD.Models || {};
 
 
-STF.Models.Assets = ( function( window ) {
+WLD.Models.Assets = ( function( window ) {
 	'use strict';
 	
 	
 	function Assets() {
-		STF.AbstractAssets.call( this );
+		WLD.AbstractAssets.call( this );
 	}
 	
 	
-	Assets.prototype				= Object.create( STF.AbstractAssets.prototype );
+	Assets.prototype				= Object.create( WLD.AbstractAssets.prototype );
 	Assets.prototype.constructor	= Assets;
 	
 	
@@ -32,43 +32,43 @@ STF.Models.Assets = ( function( window ) {
 			
 			'error-404': [
 				/* temp */
-				STF.Path.URL.img + 'temp/404.jpg',
+				WLD.Path.URL.img + 'temp/404.jpg',
 			],
 			
 			'not-available': [
 				/* temp */
-				STF.Path.URL.img + 'temp/not-available.gif',
+				WLD.Path.URL.img + 'temp/not-available.gif',
 			],
 			
 			'home': [
 				/* temp */
-				STF.Path.URL.img + 'temp/home.jpg',
+				WLD.Path.URL.img + 'temp/home.jpg',
 			],
 			
 			'about': [
 				/* temp */
-				STF.Path.URL.img + 'temp/about-1.jpg',
-				STF.Path.URL.img + 'temp/about-2.jpg',
+				WLD.Path.URL.img + 'temp/about-1.jpg',
+				WLD.Path.URL.img + 'temp/about-2.jpg',
 			],
 			
 			'projects': [
 				/* temp */
-				STF.Path.URL.img + 'temp/projects.jpg',
+				WLD.Path.URL.img + 'temp/projects.jpg',
 			]
 		};
 		
 		
 		this.aJson = {
 			'global': {
-				global: STF.Path.URL.json + 'test-global.json'
+				global: WLD.Path.URL.json + 'test-global.json'
 			},
 			
 			'home': {
-				home: STF.Path.URL.json + 'test-home.json'
+				home: WLD.Path.URL.json + 'test-home.json'
 			},
 			
 			'projects': {
-				projects: STF.Path.URL.json + 'test-projects.json'
+				projects: WLD.Path.URL.json + 'test-projects.json'
 			}
 		};
 	};

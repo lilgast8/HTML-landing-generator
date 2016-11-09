@@ -1,4 +1,4 @@
 
 
-var STF = STF || {};
+var WLD = WLD || {};
 

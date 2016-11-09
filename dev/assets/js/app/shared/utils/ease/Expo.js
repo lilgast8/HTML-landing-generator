@@ -1,10 +1,10 @@
 
 
-STF.Utils		= STF.Utils || {};
-STF.Utils.Ease	= STF.Utils.Ease || {};
+WLD.Utils		= WLD.Utils || {};
+WLD.Utils.Ease	= WLD.Utils.Ease || {};
 
 
-STF.Utils.Ease.Expo = ( function( window ) {
+WLD.Utils.Ease.Expo = ( function( window ) {
 	'use strict';
 	
 	

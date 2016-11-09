@@ -1,6 +1,6 @@
 
 
-STF.Props = ( function( window ) {
+WLD.Props = ( function( window ) {
 	'use strict';
 	
 	

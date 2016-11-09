@@ -1,6 +1,6 @@
 
 
-STF.Device = ( function( window ) {
+WLD.Device = ( function( window ) {
 	'use strict';
 	
 	

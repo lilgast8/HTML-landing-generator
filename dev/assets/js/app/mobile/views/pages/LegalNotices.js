@@ -1,24 +1,24 @@
 
 
-STF.Views		= STF.Views || {};
-STF.Views.Pages	= STF.Views.Pages || {};
+WLD.Views		= WLD.Views || {};
+WLD.Views.Pages	= WLD.Views.Pages || {};
 
 
-STF.Views.Pages.LegalNotices = ( function( window ) {
+WLD.Views.Pages.LegalNotices = ( function( window ) {
 	'use strict';
 	
 	
 	function LegalNotices() {
-		STF.AbstractPageView.call( this );
+		WLD.AbstractPageView.call( this );
 	}
 	
 	
-	LegalNotices.prototype				= Object.create( STF.AbstractPageView.prototype );
+	LegalNotices.prototype				= Object.create( WLD.AbstractPageView.prototype );
 	LegalNotices.prototype.constructor	= LegalNotices;
 	
 	
 	LegalNotices.prototype.initDOM = function() {
-		STF.AbstractPageView.prototype.initDOM.call( this );
+		WLD.AbstractPageView.prototype.initDOM.call( this );
 		
 		this.$email	= this.$page.find( '.email' );
 		
@@ -27,12 +27,12 @@ STF.Views.Pages.LegalNotices = ( function( window ) {
 	
 	
 	LegalNotices.prototype.bindEvents = function() {
-		STF.AbstractPageView.prototype.bindEvents.call( this );
+		WLD.AbstractPageView.prototype.bindEvents.call( this );
 	};
 	
 	
 	LegalNotices.prototype.unbindEvents = function() {
-		STF.AbstractPageView.prototype.unbindEvents.call( this );
+		WLD.AbstractPageView.prototype.unbindEvents.call( this );
 	};
 	
 	

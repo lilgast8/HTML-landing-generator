@@ -1,11 +1,11 @@
 
 
-STF.Router = ( function( window ) {
+WLD.Router = ( function( window ) {
 	'use strict';
 	
 	
 	function Router() {
-		STF.CustomEvent.call( this );
+		WLD.CustomEvent.call( this );
 		
 		this.URL					= {};
 		this.ALT_LANG_URL			= {};
@@ -18,7 +18,7 @@ STF.Router = ( function( window ) {
 	}
 	
 	
-	Router.prototype				= Object.create( STF.CustomEvent.prototype );
+	Router.prototype				= Object.create( WLD.CustomEvent.prototype );
 	Router.prototype.constructor	= Router;
 	
 	
@@ -49,7 +49,7 @@ STF.Router = ( function( window ) {
 	
 	
 	var _getFullGaUrl = function () {
-		var fullGaUrl = this.URL.full.replace( STF.Path.URL.base, '' );
+		var fullGaUrl = this.URL.full.replace( WLD.Path.URL.base, '' );
 		
 		
 		return fullGaUrl;
@@ -59,21 +59,21 @@ STF.Router = ( function( window ) {
 	Router.prototype.init = function() {
 		_bindEvents.call( this );
 		
-		STF.PagesController.initFirstPage();
+		WLD.PagesController.initFirstPage();
 	};
 	
 	
 	var _bindEvents = function() {
-		STF.MainView.$window.on( 'popstate', $.proxy( _onPopState, this ) );
-		STF.MainView.$window.on( 'hashchange', $.proxy( _onHashChange, this ) );
+		WLD.MainView.$window.on( 'popstate', $.proxy( _onPopState, this ) );
+		WLD.MainView.$window.on( 'hashchange', $.proxy( _onHashChange, this ) );
 	};
 	
 	
 	var _getLangExistence = function() {
 		var langExist = true;
 		
-		if ( STF.Lang.ALL_LANG.indexOf( STF.Lang.LANG ) == -1 ) {
-			STF.Lang.LANG = STF.Lang.DEFAULT_LANG;
+		if ( WLD.Lang.ALL_LANG.indexOf( WLD.Lang.LANG ) == -1 ) {
+			WLD.Lang.LANG = WLD.Lang.DEFAULT_LANG;
 			
 			langExist = false;
 		}
@@ -96,7 +96,7 @@ STF.Router = ( function( window ) {
 	
 	
 	Router.prototype.updateUrl = function( url ) {
-		if ( STF.PagesController.isPageChange )
+		if ( WLD.PagesController.isPageChange )
 			return;
 		
 		this.isPageChangeByClick = true;
@@ -115,16 +115,16 @@ STF.Router = ( function( window ) {
 		
 		
 		if ( this.isPageChange )
-			STF.PagesController.changePage( this.URL.full );
+			WLD.PagesController.changePage( this.URL.full );
 		else if ( this.isSearchChange )
-			STF.PagesController.changeSearch();
+			WLD.PagesController.changeSearch();
 		else if ( this.isHashChange )
-			STF.PagesController.changeHash();
+			WLD.PagesController.changeHash();
 	};
 	
 	
 	var _onPopState = function( e ) {
-		if ( STF.PagesController.isPageChange )
+		if ( WLD.PagesController.isPageChange )
 			return;
 		
 		this.isPageChangeByClick = false;
@@ -136,14 +136,14 @@ STF.Router = ( function( window ) {
 			this.setUrl( false, null );
 		
 		if ( this.isPageChange )
-			STF.PagesController.changePage( this.URL.full );
+			WLD.PagesController.changePage( this.URL.full );
 		else if ( this.isSearchChange )
-			STF.PagesController.changeSearch();
+			WLD.PagesController.changeSearch();
 	};
 	
 	
 	var _onHashChange = function( e ) {
-		if ( STF.PagesController.isPageChange )
+		if ( WLD.PagesController.isPageChange )
 			return;
 		
 		_setUrlPartChange.call( this, window.location.href );
@@ -151,7 +151,7 @@ STF.Router = ( function( window ) {
 		
 		
 		if ( this.isHashChange && !this.isPageChange && !this.isSearchChange )
-			STF.PagesController.changeHash();
+			WLD.PagesController.changeHash();
 	};
 	
 	
@@ -183,18 +183,18 @@ STF.Router = ( function( window ) {
 	Router.prototype.setAltLangUrl = function( $page ) {
 		var lang;
 		
-		for ( var i = 0; i < STF.Lang.ALL_LANG.length; i++ ) {
-			lang = STF.Lang.ALL_LANG[ i ];
+		for ( var i = 0; i < WLD.Lang.ALL_LANG.length; i++ ) {
+			lang = WLD.Lang.ALL_LANG[ i ];
 			
-			if ( lang != STF.Lang.LANG )
+			if ( lang != WLD.Lang.LANG )
 				this.ALT_LANG_URL[ lang ] = $page[0].getAttribute( 'data-lang-' + lang );
 		}
 	};
 	
 	
 	Router.prototype.updateGA = function() {
-		if ( STF.Config.IS_PROD && Object.keys( STF.Config.GA_ID ).length > 0 ) {
-			for ( var gaName in STF.Config.GA_ID ) {
+		if ( WLD.Config.IS_PROD && Object.keys( WLD.Config.GA_ID ).length > 0 ) {
+			for ( var gaName in WLD.Config.GA_ID ) {
 				if ( gaName == 'default' )
 					ga( 'send', 'pageview', '/' + this.URL.fullGA );
 				else

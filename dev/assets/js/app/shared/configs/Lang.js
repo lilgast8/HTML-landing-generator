@@ -1,6 +1,6 @@
 
 
-STF.Lang = ( function( window ) {
+WLD.Lang = ( function( window ) {
 	'use strict';
 	
 	
@@ -11,7 +11,7 @@ STF.Lang = ( function( window ) {
 	
 	Lang.prototype.init = function() {
 		_setGlobalInfos.call( this );
-		STF.Router.setUrl( true, null );
+		WLD.Router.setUrl( true, null );
 		_setCurrentLang.call( this );
 		_checkDefaultLang.call( this );
 		_setLangLinks.call( this );
@@ -20,7 +20,7 @@ STF.Lang = ( function( window ) {
 	
 	var _setGlobalInfos = function() {
 		// all lang
-		this.ALL_LANG = STF.Config.ALL_LANG;
+		this.ALL_LANG = WLD.Config.ALL_LANG;
 		
 		// default lang
 		this.DEFAULT_LANG = this.ALL_LANG[0];
@@ -34,10 +34,10 @@ STF.Lang = ( function( window ) {
 	
 	
 	var _setCurrentLang = function() {
-		if ( !this.MULTI_LANG || STF.Router.URL.path.length === 0 )
+		if ( !this.MULTI_LANG || WLD.Router.URL.path.length === 0 )
 			this.LANG = this.DEFAULT_LANG;
 		else
-			this.LANG = STF.Router.URL.pathParams[0];
+			this.LANG = WLD.Router.URL.pathParams[0];
 	};
 	
 	

@@ -1,6 +1,6 @@
 
 
-STF.Config = ( function( window ) {
+WLD.Config = ( function( window ) {
 	'use strict';
 	
 	

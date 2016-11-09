@@ -1,11 +1,11 @@
 
 
-STF.AbstractView = ( function( window ) {
+WLD.AbstractView = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractView() {
-		STF.CustomEvent.call( this );
+		WLD.CustomEvent.call( this );
 		
 		this.E		= {
 			SHOW:	'show',
@@ -21,7 +21,7 @@ STF.AbstractView = ( function( window ) {
 	}
 	
 	
-	AbstractView.prototype				= Object.create( STF.CustomEvent.prototype );
+	AbstractView.prototype				= Object.create( WLD.CustomEvent.prototype );
 	AbstractView.prototype.constructor	= AbstractView;
 	
 	
@@ -53,14 +53,14 @@ STF.AbstractView = ( function( window ) {
 	AbstractView.prototype.bindEvents = function() {
 		// console.log( 'AbstractView.bindEvents() — ', this.constructor.name );
 		
-		STF.MainView.bind( STF.MainView.E.RESIZE, this.resize, this );
+		WLD.MainView.bind( WLD.MainView.E.RESIZE, this.resize, this );
 	};
 	
 	
 	AbstractView.prototype.unbindEvents = function() {
 		// console.log( 'AbstractView.unbindEvents() — ', this.constructor.name );
 		
-		STF.MainView.unbind( STF.MainView.E.RESIZE, this.resize, this );
+		WLD.MainView.unbind( WLD.MainView.E.RESIZE, this.resize, this );
 	};
 	
 	
@@ -142,7 +142,7 @@ STF.AbstractView = ( function( window ) {
 	 *								 but if you need to force a specific url you can directly pass a string
 	 */
 	AbstractView.prototype.changeUrl = function( e ) {
-		if ( STF.Props.HAS_PUSHSTATE ) { // if pushstate supported
+		if ( WLD.Props.HAS_PUSHSTATE ) { // if pushstate supported
 			var url;
 			
 			if ( typeof e == 'object' ) {
@@ -153,19 +153,19 @@ STF.AbstractView = ( function( window ) {
 			else if ( typeof e == 'string' )
 				url = e;
 			
-			STF.Router.updateUrl( url );
+			WLD.Router.updateUrl( url );
 		}
 	};
 	
 	
 	AbstractView.prototype.updateSearch = function() {
-		if ( !STF.Config.IS_PROD )
+		if ( !WLD.Config.IS_PROD )
 			console.warn( 'You need to override the updateSearch() method from AbstractView in the current page view.' );
 	};
 	
 	
 	AbstractView.prototype.updateHash = function() {
-		if ( !STF.Config.IS_PROD )
+		if ( !WLD.Config.IS_PROD )
 			console.warn( 'You need to override the updateHash() method from AbstractView in the current page view.' );
 	};
 	

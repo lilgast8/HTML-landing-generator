@@ -1,6 +1,6 @@
 
 
-STF.AbstractAssets = ( function( window ) {
+WLD.AbstractAssets = ( function( window ) {
 	'use strict';
 	
 	
@@ -91,8 +91,8 @@ STF.AbstractAssets = ( function( window ) {
 	
 	
 	var _addDynamicAssetsToLoad = function( isFirstLoad, aAssetsToLoad ) {
-		var $dynamicImgs = isFirstLoad ? STF.MainView.$mainCont.find( STF.PagesController.DYNAMIC_IMG_TO_LOAD ) :
-										 STF.MainView.$pageCont.find( STF.PagesController.DYNAMIC_IMG_TO_LOAD );
+		var $dynamicImgs = isFirstLoad ? WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD ) :
+										 WLD.MainView.$pageCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
 		
 		for ( var i = 0; i < $dynamicImgs.length; i++ )
 			if ( $dynamicImgs[ i ].getAttribute( 'data-lazyload' ) != 'true' )
@@ -111,7 +111,7 @@ STF.AbstractAssets = ( function( window ) {
 				id:		id,
 				src:	assetUrl
 			} );
-		else if ( !STF.Config.IS_PROD )
+		else if ( !WLD.Config.IS_PROD )
 			console.warn( 'AbstractAssets:' + assetUrl + ' already added to the loading assets list!' );
 	};
 	
