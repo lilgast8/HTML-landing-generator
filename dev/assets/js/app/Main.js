@@ -10,11 +10,11 @@ WLD.Main = ( function( window ) {
 	
 	
 	Main.prototype.init = function() {
-		WLD.Config.init();
+		// WLD.Config.init();
 		WLD.Props.init();
 		WLD.Device.init();
 		WLD.Path.init();
-		WLD.Lang.init();
+		// WLD.Lang.init();
 		
 		// _initDebug.call( this );
 		

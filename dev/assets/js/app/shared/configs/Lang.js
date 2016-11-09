@@ -10,7 +10,7 @@ WLD.Lang = ( function( window ) {
 	
 	
 	Lang.prototype.init = function() {
-		_setGlobalInfos.call( this );
+		// _setGlobalInfos.call( this );
 		// WLD.Router.setUrl( true, null );
 		// _setCurrentLang.call( this );
 		// _checkDefaultLang.call( this );

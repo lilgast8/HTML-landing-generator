@@ -85,7 +85,7 @@ WLD.AbstractAssets = ( function( window ) {
 				}
 		}
 		
-		
+		console.log( aAssetsToLoad );
 		return aAssetsToLoad;
 	};
 	

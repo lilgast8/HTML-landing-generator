@@ -23,7 +23,7 @@ WLD.Device = ( function( window ) {
 	
 	
 	Device.prototype.init = function() {
-		_setDevice.call( this );
+		// _setDevice.call( this );
 	};
 	
 	var _setDevice = function() {

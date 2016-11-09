@@ -18,11 +18,16 @@
 	STF_resetImgs( document.getElementsByTagName( 'img' ) );
 	
 	
-	/* JS vars */
-	var STF_Config		= JSON.parse( '{{ Config|json_encode|e("js") }}' );
-	var STF_Device		= JSON.parse( '{{ Device|json_encode|e("js") }}' );
-	var STF_JS_VIEWS_ID	= JSON.parse( '{{ Router.JS_VIEWS_ID|json_encode|e("js") }}' );
+	{% if Router.CONTENT_TYPE == 'view' %}
+	var BASE_URL = '{{ Path.URL.base }}';
+	{% endif %}
 </script>
+
+{# {% if Router.CONTENT_TYPE == 'view' %}
+<script>
+	var BASE_URL = '{{ Path.URL.base }}';
+</script>
+{% endif %} #}
 
 
 {# JS scripts #}

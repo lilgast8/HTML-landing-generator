@@ -90,10 +90,10 @@ class AbstractViewController
 	private function setParams()
 	{
 		$this->getParamsFromClass( 'Config' );
-		$this->getParamsFromClass( 'Device' );
+		// $this->getParamsFromClass( 'Device' );
 		$this->getParamsFromClass( 'Path' );
 		$this->getParamsFromClass( 'Lang' );
-		// $this->getParamsFromClass( 'Router' );
+		$this->getParamsFromClass( 'Router' );
 		$this->getParamsFromClass( 'Page' );
 	}
 	

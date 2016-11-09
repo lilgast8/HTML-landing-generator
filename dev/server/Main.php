@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 
 include_once 'server/core/configs/Config.php';
-include_once 'server/core/configs/Device.php';
+// include_once 'server/core/configs/Device.php';
 include_once 'server/core/configs/Lang.php';
 include_once 'server/core/configs/Path.php';
 
@@ -29,7 +29,7 @@ class Main
 	protected static $instance;
 	
 	private $config				= null;
-	private $device				= null;
+	// private $device				= null;
 	private $path				= null;
 	private $lang				= null;
 	private $router				= null;
@@ -41,7 +41,7 @@ class Main
 	{
 		$this->setWhoops();
 		$this->setConfig();
-		$this->setDevice();
+		// $this->setDevice();
 		$this->setPath();
 		$this->setLang();
 		$this->setRoutes();
@@ -73,10 +73,10 @@ class Main
 	}
 	
 	
-	private function setDevice()
+	/*private function setDevice()
 	{
 		$this->device = Device::getInstance();
-	}
+	}*/
 	
 	
 	private function setPath()

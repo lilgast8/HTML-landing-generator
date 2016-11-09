@@ -41,14 +41,16 @@ class Path
 	
 	private function setDeviceDir()
 	{
-		if ( !Device::$HAS_MOBILE_VERSION ||
-			 Device::$HAS_MOBILE_VERSION && Device::$IS_DESKTOP ||
-			 Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'desktop' )
-			$this->deviceDir = 'desktop/';
+		// if ( !Device::$HAS_MOBILE_VERSION ||
+		// 	 Device::$HAS_MOBILE_VERSION && Device::$IS_DESKTOP ||
+		// 	 Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'desktop' )
+		// 	$this->deviceDir = 'desktop/';
 		
-		else if ( Device::$HAS_MOBILE_VERSION && Device::$IS_MOBILE ||
-				  Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'mobile' )
-			$this->deviceDir = 'mobile/';
+		// else if ( Device::$HAS_MOBILE_VERSION && Device::$IS_MOBILE ||
+		// 		  Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'mobile' )
+		// 	$this->deviceDir = 'mobile/';
+		
+		$this->deviceDir = 'desktop/';
 	}
 	
 	

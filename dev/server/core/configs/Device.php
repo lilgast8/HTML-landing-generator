@@ -32,14 +32,14 @@ class Device
 	{
 		$this->whichBrowser = new WhichBrowser\Parser( getallheaders(), [ 'detectBots' => false ] );
 		
-		$this->getConfig();
-		$this->setDevice();
-		$this->setBrowser();
+		// $this->getConfig();
+		// $this->setDevice();
+		// $this->setBrowser();
 		
-		$this->config = Config::getInstance();
-		$this->config->init();
+		// $this->config = Config::getInstance();
+		// $this->config->init();
 		
-		$this->setParams();
+		// $this->setParams();
 	}
 	
 	
@@ -124,10 +124,10 @@ class Device
 	}
 	
 	
-	public function getParams()
+	/*public function getParams()
 	{
 		return $this->params;
-	}
+	}*/
 	
 }
 

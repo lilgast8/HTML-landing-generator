@@ -15,7 +15,8 @@ WLD.Path = ( function( window ) {
 	
 	
 	var _setPaths = function() {
-		var baseUrl = WLD.Config.ENVS.base_url;
+		// var baseUrl = WLD.Config.ENVS.base_url;
+		var baseUrl = BASE_URL;
 		
 		// url paths
 		this.URL = {

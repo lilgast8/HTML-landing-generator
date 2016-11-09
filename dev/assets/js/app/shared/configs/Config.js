@@ -26,7 +26,7 @@ WLD.Config = ( function( window ) {
 	
 	
 	Config.prototype.init = function() {
-		_setConfig.call( this );
+		// _setConfig.call( this );
 		// _setJsViewsId.call( this );
 		// _showCreditsLog.call( this );
 	};
