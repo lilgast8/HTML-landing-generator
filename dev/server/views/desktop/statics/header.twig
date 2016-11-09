@@ -34,7 +34,7 @@
 	{{ Path.JS_FILES.header|raw }}
 	
 	{# Google Analytics #}
-	{% include 'google-analytics.twig' %}
+	{# {% include 'google-analytics.twig' %} #}
 	
 </head>
 
@@ -45,32 +45,13 @@
 
 
 <!-- Main container -->
-<div id="main-container" class="preload lang-{{ Lang.LANG }}">
+<div id="main-container" class="preload">
 	
 	{% include 'main-loader.twig' %}
 	
 	<!-- Header -->
 	<header id="header">
-		<!-- Menu -->
-		<nav id="menu">
-			<ul>
-				<li>
-					<a href="{{ Router.LINK.home }}" class="menu-link" data-link-id="home">
-						{{ menu.home }}
-					</a>
-				</li>
-				<li>
-					<a href="{{ Router.LINK.about }}" class="menu-link" data-link-id="about">
-						{{ menu.about }}
-					</a>
-				</li>
-				<li>
-					<a href="{{ Router.LINK.projects }}" class="menu-link" data-link-id="projects">
-						{{ menu.projects }}
-					</a>
-				</li>
-			</ul>
-		</nav>
+		
 	</header>
 	
 	<!-- Page container -->
