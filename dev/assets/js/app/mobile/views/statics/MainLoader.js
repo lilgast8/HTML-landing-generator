@@ -72,7 +72,6 @@ WLD.Views.Statics.MainLoader = ( function( window ) {
 	
 	
 	var _onHideComplete = function() {
-		// LOADING_MODE == 'byPageStatic' && LOADING_MODE == 'byPageDynamic'
 		this.$loader[0].style.display = 'none';
 		
 		this.dispatch( this.E.HIDDEN );

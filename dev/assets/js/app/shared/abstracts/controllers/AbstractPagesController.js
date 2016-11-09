@@ -7,8 +7,8 @@ WLD.AbstractPagesController = ( function( window ) {
 	function AbstractPagesController() {
 		WLD.CustomEvent.call( this );
 		
-		this.LOADING_MODE			= 'byPageStatic'; // can be allStatic, byPageStatic, byPageDynamic
-		this.DYNAMIC_IMG_TO_LOAD	= 'img'; // used when LOADING_MODE == 'byPageDynamic', can be img.class for selective preload
+		this.LOADING_MODE			= 'static'; // can be static, dynamic
+		this.DYNAMIC_IMG_TO_LOAD	= 'img'; // used when LOADING_MODE == 'dynamic', can be img.class for selective preload
 		this.IS_HIDE_INIT			= true; // set to true if need a different behavior when hide loader on init
 		
 		this.pages					= {};
@@ -129,7 +129,8 @@ WLD.AbstractPagesController = ( function( window ) {
 	
 	
 	var _loadAssets = function() {
-		var aAssetsToLoad = this.assetsModel.getAssetsToLoad( this.pageInfos.id, this.isFirstLoad, this.LOADING_MODE );
+		// var aAssetsToLoad = this.assetsModel.getAssetsToLoad( this.pageInfos.id, this.isFirstLoad, this.LOADING_MODE );
+		var aAssetsToLoad = this.assetsModel.getAssetsToLoad( this.LOADING_MODE );
 		
 		this.mainLoader.loadAssets( aAssetsToLoad );
 	};
@@ -186,7 +187,7 @@ WLD.AbstractPagesController = ( function( window ) {
 		
 		
 		/*// page change load
-		else if ( !this.isFirstLoad && ( this.LOADING_MODE == 'byPageStatic' || this.LOADING_MODE == 'byPageDynamic' ) ) {
+		else if ( !this.isFirstLoad && ( this.LOADING_MODE == 'static' || this.LOADING_MODE == 'dynamic' ) ) {
 			this.isAssetsLoaded = true;
 			
 			this.checkPageHiding();
@@ -320,13 +321,13 @@ WLD.AbstractPagesController = ( function( window ) {
 			this.showPage();
 		}
 		
-		else if ( ( this. LOADING_MODE == 'byPageStatic' || this. LOADING_MODE == 'byPageDynamic' ) &&
+		else if ( ( this. LOADING_MODE == 'static' || this. LOADING_MODE == 'dynamic' ) &&
 				  this.isContentLoaded && !this.isAssetsLoaded && this.isPageHidden && this.isMainLoaderShown ) {
 			
 			this.setContent();
 		}
 		
-		else if ( ( this. LOADING_MODE == 'byPageStatic' || this. LOADING_MODE == 'byPageDynamic' ) &&
+		else if ( ( this. LOADING_MODE == 'static' || this. LOADING_MODE == 'dynamic' ) &&
 				  this.isContentLoaded && this.isAssetsLoaded && this.isPageHidden && this.isMainLoaderShown ) {
 			
 			this.showPage();

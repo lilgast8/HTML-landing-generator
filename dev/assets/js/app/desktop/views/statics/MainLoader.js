@@ -102,7 +102,6 @@ WLD.Views.Statics.MainLoader = ( function( window ) {
 	
 	
 	var _onHideComplete = function() {
-		// LOADING_MODE == 'byPageStatic' && LOADING_MODE == 'byPageDynamic'
 		this.$percentage[0].innerHTML					= '0 %';
 		this.$progress[0].style[ WLD.Props.TRANSFORM ]	= 'translate(-100%, 0%)';
 		

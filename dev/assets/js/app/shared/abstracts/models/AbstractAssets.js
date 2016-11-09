@@ -16,22 +16,26 @@ WLD.AbstractAssets = ( function( window ) {
 	};
 	
 	
-	AbstractAssets.prototype.getAssetsToLoad = function( pageId, isFirstLoad, loadingMode ) {
-		var aListIds		= _getAssetsListIds.call( this, pageId, isFirstLoad, loadingMode );
+	// AbstractAssets.prototype.getAssetsToLoad = function( pageId, isFirstLoad, loadingMode ) {
+	AbstractAssets.prototype.getAssetsToLoad = function( loadingMode ) {
+		// var aListIds		= _getAssetsListIds.call( this, pageId, isFirstLoad, loadingMode );
+		// var aListIds = this.aImg;
+		// console.log( this.aImg );
 		
 		var aAssetsToLoad	= [];
-		aAssetsToLoad		= _addStaticAssetsToLoad.call( this, 'img', aAssetsToLoad, aListIds );
-		aAssetsToLoad		= _addStaticAssetsToLoad.call( this, 'json', aAssetsToLoad, aListIds );
+		aAssetsToLoad		= _addStaticAssetsToLoad.call( this, 'img', aAssetsToLoad );
+		aAssetsToLoad		= _addStaticAssetsToLoad.call( this, 'json', aAssetsToLoad );
 		
-		if ( loadingMode == 'byPageDynamic' )
-			aAssetsToLoad	= _addDynamicAssetsToLoad.call( this, isFirstLoad, aAssetsToLoad );
+		if ( loadingMode == 'dynamic' )
+			aAssetsToLoad	= _addDynamicAssetsToLoad.call( this, aAssetsToLoad );
 		
 		
+		// console.log( aAssetsToLoad );
 		return aAssetsToLoad;
 	};
 	
 	
-	var _getAssetsListIds = function( pageId, isFirstLoad, loadingMode ) {
+	/*var _getAssetsListIds = function( pageId, isFirstLoad, loadingMode ) {
 		var aIds = [];
 		
 		
@@ -39,22 +43,22 @@ WLD.AbstractAssets = ( function( window ) {
 		if ( isFirstLoad && loadingMode == 'allStatic')
 			aIds = _getAllStaticAssetsListIds.call( this );
 		
-		else if ( isFirstLoad && loadingMode == 'byPageStatic' ||
-				  isFirstLoad && loadingMode == 'byPageDynamic' )
+		else if ( isFirstLoad && loadingMode == 'static' ||
+				  isFirstLoad && loadingMode == 'dynamic' )
 			aIds = [ 'global', pageId ];
 		
 		
 		// page change load
-		else if ( !isFirstLoad && loadingMode == 'byPageStatic' ||
-				  !isFirstLoad && loadingMode == 'byPageDynamic' )
+		else if ( !isFirstLoad && loadingMode == 'static' ||
+				  !isFirstLoad && loadingMode == 'dynamic' )
 			aIds = [ pageId ];
 		
 		
 		return aIds;
-	};
+	};*/
 	
 	
-	var _getAllStaticAssetsListIds = function() {
+	/*var _getAllStaticAssetsListIds = function() {
 		var aIds = [];
 		
 		for ( var id in this.aImg )
@@ -66,33 +70,29 @@ WLD.AbstractAssets = ( function( window ) {
 		
 		
 		return aIds;
-	};
+	};*/
 	
 	
-	var _addStaticAssetsToLoad = function( type, aAssetsToLoad, aListIds ) {
-		var assetsList;
-		var aAssets = type == 'img' ? this.aImg : this.aJson;
+	var _addStaticAssetsToLoad = function( type, aAssetsToLoad ) {
+		var assetsList = type == 'img' ? this.aImg : this.aJson;
+		var fileId;
 		
-		for ( var i = 0; i < aListIds.length; i++ ) {
-			assetsList = aAssets[ aListIds[ i ] ];
+		
+		for ( var id in assetsList ) {
+			fileId = STF_gl_getType( assetsList ) === 'object' ? id : null;
 			
-			var fileId;
-			if ( assetsList !== undefined )
-				for ( var id in assetsList ) {
-					fileId = STF_gl_getType( assetsList ) === 'object' ? id : null;
-					
-					_addAsset.call( this, aAssetsToLoad, fileId, assetsList[ id ] );
-				}
+			_addAsset.call( this, aAssetsToLoad, fileId, assetsList[ id ] );
 		}
 		
-		console.log( aAssetsToLoad );
+		
 		return aAssetsToLoad;
 	};
 	
 	
-	var _addDynamicAssetsToLoad = function( isFirstLoad, aAssetsToLoad ) {
-		var $dynamicImgs = isFirstLoad ? WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD ) :
-										 WLD.MainView.$pageCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
+	var _addDynamicAssetsToLoad = function( aAssetsToLoad ) {
+		// var $dynamicImgs = isFirstLoad ? WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD ) :
+		// 								 WLD.MainView.$pageCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
+		var $dynamicImgs = WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
 		
 		for ( var i = 0; i < $dynamicImgs.length; i++ )
 			if ( $dynamicImgs[ i ].getAttribute( 'data-lazyload' ) != 'true' )
@@ -111,8 +111,6 @@ WLD.AbstractAssets = ( function( window ) {
 				id:		id,
 				src:	assetUrl
 			} );
-		else if ( !WLD.Config.IS_PROD )
-			console.warn( 'AbstractAssets:' + assetUrl + ' already added to the loading assets list!' );
 	};
 	
 	
