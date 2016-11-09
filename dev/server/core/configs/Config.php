@@ -11,7 +11,7 @@ class Config
 	
 	static $ENV					= null;
 	static $ENVS				= null;
-	static $ALL_LANG			= null;
+	// static $ALL_LANG			= null;
 	static $HTMLIFY				= null;
 	// static $GENERATE_JS_VIEW_ID	= null;
 	// static $HAS_MOBILE_VERSION	= null;
@@ -125,7 +125,7 @@ class Config
 		$this->params = new stdClass();
 		
 		$this->params->ENV				= self::$ENV;
-		$this->params->ENVS				= self::$ENVS->{ $this->params->ENV };
+		// $this->params->ENVS				= self::$ENVS->{ $this->params->ENV };
 		$this->params->ALL_LANG			= self::$ALL_LANG;
 		// $this->params->FORCE_DEVICE		= self::$FORCE_DEVICE;
 		// $this->params->GA_ID			= self::$GA_ID;

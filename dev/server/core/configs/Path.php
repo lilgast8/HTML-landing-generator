@@ -59,7 +59,8 @@ class Path
 		// url paths
 		self::$URL				= new stdClass();
 		
-		self::$URL->base		= Config::$ENVS->{ Config::$ENV }->base_url;
+		// self::$URL->base		= Config::$ENVS->{ Config::$ENV }->base_url;
+		self::$URL->base		= Config::$ENV->base_url;
 		self::$URL->assets		= self::$URL->base		. 'assets/';
 		self::$URL->css			= self::$URL->assets	. 'css/';
 		self::$URL->favicons	= self::$URL->assets	. 'favicons/';
