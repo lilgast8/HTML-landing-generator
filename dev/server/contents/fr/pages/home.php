@@ -11,8 +11,8 @@ class HomeContent extends AbstractContent
 		
 		
 		$d->metas			= new stdClass();
-		$d->metas->title	= "Accueil — Startiflette";
-		$d->metas->desc		= "Accueil — Startiflette";
+		$d->metas->title	= "Accueil — HTML landing generator";
+		$d->metas->desc		= "Accueil — HTML landing generator";
 		
 		
 		$d->title = "Bonjour monde !";

@@ -2,7 +2,7 @@
 	
 	"ENV":		{
 					"fallbackresource":	"/dev/",
-					"base_url":			"http://startouf:8888/dev/"
+					"base_url":			"http://html-landing-generator:8888/dev/"
 				},
 	"HTMLIFY":	{
 					"fr": [

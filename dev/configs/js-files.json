@@ -11,8 +11,8 @@
 	
 	"scripts-desktop": {
 		"name": [
-			"scripts-desktop.min.js",
-			"scripts-desktop-oldie.min.js"
+			"scripts.min.js",
+			"scripts-oldie.min.js"
 		],
 		"dest": "",
 		"files": [
