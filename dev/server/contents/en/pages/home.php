@@ -15,7 +15,7 @@ class HomeContent extends AbstractContent
 		$d->metas->desc		= "Home — Startiflette";
 		
 		
-		$d->title = "— Home —";
+		$d->title = "Hello world!";
 		
 		
 		

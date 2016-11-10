@@ -7,9 +7,6 @@ class HomeContent extends AbstractContent
 	
 	protected function setData()
 	{
-		$author	= $this->getContent( 'author' );
-		
-		
 		$d		= new stdClass();
 		
 		
@@ -18,8 +15,7 @@ class HomeContent extends AbstractContent
 		$d->metas->desc		= "Accueil — Startiflette";
 		
 		
-		$d->mainTitle	= "Startiflette by " . $author->name;
-		$d->title		= "— Accueil —";
+		$d->title = "Bonjour monde !";
 		
 		
 		
