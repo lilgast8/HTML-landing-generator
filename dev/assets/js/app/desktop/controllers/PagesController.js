@@ -1,11 +1,11 @@
 
 
-WLD.PagesController = ( function( window ) {
+STFL.PagesController = ( function( window ) {
 	'use strict';
 	
 	
 	function PagesController() {
-		WLD.AbstractPagesController.call( this );
+		STFL.AbstractPagesController.call( this );
 		
 		// this.LOADING_MODE			= null;
 		// this.DYNAMIC_IMG_TO_LOAD	= null;
@@ -13,7 +13,7 @@ WLD.PagesController = ( function( window ) {
 	}
 	
 	
-	PagesController.prototype				= Object.create( WLD.AbstractPagesController.prototype );
+	PagesController.prototype				= Object.create( STFL.AbstractPagesController.prototype );
 	PagesController.prototype.constructor	= PagesController;
 	
 	
@@ -43,14 +43,14 @@ WLD.PagesController = ( function( window ) {
 	
 	
 	/*PagesController.prototype.manageMenuLinks = function() {
-		this.updateMenuLinks( WLD.Views.Statics.Header.$menuLink );
-		this.updateMenuLinks( WLD.Views.Statics.Footer.$footerLink );
+		this.updateMenuLinks( STFL.Views.Statics.Header.$menuLink );
+		this.updateMenuLinks( STFL.Views.Statics.Footer.$footerLink );
 	};
 	
 	
 	PagesController.prototype.manageLangLinks = function() {
-		this.changeLangLinks( WLD.Views.Statics.Header.$headerLgLink );
-		this.changeLangLinks( WLD.Views.Statics.Footer.$footerLgLink );
+		this.changeLangLinks( STFL.Views.Statics.Header.$headerLgLink );
+		this.changeLangLinks( STFL.Views.Statics.Footer.$footerLgLink );
 	};*/
 	
 	

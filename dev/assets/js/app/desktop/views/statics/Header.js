@@ -1,19 +1,19 @@
 
 
-WLD.Views			= WLD.Views || {};
-WLD.Views.Statics	= WLD.Views.Statics || {};
+STFL.Views			= STFL.Views || {};
+STFL.Views.Statics	= STFL.Views.Statics || {};
 
 
-WLD.Views.Statics.Header = ( function( window ) {
+STFL.Views.Statics.Header = ( function( window ) {
 	'use strict';
 	
 	
 	function Header() {
-		WLD.AbstractView.call( this );
+		STFL.AbstractView.call( this );
 	}
 	
 	
-	Header.prototype				= Object.create( WLD.AbstractView.prototype );
+	Header.prototype				= Object.create( STFL.AbstractView.prototype );
 	Header.prototype.constructor	= Header;
 	
 	
@@ -26,7 +26,7 @@ WLD.Views.Statics.Header = ( function( window ) {
 	
 	
 	Header.prototype.bindEvents = function() {
-		WLD.AbstractView.prototype.bindEvents.call( this );
+		STFL.AbstractView.prototype.bindEvents.call( this );
 		
 		this.$menuLink.on( 'click', $.proxy( this.changeUrl, this ) );
 	};

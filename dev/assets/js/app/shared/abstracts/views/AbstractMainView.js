@@ -1,11 +1,11 @@
 
 
-WLD.AbstractMainView = ( function( window ) {
+STFL.AbstractMainView = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractMainView() {
-		WLD.AbstractView.call( this );
+		STFL.AbstractView.call( this );
 		
 		this.E = {
 			RESIZE:			'resize',
@@ -42,7 +42,7 @@ WLD.AbstractMainView = ( function( window ) {
 	}
 	
 	
-	AbstractMainView.prototype				= Object.create( WLD.AbstractView.prototype );
+	AbstractMainView.prototype				= Object.create( STFL.AbstractView.prototype );
 	AbstractMainView.prototype.constructor	= AbstractMainView;
 	
 	
@@ -86,9 +86,9 @@ WLD.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.initStaticsViews = function() {
-		WLD.Views.Statics.MainLoader.init();
-		WLD.Views.Statics.Header.init();
-		WLD.Views.Statics.Footer.init();
+		STFL.Views.Statics.MainLoader.init();
+		STFL.Views.Statics.Header.init();
+		STFL.Views.Statics.Footer.init();
 		
 		STF_dom_removeClass( this.$mainCont[0], 'preload' );
 	};
@@ -123,8 +123,8 @@ WLD.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.raf = function() {
-		if ( WLD.Config.HAS_FPS_STATS && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.FPSStats.begin();
+		if ( STFL.Config.HAS_FPS_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.FPSStats.begin();
 		
 		
 		_setRafProps.call( this );
@@ -132,11 +132,11 @@ WLD.AbstractMainView = ( function( window ) {
 		this.dispatch( this.E.RAF );
 		
 		
-		if ( WLD.Config.HAS_FPS_STATS && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.FPSStats.end();
+		if ( STFL.Config.HAS_FPS_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.FPSStats.end();
 		
-		if ( WLD.Config.HAS_MEMORY_STATS && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.MemoryStats.update();
+		if ( STFL.Config.HAS_MEMORY_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.MemoryStats.update();
 	};
 	
 	

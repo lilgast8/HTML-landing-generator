@@ -1,9 +1,9 @@
 
 
-WLD.Utils = WLD.Utils || {};
+STFL.Utils = STFL.Utils || {};
 
 
-WLD.Utils.String = ( function( window ) {
+STFL.Utils.String = ( function( window ) {
 	'use strict';
 	
 	
@@ -36,7 +36,7 @@ WLD.Utils.String = ( function( window ) {
 	
 	window.STF_str_getPath = function( string, baseUrl ) {
 		if ( baseUrl === null || baseUrl === undefined )
-			baseUrl = WLD.Path.URL.base;
+			baseUrl = STFL.Path.URL.base;
 		
 		var path	= string.replace( baseUrl, '' );
 		

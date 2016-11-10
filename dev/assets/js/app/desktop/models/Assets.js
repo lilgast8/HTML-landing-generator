@@ -1,18 +1,18 @@
 
 
-WLD.Models = WLD.Models || {};
+STFL.Models = STFL.Models || {};
 
 
-WLD.Models.Assets = ( function( window ) {
+STFL.Models.Assets = ( function( window ) {
 	'use strict';
 	
 	
 	function Assets() {
-		WLD.AbstractAssets.call( this );
+		STFL.AbstractAssets.call( this );
 	}
 	
 	
-	Assets.prototype				= Object.create( WLD.AbstractAssets.prototype );
+	Assets.prototype				= Object.create( STFL.AbstractAssets.prototype );
 	Assets.prototype.constructor	= Assets;
 	
 	
@@ -29,14 +29,14 @@ WLD.Models.Assets = ( function( window ) {
 			/* others */
 			
 			/* temp */
-			WLD.Path.URL.img + 'temp/home.jpg',
-			WLD.Path.URL.img + 'temp/404.jpg',
+			STFL.Path.URL.img + 'temp/home.jpg',
+			STFL.Path.URL.img + 'temp/404.jpg',
 		];
 		
 		
 		this.aJson = {
-			global: WLD.Path.URL.json + 'test-global.json',
-			home: WLD.Path.URL.json + 'test-home.json'
+			global: STFL.Path.URL.json + 'test-global.json',
+			home: STFL.Path.URL.json + 'test-home.json'
 		};
 		
 		
@@ -55,43 +55,43 @@ WLD.Models.Assets = ( function( window ) {
 			
 		// 	'error-404': [
 		// 		/* temp */
-		// 		WLD.Path.URL.img + 'temp/404.jpg',
+		// 		STFL.Path.URL.img + 'temp/404.jpg',
 		// 	],
 			
 		// 	'not-available': [
 		// 		/* temp */
-		// 		WLD.Path.URL.img + 'temp/not-available.gif',
+		// 		STFL.Path.URL.img + 'temp/not-available.gif',
 		// 	],
 			
 		// 	'home': [
 		// 		/* temp */
-		// 		WLD.Path.URL.img + 'temp/home.jpg',
+		// 		STFL.Path.URL.img + 'temp/home.jpg',
 		// 	],
 			
 		// 	'about': [
 		// 		/* temp */
-		// 		WLD.Path.URL.img + 'temp/about-1.jpg',
-		// 		WLD.Path.URL.img + 'temp/about-2.jpg',
+		// 		STFL.Path.URL.img + 'temp/about-1.jpg',
+		// 		STFL.Path.URL.img + 'temp/about-2.jpg',
 		// 	],
 			
 		// 	'projects': [
 		// 		/* temp */
-		// 		WLD.Path.URL.img + 'temp/projects.jpg',
+		// 		STFL.Path.URL.img + 'temp/projects.jpg',
 		// 	]
 		// };
 		
 		
 		// this.aJson = {
 		// 	'global': {
-		// 		global: WLD.Path.URL.json + 'test-global.json'
+		// 		global: STFL.Path.URL.json + 'test-global.json'
 		// 	},
 			
 		// 	'home': {
-		// 		home: WLD.Path.URL.json + 'test-home.json'
+		// 		home: STFL.Path.URL.json + 'test-home.json'
 		// 	},
 			
 		// 	'projects': {
-		// 		projects: WLD.Path.URL.json + 'test-projects.json'
+		// 		projects: STFL.Path.URL.json + 'test-projects.json'
 		// 	}
 		// };
 	};

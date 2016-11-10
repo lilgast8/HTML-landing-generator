@@ -1,9 +1,9 @@
 
 
-WLD.Utils = WLD.Utils || {};
+STFL.Utils = STFL.Utils || {};
 
 
-WLD.Utils.DOM = ( function( window ) {
+STFL.Utils.DOM = ( function( window ) {
 	'use strict';
 	
 	
@@ -56,10 +56,10 @@ WLD.Utils.DOM = ( function( window ) {
 		x = x === null ? 0 : x;
 		y = y === null ? 0 : y;
 		
-		if ( WLD.Props.HAS_TRANSFORMS_3D )
-			el.style[ WLD.Props.TRANSFORM ] = 'translate3d(' + x + 'px, ' + y + 'px, 0px)';
+		if ( STFL.Props.HAS_TRANSFORMS_3D )
+			el.style[ STFL.Props.TRANSFORM ] = 'translate3d(' + x + 'px, ' + y + 'px, 0px)';
 		else
-			el.style[ WLD.Props.TRANSFORM ] = 'translate(' + x + 'px, ' + y + 'px)';
+			el.style[ STFL.Props.TRANSFORM ] = 'translate(' + x + 'px, ' + y + 'px)';
 	};
 	
 	

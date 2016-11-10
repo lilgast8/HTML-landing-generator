@@ -1,11 +1,11 @@
 
 
-WLD.Router = ( function( window ) {
+STFL.Router = ( function( window ) {
 	'use strict';
 	
 	
 	function Router() {
-		WLD.CustomEvent.call( this );
+		STFL.CustomEvent.call( this );
 		
 		this.URL					= {};
 		this.ALT_LANG_URL			= {};
@@ -18,7 +18,7 @@ WLD.Router = ( function( window ) {
 	}
 	
 	
-	Router.prototype				= Object.create( WLD.CustomEvent.prototype );
+	Router.prototype				= Object.create( STFL.CustomEvent.prototype );
 	Router.prototype.constructor	= Router;
 	
 	
@@ -49,7 +49,7 @@ WLD.Router = ( function( window ) {
 	
 	
 	var _getFullGaUrl = function () {
-		var fullGaUrl = this.URL.full.replace( WLD.Path.URL.base, '' );
+		var fullGaUrl = this.URL.full.replace( STFL.Path.URL.base, '' );
 		
 		
 		return fullGaUrl;
@@ -59,21 +59,21 @@ WLD.Router = ( function( window ) {
 	Router.prototype.init = function() {
 		// _bindEvents.call( this );
 		
-		// WLD.PagesController.initFirstPage();
+		// STFL.PagesController.initFirstPage();
 	};
 	
 	
 	/*var _bindEvents = function() {
-		WLD.MainView.$window.on( 'popstate', $.proxy( _onPopState, this ) );
-		WLD.MainView.$window.on( 'hashchange', $.proxy( _onHashChange, this ) );
+		STFL.MainView.$window.on( 'popstate', $.proxy( _onPopState, this ) );
+		STFL.MainView.$window.on( 'hashchange', $.proxy( _onHashChange, this ) );
 	};*/
 	
 	
 	/*var _getLangExistence = function() {
 		var langExist = true;
 		
-		if ( WLD.Lang.ALL_LANG.indexOf( WLD.Lang.LANG ) == -1 ) {
-			WLD.Lang.LANG = WLD.Lang.DEFAULT_LANG;
+		if ( STFL.Lang.ALL_LANG.indexOf( STFL.Lang.LANG ) == -1 ) {
+			STFL.Lang.LANG = STFL.Lang.DEFAULT_LANG;
 			
 			langExist = false;
 		}
@@ -96,7 +96,7 @@ WLD.Router = ( function( window ) {
 	
 	
 	Router.prototype.updateUrl = function( url ) {
-		if ( WLD.PagesController.isPageChange )
+		if ( STFL.PagesController.isPageChange )
 			return;
 		
 		this.isPageChangeByClick = true;
@@ -115,16 +115,16 @@ WLD.Router = ( function( window ) {
 		
 		
 		if ( this.isPageChange )
-			WLD.PagesController.changePage( this.URL.full );
+			STFL.PagesController.changePage( this.URL.full );
 		else if ( this.isSearchChange )
-			WLD.PagesController.changeSearch();
+			STFL.PagesController.changeSearch();
 		else if ( this.isHashChange )
-			WLD.PagesController.changeHash();
+			STFL.PagesController.changeHash();
 	};
 	
 	
 	var _onPopState = function( e ) {
-		if ( WLD.PagesController.isPageChange )
+		if ( STFL.PagesController.isPageChange )
 			return;
 		
 		this.isPageChangeByClick = false;
@@ -136,14 +136,14 @@ WLD.Router = ( function( window ) {
 			this.setUrl( false, null );
 		
 		if ( this.isPageChange )
-			WLD.PagesController.changePage( this.URL.full );
+			STFL.PagesController.changePage( this.URL.full );
 		else if ( this.isSearchChange )
-			WLD.PagesController.changeSearch();
+			STFL.PagesController.changeSearch();
 	};
 	
 	
 	var _onHashChange = function( e ) {
-		if ( WLD.PagesController.isPageChange )
+		if ( STFL.PagesController.isPageChange )
 			return;
 		
 		_setUrlPartChange.call( this, window.location.href );
@@ -151,7 +151,7 @@ WLD.Router = ( function( window ) {
 		
 		
 		if ( this.isHashChange && !this.isPageChange && !this.isSearchChange )
-			WLD.PagesController.changeHash();
+			STFL.PagesController.changeHash();
 	};
 	
 	
@@ -183,18 +183,18 @@ WLD.Router = ( function( window ) {
 	/*Router.prototype.setAltLangUrl = function( $page ) {
 		var lang;
 		
-		for ( var i = 0; i < WLD.Lang.ALL_LANG.length; i++ ) {
-			lang = WLD.Lang.ALL_LANG[ i ];
+		for ( var i = 0; i < STFL.Lang.ALL_LANG.length; i++ ) {
+			lang = STFL.Lang.ALL_LANG[ i ];
 			
-			if ( lang != WLD.Lang.LANG )
+			if ( lang != STFL.Lang.LANG )
 				this.ALT_LANG_URL[ lang ] = $page[0].getAttribute( 'data-lang-' + lang );
 		}
 	};*/
 	
 	
 	/*Router.prototype.updateGA = function() {
-		if ( WLD.Config.IS_PROD && Object.keys( WLD.Config.GA_ID ).length > 0 ) {
-			for ( var gaName in WLD.Config.GA_ID ) {
+		if ( STFL.Config.IS_PROD && Object.keys( STFL.Config.GA_ID ).length > 0 ) {
+			for ( var gaName in STFL.Config.GA_ID ) {
 				if ( gaName == 'default' )
 					ga( 'send', 'pageview', '/' + this.URL.fullGA );
 				else

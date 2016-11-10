@@ -1,6 +1,6 @@
 
 
-WLD.AbstractAssets = ( function( window ) {
+STFL.AbstractAssets = ( function( window ) {
 	'use strict';
 	
 	
@@ -90,9 +90,9 @@ WLD.AbstractAssets = ( function( window ) {
 	
 	
 	var _addDynamicAssetsToLoad = function( aAssetsToLoad ) {
-		// var $dynamicImgs = isFirstLoad ? WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD ) :
-		// 								 WLD.MainView.$pageCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
-		var $dynamicImgs = WLD.MainView.$mainCont.find( WLD.PagesController.DYNAMIC_IMG_TO_LOAD );
+		// var $dynamicImgs = isFirstLoad ? STFL.MainView.$mainCont.find( STFL.PagesController.DYNAMIC_IMG_TO_LOAD ) :
+		// 								 STFL.MainView.$pageCont.find( STFL.PagesController.DYNAMIC_IMG_TO_LOAD );
+		var $dynamicImgs = STFL.MainView.$mainCont.find( STFL.PagesController.DYNAMIC_IMG_TO_LOAD );
 		
 		for ( var i = 0; i < $dynamicImgs.length; i++ )
 			if ( $dynamicImgs[ i ].getAttribute( 'data-lazyload' ) != 'true' )

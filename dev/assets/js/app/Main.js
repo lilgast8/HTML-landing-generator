@@ -1,6 +1,6 @@
 
 
-WLD.Main = ( function( window ) {
+STFL.Main = ( function( window ) {
 	'use strict';
 	
 	
@@ -10,18 +10,18 @@ WLD.Main = ( function( window ) {
 	
 	
 	Main.prototype.init = function() {
-		// WLD.Config.init();
-		WLD.Props.init();
-		WLD.Device.init();
-		WLD.Path.init();
-		// WLD.Lang.init();
+		// STFL.Config.init();
+		STFL.Props.init();
+		STFL.Device.init();
+		STFL.Path.init();
+		// STFL.Lang.init();
 		
 		// _initDebug.call( this );
 		
-		WLD.PagesController.init();
-		WLD.MainView.init();
-		// WLD.Router.init();
-		WLD.PagesController.initFirstPage();
+		STFL.PagesController.init();
+		STFL.MainView.init();
+		// STFL.Router.init();
+		STFL.PagesController.initFirstPage();
 		
 		// this.$window.on( 'load', $.proxy( _windowLoad, this ) );
 	};
@@ -35,24 +35,24 @@ WLD.Main = ( function( window ) {
 	
 	
 	var _initFPSStats = function( isSet ) {
-		WLD.Config.setFPSStats( isSet );
+		STFL.Config.setFPSStats( isSet );
 		
-		if ( isSet && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.FPSStats.init();
+		if ( isSet && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.FPSStats.init();
 	};
 	
 	
 	var _initMemoryStats = function( isSet ) {
-		WLD.Config.setMemoryStats( isSet );
+		STFL.Config.setMemoryStats( isSet );
 		
-		if ( isSet && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.MemoryStats.init();
+		if ( isSet && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.MemoryStats.init();
 	};
 	
 	
 	var _initDatGUI = function( isSet ) {
-		if ( isSet && ( WLD.Config.IS_DEV || WLD.Config.IS_PREPROD_LOCAL ) )
-			WLD.Utils.DatGUI.init();
+		if ( isSet && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
+			STFL.Utils.DatGUI.init();
 	};*/
 	
 	
@@ -62,5 +62,5 @@ WLD.Main = ( function( window ) {
 } ) ( window );
 
 
-$( WLD.Main.init.bind( WLD.Main ) );
+$( STFL.Main.init.bind( STFL.Main ) );
 

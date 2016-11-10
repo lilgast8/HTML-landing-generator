@@ -1,6 +1,6 @@
 
 
-WLD.Path = ( function( window ) {
+STFL.Path = ( function( window ) {
 	'use strict';
 	
 	
@@ -15,7 +15,7 @@ WLD.Path = ( function( window ) {
 	
 	
 	var _setPaths = function() {
-		// var baseUrl = WLD.Config.ENVS.base_url;
+		// var baseUrl = STFL.Config.ENVS.base_url;
 		// var baseUrl = BASE_URL;
 		
 		// url paths

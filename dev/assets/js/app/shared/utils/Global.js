@@ -1,9 +1,9 @@
 
 
-WLD.Utils = WLD.Utils || {};
+STFL.Utils = STFL.Utils || {};
 
 
-WLD.Utils.Global = ( function( window ) {
+STFL.Utils.Global = ( function( window ) {
 	'use strict';
 	
 	

@@ -1,9 +1,9 @@
 
 
-WLD.Utils = WLD.Utils || {};
+STFL.Utils = STFL.Utils || {};
 
 
-WLD.Utils.MemoryStats = ( function( window ) {
+STFL.Utils.MemoryStats = ( function( window ) {
 	'use strict';
 	
 	

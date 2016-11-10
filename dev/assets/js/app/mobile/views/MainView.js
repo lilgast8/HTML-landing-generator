@@ -1,20 +1,20 @@
 
 
-WLD.MainView = ( function( window ) {
+STFL.MainView = ( function( window ) {
 	'use strict';
 	
 	
 	function MainView() {
-		WLD.AbstractMainView.call( this );
+		STFL.AbstractMainView.call( this );
 	}
 	
 	
-	MainView.prototype				= Object.create( WLD.AbstractMainView.prototype );
+	MainView.prototype				= Object.create( STFL.AbstractMainView.prototype );
 	MainView.prototype.constructor	= MainView;
 	
 	
 	/*MainView.prototype.initDOM = function() {
-		WLD.AbstractMainView.prototype.initDOM.call( this );
+		STFL.AbstractMainView.prototype.initDOM.call( this );
 	};*/
 	
 	
@@ -24,12 +24,12 @@ WLD.MainView = ( function( window ) {
 	
 	
 	/*MainView.prototype.bindEvents = function() {
-		WLD.AbstractMainView.prototype.bindEvents.call( this );
+		STFL.AbstractMainView.prototype.bindEvents.call( this );
 	};*/
 	
 	
 	/*MainView.prototype.initStaticsViews = function() {
-		WLD.AbstractMainView.prototype.initStaticsViews.call( this );
+		STFL.AbstractMainView.prototype.initStaticsViews.call( this );
 	};*/
 	
 	
