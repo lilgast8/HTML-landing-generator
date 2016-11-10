@@ -16,9 +16,7 @@ class PagesController
 	private $twig				= null;
 	
 	private $pageController		= null;
-	
 	private $page				= null;
-	// private $router				= null;
 	
 	
 	protected function __construct()
@@ -48,14 +46,10 @@ class PagesController
 			Path::$FILE->svgSprite
 		) );
 		
-		// if ( Config::$IS_DEV ) {
-			$this->twig	= new Twig_Environment( $loader, array(
-				'debug' => true
-			) );
-			$this->twig->addExtension( new Twig_Extension_Debug() );
-		// }
-		// else
-		// 	$this->twig	= new Twig_Environment( $loader );
+		$this->twig	= new Twig_Environment( $loader, array(
+			'debug' => true
+		) );
+		$this->twig->addExtension( new Twig_Extension_Debug() );
 	}
 	
 	
@@ -71,7 +65,6 @@ class PagesController
 	}
 	
 	
-	// public function setPageInfos( $page )
 	public function setPageInfos()
 	{
 		$this->page = Page::getInstance();
@@ -88,36 +81,11 @@ class PagesController
 			$this->page->twig	= $this->page->id;
 			$this->page->ctrl	= $this->page->id;
 		}
-		
-		
-		/*$this->page->id		= $page->available ? $page->id : 'not-available';
-		$this->page->name	= Strings::camelCase( $this->page->id );
-		if ( $page->available ) {
-			$this->page->js			= $page->js === null ? $page->id : $page->js;
-			$this->page->twig		= $page->twig === null ? $page->id : $page->twig;
-			$this->page->ctrl		= $page->ctrl === null ? $page->id : $page->ctrl;
-			$this->page->alias		= $page->alias;
-			$this->page->dynamic	= $page->dynamic;
-		}
-		else {
-			$this->page->js		= $this->page->id;
-			$this->page->twig	= $this->page->id;
-			$this->page->ctrl	= $this->page->id;
-			$this->page->alias	= null;
-		}*/
 	}
 	
 	
 	public function init()
 	{
-		// $this->router = Router::getInstance();
-		
-		// echo '⚡️ SLP ⚡️';
-		// echo '<pre>"';
-		// print_r( $this->page );
-		// echo '"</pre>';
-		// exit();
-		
 		$this->setPageInfos();
 		$this->page->setParams();
 		
@@ -146,25 +114,6 @@ class PagesController
 	private function initPageController()
 	{
 		$this->pageController->init( $this->twig );
-		
-		/* static page */
-		/*if ( $this->page->dynamic == null )
-			$this->pageController->init( $this->twig );*/
-		
-		/* dynamic page */
-		/*else {
-			$pageExist = $this->pageController->getPageExistence();
-			
-			if ( $pageExist ) {
-				$this->router->updateFurtherToAPIResponse( $this->pageController->response );
-				$this->pageController->init( $this->twig );
-			}
-			else {
-				$this->router->updateFurtherToAPIResponse( $this->pageController->response );
-				
-				return;
-			}
-		}*/
 	}
 	
 	

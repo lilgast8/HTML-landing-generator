@@ -6,7 +6,6 @@ require 'vendor/autoload.php';
 
 
 include_once 'server/core/configs/Config.php';
-// include_once 'server/core/configs/Device.php';
 include_once 'server/core/configs/Lang.php';
 include_once 'server/core/configs/Path.php';
 
@@ -15,9 +14,7 @@ include_once 'server/core/routes/Router.php';
 include_once 'server/core/controllers/PagesController.php';
 include_once 'server/core/controllers/Page.php';
 
-include_once 'server/core/utils/Caller.php';
 include_once 'server/core/utils/Helpers.php';
-// include_once 'server/core/utils/HTMLify.php';
 include_once 'server/core/utils/Strings.php';
 include_once 'server/core/utils/TwigHelpers.php';
 
@@ -29,24 +26,20 @@ class Main
 	protected static $instance;
 	
 	private $config				= null;
-	// private $device				= null;
 	private $path				= null;
 	private $lang				= null;
 	private $router				= null;
 	private $pagesController	= null;
-	// private $HTMLify			= null;
 	
 	
 	protected function __construct()
 	{
 		$this->setWhoops();
 		$this->setConfig();
-		// $this->setDevice();
 		$this->setPath();
 		$this->setLang();
 		$this->setRoutes();
 		$this->setPagesController();
-		// $this->HTMLify();
 	}
 	
 	
@@ -73,12 +66,6 @@ class Main
 	}
 	
 	
-	/*private function setDevice()
-	{
-		$this->device = Device::getInstance();
-	}*/
-	
-	
 	private function setPath()
 	{
 		$this->path = Path::getInstance();
@@ -103,12 +90,6 @@ class Main
 		$this->pagesController = PagesController::getInstance();
 		$this->pagesController->init();
 	}
-	
-	
-	/*private function HTMLify()
-	{
-		$this->HTMLify = HTMLify::getInstance();
-	}*/
 	
 	
 	public function displayView()

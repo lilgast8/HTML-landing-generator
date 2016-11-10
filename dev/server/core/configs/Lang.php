@@ -31,7 +31,6 @@ class Lang
 		$this->router->setUrl();
 		$this->setCurrentLang();
 		$this->checkDefaultLang();
-		// $this->router->setPageUrl();
 		$this->setLangLinks();
 		
 		$this->path->setFileLangVar();
@@ -113,7 +112,7 @@ class Lang
 	{
 		$this->params = new stdClass();
 		
-		// $this->params->ALL_LANG			= self::$ALL_LANG;
+		$this->params->ALL_LANG			= self::$ALL_LANG;
 		$this->params->MULTI_LANG		= self::$MULTI_LANG;
 		$this->params->DEFAULT_LANG		= self::$DEFAULT_LANG;
 		$this->params->LANG				= self::$LANG;

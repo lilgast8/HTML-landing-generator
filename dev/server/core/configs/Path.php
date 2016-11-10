@@ -24,9 +24,7 @@ class Path
 		
 		$this->setDeviceDir();
 		$this->setPaths();
-		// $this->setJsFilesUrl();
 		
-		// $this->setParams();
 	}
 	
 	
@@ -41,15 +39,6 @@ class Path
 	
 	private function setDeviceDir()
 	{
-		// if ( !Device::$HAS_MOBILE_VERSION ||
-		// 	 Device::$HAS_MOBILE_VERSION && Device::$IS_DESKTOP ||
-		// 	 Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'desktop' )
-		// 	$this->deviceDir = 'desktop/';
-		
-		// else if ( Device::$HAS_MOBILE_VERSION && Device::$IS_MOBILE ||
-		// 		  Device::$HAS_MOBILE_VERSION && Device::$IS_TABLET && Device::$TABLET_VERSION == 'mobile' )
-		// 	$this->deviceDir = 'mobile/';
-		
 		$this->deviceDir = 'desktop/';
 	}
 	
@@ -60,9 +49,7 @@ class Path
 		self::$URL				= new stdClass();
 		
 		echo Router::$CONTENT_TYPE;
-		// self::$URL->base		= Config::$ENVS->{ Config::$ENV }->base_url;
 		self::$URL->base		= Config::$ENV->base_url;
-		// self::$URL->assets		= self::$URL->base		. 'assets/';
 		self::$URL->assets		= 'assets/';
 		self::$URL->css			= self::$URL->assets	. 'css/';
 		self::$URL->favicons	= self::$URL->assets	. 'favicons/';
@@ -132,8 +119,6 @@ class Path
 			$listFiles	= '';
 			
 			// dev
-			// echo Router::$CONTENT_TYPE;
-			// echo '⚡️ SLP ⚡️ '.Router::$CONTENT_TYPE.'<br>';
 			if ( Router::$CONTENT_TYPE == 'view' ) {
 				$files = $jsFiles->$fileId->files;
 				
@@ -149,7 +134,7 @@ class Path
 				}
 			}
 			
-			// preprod-local, preprod or prod
+			// prod
 			else {
 				$fileName = $jsFiles->$fileId->name;
 				$fileDest = $jsFiles->$fileId->dest;
@@ -171,7 +156,6 @@ class Path
 	
 	
 	private function setParams()
-	// public function setParams()
 	{
 		$this->params = new stdClass();
 		
