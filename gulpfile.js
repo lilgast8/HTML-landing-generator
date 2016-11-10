@@ -44,5 +44,6 @@ gulp.task( 'prod:move', [
 ], function() {
 	
 	gulp.start( 'move' );
+	gulp.start( 'htmlify' );
 	
 } );
