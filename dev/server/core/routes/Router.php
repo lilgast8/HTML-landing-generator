@@ -15,9 +15,9 @@ class Router
 	
 	static $CONTENT_TYPE		= null;
 	
-	private $page				= null;
-	private $lang				= null;
-	private $pagesController	= null;
+	// private $page				= null;
+	// private $lang				= null;
+	// private $pagesController	= null;
 	
 	private $isHomepage			= null;
 	
@@ -130,8 +130,8 @@ class Router
 	
 	public function init()
 	{
-		$this->lang				= Lang::getInstance();
-		$this->pagesController	= PagesController::getInstance();
+		// $this->lang				= Lang::getInstance();
+		// $this->pagesController	= PagesController::getInstance();
 		
 		$this->setContentType();
 		// $this->setCurrentPage();
@@ -139,7 +139,7 @@ class Router
 		// if ( self::$CONTENT_TYPE == 'firstLoad' && Config::$NEED_PAGE_ID )
 		// 	$this->setJsViewId();
 		
-		$this->setParams();
+		// $this->setParams();
 	}
 	
 	
@@ -167,11 +167,30 @@ class Router
 		// echo strpos( self::$URL->pathParams[ 0 ], 'htmlify' );
 		// if ( self::$URL->path == 'htmlify' )
 		// if ( strpos( self::$URL->path, 'htmlify' ) !== null )
-		if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) == 1 )
+		
+		/*if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) == 1 )
 			self::$CONTENT_TYPE = 'htmlify';
 		
 		else if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) > 1 )
-			self::$CONTENT_TYPE = 'view-prod';
+			self::$CONTENT_TYPE = 'view-prod';*/
+		
+		// if ( self::$URL->pathParams[ 0 ] == 'htmlify' && count( self::$URL->pathParams ) > 1 )
+		// 	self::$CONTENT_TYPE = 'htmlify';
+		
+		// echo '<pre>';
+		// print_r( self::$URL );
+		// echo '</pre>';
+		
+		if ( isset( $_POST[ 'htmlify' ] ) )
+			self::$CONTENT_TYPE = 'htmlify';
+		
+		else if ( self::$URL->path == '' ||
+			 count( self::$URL->pathParams ) == 1 && self::$URL->pathParams[0] != Lang::$LANG ||
+			 count( self::$URL->pathParams ) > 1 ) {
+			header( 'Status: 301 Moved Permanently', true, 301 );
+			header( 'Location: ' . Path::$URL->base . Lang::$LANG );
+			exit();
+		}
 		
 		else {
 			for ( $i = 0; $i < count( Lang::$ALL_LANG ); $i++ ) {
@@ -184,6 +203,7 @@ class Router
 				}
 			}
 		}
+		
 		
 		// echo Config::$ENV.'<br>';
 		// echo self::$CONTENT_TYPE.'<br>';

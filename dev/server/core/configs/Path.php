@@ -59,9 +59,11 @@ class Path
 		// url paths
 		self::$URL				= new stdClass();
 		
+		echo Router::$CONTENT_TYPE;
 		// self::$URL->base		= Config::$ENVS->{ Config::$ENV }->base_url;
 		self::$URL->base		= Config::$ENV->base_url;
-		self::$URL->assets		= self::$URL->base		. 'assets/';
+		// self::$URL->assets		= self::$URL->base		. 'assets/';
+		self::$URL->assets		= 'assets/';
 		self::$URL->css			= self::$URL->assets	. 'css/';
 		self::$URL->favicons	= self::$URL->assets	. 'favicons/';
 		self::$URL->files		= self::$URL->assets	. 'files/';

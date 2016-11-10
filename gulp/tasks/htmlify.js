@@ -30,7 +30,7 @@ gulp.task( 'htmlify', [ 'delete' ], function() {
 function htmlify( lg, type ) {
 	var url			= config.ENV.base_url + lg;
 	
-	var dataObject	= {};
+	var dataObject	= { htmlify: 'true' };
 	var curlOpts	= curl.opts.silent()
 								.ignore_cert()
 								.follow_redirects()
