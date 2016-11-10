@@ -29,13 +29,13 @@ gulp.task( 'delete', function() {
 	
 	
 	/* Favicons */
-	else if ( options.task == 'default' && options.subtask == 'default-favicons' )
+	/*else if ( options.task == 'default' && options.subtask == 'default-favicons' )
 		deletePath = paths.env.dev + paths.assets.favicons.dir;
 	else if ( options.task == 'favicons' )
 		deletePath = [
 			paths.env.dev + paths.assets.favicons.dir,
 			paths.env.prod + paths.assets.favicons.dir
-		];
+		];*/
 	
 	
 	/* Files */
@@ -80,11 +80,11 @@ gulp.task( 'delete', function() {
 	
 	
 	/* Server */
-	else if ( options.task == 'server' )
+	/*else if ( options.task == 'server' )
 		deletePath = [
 			paths.env.prod + paths.server.dir,
 			paths.env.prod + paths.server.indexFile
-		];
+		];*/
 	
 	
 	

@@ -10,6 +10,7 @@ module.exports = {
 	
 	htaccess:	'.htaccess',
 	robots:		'robots.txt',
+	htmlFiles:	'*.html',
 	
 	assets: {
 		allFiles: 'assets/**/*',

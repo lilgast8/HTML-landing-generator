@@ -27,23 +27,26 @@ options.svgSrcPath	= null;
 
 function getEnv() {
 	var config		= require( '../../' + paths.env.dev + paths.configs.configFile );
-	var defaultEnv	= config.ENV;
+	// var defaultEnv	= config.ENV;
+	var defaultEnv	= 'dev';
 	var env			= options.env;
 	
-	checkEnvExistence( config, env );
+	// checkEnvExistence( config, env );
 	
 	// dev
 	if ( env == defaultEnv || options.task == 'init' || options.task == 'default' ) {
-		if ( env === undefined )
-			env = config.ENV;
+		// if ( env === undefined )
+		// 	env = config.ENV;
+		env = 'dev';
 		
 		options.isDev = true;
 	}
 	
-	// preprod-local, preprod or prod
+	// prod
 	else {
-		if ( env === undefined )
-			env = 'prod';
+		// if ( env === undefined )
+		// 	env = 'prod';
+		env = 'prod';
 		
 		options.isDev = false;
 	}
@@ -55,10 +58,10 @@ function getEnv() {
 }
 
 
-function checkEnvExistence( config, env ) {
+/*function checkEnvExistence( config, env ) {
 	if ( env !== undefined && config.ENVS[ env ] === undefined )
 		console.log( gutil.colors.red( 'WARNING!: ' ) + gutil.colors.bgRed( ' ' + env + ' ' ) + gutil.colors.red( ' doesn\'t exist! Please set an existing environment.' ) );	
-}
+}*/
 
 
 function getDevice() {
