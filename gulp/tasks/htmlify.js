@@ -28,7 +28,7 @@ gulp.task( 'htmlify', [ 'delete' ], function() {
 
 
 function htmlify( lg, type ) {
-	var url			= config.ENV.base_url + lg;
+	var url			= config.ENV.base_url + lg + '?type=' + type;
 	
 	var dataObject	= { htmlify: 'true' };
 	var curlOpts	= curl.opts.silent()
@@ -38,7 +38,6 @@ function htmlify( lg, type ) {
 								.connect_timeout( 3 )
 								.post_data( dataObject );
 	
-	console.log( url );
 	curl( url, curlOpts, function( err, data, stderr ) {
 		var stringToReplace	= 'LANDING_TYPE';
 		var newString		= type

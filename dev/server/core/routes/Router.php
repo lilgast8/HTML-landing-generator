@@ -8,11 +8,8 @@ class Router
 	protected static $instance;
 	
 	static $URL					= null;
-	static $ALT_LANG_URL		= null;
-	static $LINK				= null;
-	static $JS_VIEWS_ID			= null;
-	
 	static $CONTENT_TYPE		= null;
+	static $LANDING_TYPE		= null;
 	
 	private $isHomepage			= null;
 	
@@ -48,6 +45,7 @@ class Router
 		self::$URL				= new stdClass();
 		
 		self::$URL->full		= $this->getFullUrl();
+		self::$URL->fullPath	= $this->getFullPath();
 		self::$URL->path		= $this->getPath();
 		self::$URL->pathParams	= explode( '/', self::$URL->path );
 		self::$URL->page		= null;
@@ -65,7 +63,7 @@ class Router
 	}
 	
 	
-	private function getPath()
+	private function getFullPath()
 	{
 		$path		= str_replace( Path::$URL->base, '', self::$URL->full );
 		
@@ -73,8 +71,15 @@ class Router
 		$pathParams	= explode( '?', $path );
 		$path		= $pathParams[0];
 		
-		$path = Strings::removeFirstSpecificChar( $path, '/' );
-		$path = Strings::removeLastSpecificChar( $path, '/' );
+		
+		return $path;
+	}
+	
+	
+	private function getPath()
+	{
+		$path = Strings::removeFirstSpecificChar( self::$URL->fullPath, '/' );
+		$path = Strings::removeLastSpecificChar( self::$URL->fullPath, '/' );
 		
 		
 		return $path;
@@ -105,6 +110,7 @@ class Router
 	public function init()
 	{
 		$this->setContentType();
+		$this->setParams();
 	}
 	
 	
@@ -112,22 +118,11 @@ class Router
 	{
 		self::$CONTENT_TYPE = '404';
 		
-		if ( isset( $_POST[ 'htmlify' ] ) )
-			self::$CONTENT_TYPE = 'htmlify';
+		$type = isset( $_GET[ 'type' ] ) ? $_GET[ 'type' ] : null;
 		
-		else if ( self::$URL->path == '' ||
-			 count( self::$URL->pathParams ) == 1 && self::$URL->pathParams[0] != Lang::$LANG ||
-			 count( self::$URL->pathParams ) > 1 ) {
-			header( 'Status: 301 Moved Permanently', true, 301 );
-			header( 'Location: ' . Path::$URL->base . Lang::$LANG );
-			exit();
-		}
-		
-		else {
-			for ( $i = 0; $i < count( Lang::$ALL_LANG ); $i++ ) {
-				$lg = Lang::$ALL_LANG [ $i ];
-				
-				if ( $lg == self::$URL->path ) {
+		foreach ( Config::$HTMLIFY as $lg => $typeList ) {
+			if ( $lg == self::$URL->pathParams[ 0 ] && count( self::$URL->pathParams ) == 1 && substr( self::$URL->fullPath, -1, 1 ) != '/' ) {
+				if ( in_array( $type, $typeList ) ) {
 					self::$CONTENT_TYPE = 'view';
 					
 					break;
@@ -135,8 +130,35 @@ class Router
 			}
 		}
 		
+		if ( isset( $_POST[ 'htmlify' ] ) )
+			self::$CONTENT_TYPE = 'htmlify';
+		
+		else if ( self::$CONTENT_TYPE != 'view' ) {
+			$type	= in_array( $type, Config::$HTMLIFY->{ Lang::$LANG } ) ? $type : Config::$HTMLIFY->{ Lang::$LANG }[0];
+			$url	= Path::$URL->base . Lang::$LANG . '?type=' . $type;
+			
+			header( 'Location: ' . $url );
+			exit();
+		}
+		
+		self::$LANDING_TYPE = $type;
+		
 		
 		$this->path->setJsFilesUrl();
+	}
+	
+	
+	private function setParams()
+	{
+		$this->params = new stdClass();
+		
+		$this->params->LANDING_TYPE = self::$LANDING_TYPE;
+	}
+	
+	
+	public function getParams()
+	{
+		return $this->params;
 	}
 	
 }
