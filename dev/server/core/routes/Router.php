@@ -513,7 +513,7 @@ class Router
 	}*/
 	
 	
-	private function setParams()
+	/*private function setParams()
 	{
 		$this->params = new stdClass();
 		
@@ -529,7 +529,7 @@ class Router
 	public function getParams()
 	{
 		return $this->params;
-	}
+	}*/
 	
 	
 	/*public function updateFurtherToAPIResponse( $response )

@@ -93,7 +93,7 @@ class AbstractViewController
 		// $this->getParamsFromClass( 'Device' );
 		$this->getParamsFromClass( 'Path' );
 		$this->getParamsFromClass( 'Lang' );
-		$this->getParamsFromClass( 'Router' );
+		// $this->getParamsFromClass( 'Router' );
 		$this->getParamsFromClass( 'Page' );
 	}
 	
