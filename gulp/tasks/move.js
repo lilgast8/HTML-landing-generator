@@ -32,10 +32,6 @@ gulp.task( 'move', function() {
 					paths.env.dev + paths.assets.css.fonts.allFiles,
 					'!' + paths.env.dev + paths.emptyFiles
 				],
-				/*[
-					paths.env.dev + paths.assets.favicons.allFiles,
-					'!' + paths.env.dev + paths.emptyFiles
-				],*/
 				[
 					paths.env.dev + paths.assets.files.allFiles,
 					'!' + paths.env.dev + paths.emptyFiles
@@ -53,25 +49,17 @@ gulp.task( 'move', function() {
 				[
 					paths.env.dev + paths.assets.videos.allFiles,
 					'!' + paths.env.dev + paths.emptyFiles
-				]/*,
-				[ paths.env.dev + paths.server.indexFile ]*//*,
-				[
-					paths.env.dev + paths.server.allFiles,
-					'!' + paths.env.dev + paths.emptyFiles
-				]*/
+				]
 			],
 			to: [
 				paths.env.prod + paths.assets.css.dir,
 				paths.env.prod + paths.assets.css.fonts.dir,
-				// paths.env.prod + paths.assets.favicons.dir,
 				paths.env.prod + paths.assets.files.dir,
 				paths.env.prod + paths.assets.img.dir,
 				paths.env.prod + paths.assets.js.vendor.dir,
 				paths.env.prod + paths.assets.sounds.dir,
 				paths.env.prod + paths.assets.svg.sprite.dir,
-				paths.env.prod + paths.assets.videos.dir,
-				// paths.env.prod,
-				// paths.env.prod + paths.server.dir
+				paths.env.prod + paths.assets.videos.dir
 			]
 		};
 	}
@@ -92,19 +80,6 @@ gulp.task( 'move', function() {
 				paths.env.prod + paths.assets.css.fonts.dir
 			]
 		};
-	
-	
-	/* Favicons */
-	/*else if ( options.task == 'favicons' )
-		movePath = {
-			from: [
-				[
-					paths.env.dev + paths.assets.favicons.allFiles,
-					'!' + paths.env.dev + paths.emptyFiles
-				]
-			],
-			to: [ paths.env.prod + paths.assets.favicons.dir ]
-		};*/
 	
 	
 	/* Files */
@@ -173,23 +148,6 @@ gulp.task( 'move', function() {
 			],
 			to: [ paths.env.prod + paths.assets.videos.dir ]
 		};
-	
-	
-	/* Server */
-	/*else if ( options.task == 'server' )
-		movePath = {
-			from: [
-				[
-					paths.env.dev + paths.server.allFiles,
-					'!' + paths.env.dev + paths.emptyFiles,
-				],
-				[ paths.env.dev + paths.server.indexFile ]
-			],
-			to: [
-				paths.env.prod + paths.server.dir,
-				paths.env.prod
-			]
-		};*/
 	
 	
 	

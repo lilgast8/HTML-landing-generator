@@ -28,16 +28,6 @@ gulp.task( 'delete', function() {
 		];
 	
 	
-	/* Favicons */
-	/*else if ( options.task == 'default' && options.subtask == 'default-favicons' )
-		deletePath = paths.env.dev + paths.assets.favicons.dir;
-	else if ( options.task == 'favicons' )
-		deletePath = [
-			paths.env.dev + paths.assets.favicons.dir,
-			paths.env.prod + paths.assets.favicons.dir
-		];*/
-	
-	
 	/* Files */
 	else if ( options.task == 'files' )
 		deletePath = paths.env.prod + paths.assets.files.dir;
@@ -82,14 +72,6 @@ gulp.task( 'delete', function() {
 	/* Videos */
 	else if ( options.task == 'videos' )
 		deletePath = paths.env.prod + paths.assets.videos.dir;
-	
-	
-	/* Server */
-	/*else if ( options.task == 'server' )
-		deletePath = [
-			paths.env.prod + paths.server.dir,
-			paths.env.prod + paths.server.indexFile
-		];*/
 	
 	
 	

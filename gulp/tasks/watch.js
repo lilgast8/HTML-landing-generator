@@ -23,12 +23,10 @@ gulp.task( 'watch', function() {
 		paths.env.dev + paths.assets.allFiles,
 		'!' + paths.env.dev + paths.assets.css.minAllFiles,
 		'!' + paths.env.dev + paths.assets.css.fonts.allFiles,
-		// '!' + paths.env.dev + paths.assets.favicons.allFiles,
 		'!' + paths.env.dev + paths.assets.svg.sprite.allFiles,
 		
 		/* Config */
-		paths.env.dev + paths.configs.allFiles,
-		// '!' + paths.env.dev + paths.configs.favicons.dataFile,
+		paths.env.dev + paths.configs.allFiles
 		
 	], function( e ) {
 		
@@ -42,7 +40,6 @@ gulp.task( 'watch', function() {
 		desktop		= options.filePath.indexOf( 'desktop' ) > -1 ? true : false;
 		mobile		= options.filePath.indexOf( 'mobile' ) > -1 ? true : false;
 		shared		= options.filePath.indexOf( 'shared' ) > -1 ? true : false;
-		// favicons	= options.filePath.indexOf( 'configs/favicons/' ) > -1 ? true : false;
 		configs		= options.filePath.indexOf( 'configs/' ) > -1 ? true : false;
 		
 		// options.devicePath: used for SASS error notification
@@ -73,12 +70,6 @@ gulp.task( 'watch', function() {
 					paths.env.dev + paths.assets.css.app.mobileFile
 				];
 		}
-		
-		/* Favicons */
-		/*if ( favicons ) {
-			taskname		= 'favicons';
-			options.subtask	= 'default-favicons';
-		}*/
 		
 		/* JS */
 		/*else*/ if ( ext == '.js' ) {
@@ -136,7 +127,6 @@ gulp.task( 'watch', function() {
 		
 		/* Config */
 		paths.env.dev + paths.configs.allFiles,
-		// '!' + paths.env.dev + paths.configs.favicons.dataFile,
 		
 		/* Server */
 		paths.env.dev + paths.server.indexFile,

@@ -16,7 +16,6 @@ gulp.task( 'htaccess', function() {
 		config			= JSON.parse( configFile );
 	}
 	
-	// var baseUrlFBR		= config.ENVS[ options.env ].fallbackresource;
 	var baseUrlFBR		= config.ENV.fallbackresource;
 	var dirPath			= options.isDev ? paths.env.dev : paths.env.prod;
 	

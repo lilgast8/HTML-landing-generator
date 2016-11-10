@@ -11,9 +11,7 @@ var config		= require( '../../' + paths.env.dev + paths.configs.configFile );
 
 
 
-gulp.task( 'json-min', [ 'json-min:json'/*, 'json-min:configs'*/ ], function () {
-	
-	// gulp.start( 'set-env' );
+gulp.task( 'json-min', [ 'json-min:json' ], function () {
 	
 } );
 
@@ -27,23 +25,6 @@ gulp.task( 'json-min:json', [ 'delete' ], function() {
 	return minifyJson( jsonSrcPath, jsonDestPath );
 	
 } );
-
-
-/*gulp.task( 'json-min:configs', [ 'delete' ], function() {
-	
-	var jsonSrcPath = [
-		paths.env.dev + paths.configs.allJsonFiles,
-		'!' + paths.env.dev + paths.configs.jsFilesFile,
-		'!' + paths.env.dev + paths.configs.favicons.allFiles
-	];
-	var jsonDestPath = paths.env.prod + paths.configs.dir;
-	
-	
-	minifyJsFilesFile(); // js-files file
-	
-	return minifyJson( jsonSrcPath, jsonDestPath );
-	
-} );*/
 
 
 
