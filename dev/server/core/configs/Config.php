@@ -13,6 +13,7 @@ class Config
 	static $ENVS				= null;
 	// static $ALL_LANG			= null;
 	static $HTMLIFY				= null;
+	static $TLP_NAME			= null;
 	// static $GENERATE_JS_VIEW_ID	= null;
 	// static $HAS_MOBILE_VERSION	= null;
 	// static $TABLET_VERSION		= null;

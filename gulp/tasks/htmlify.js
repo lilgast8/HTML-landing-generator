@@ -42,7 +42,7 @@ function htmlify( lg, type ) {
 	curl( url, curlOpts, function( err, data, stderr ) {
 		var stringToReplace	= 'LANDING_TYPE';
 		var newString		= type
-		var filePath		= paths.env.prod + 'template-' + lg + '-' + type + '.html';
+		var filePath		= paths.env.prod + config.TLP_NAME + '-' + lg + '-' + type + '.html';
 		
 		data = data.replace( new RegExp( 'LANDING_TYPE', 'g' ), type );
 		
