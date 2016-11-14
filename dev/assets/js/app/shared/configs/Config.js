@@ -1,6 +1,6 @@
 
 
-STFL.Config = ( function( window ) {
+HLG.Config = ( function( window ) {
 	'use strict';
 	
 	

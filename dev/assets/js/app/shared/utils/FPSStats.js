@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.FPSStats = ( function( window ) {
+HLG.Utils.FPSStats = ( function( window ) {
 	'use strict';
 	
 	

@@ -1,11 +1,11 @@
 
 
-STFL.AbstractMainView = ( function( window ) {
+HLG.AbstractMainView = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractMainView() {
-		STFL.AbstractView.call( this );
+		HLG.AbstractView.call( this );
 		
 		this.E = {
 			RESIZE:			'resize',
@@ -42,7 +42,7 @@ STFL.AbstractMainView = ( function( window ) {
 	}
 	
 	
-	AbstractMainView.prototype				= Object.create( STFL.AbstractView.prototype );
+	AbstractMainView.prototype				= Object.create( HLG.AbstractView.prototype );
 	AbstractMainView.prototype.constructor	= AbstractMainView;
 	
 	
@@ -86,9 +86,9 @@ STFL.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.initStaticsViews = function() {
-		STFL.Views.Statics.MainLoader.init();
-		STFL.Views.Statics.Header.init();
-		STFL.Views.Statics.Footer.init();
+		HLG.Views.Statics.MainLoader.init();
+		HLG.Views.Statics.Header.init();
+		HLG.Views.Statics.Footer.init();
 		
 		STF_dom_removeClass( this.$mainCont[0], 'preload' );
 	};
@@ -123,8 +123,8 @@ STFL.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.raf = function() {
-		if ( STFL.Config.HAS_FPS_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
-			STFL.Utils.FPSStats.begin();
+		if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+			HLG.Utils.FPSStats.begin();
 		
 		
 		_setRafProps.call( this );
@@ -132,11 +132,11 @@ STFL.AbstractMainView = ( function( window ) {
 		this.dispatch( this.E.RAF );
 		
 		
-		if ( STFL.Config.HAS_FPS_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
-			STFL.Utils.FPSStats.end();
+		if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+			HLG.Utils.FPSStats.end();
 		
-		if ( STFL.Config.HAS_MEMORY_STATS && ( STFL.Config.IS_DEV || STFL.Config.IS_PREPROD_LOCAL ) )
-			STFL.Utils.MemoryStats.update();
+		if ( HLG.Config.HAS_MEMORY_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+			HLG.Utils.MemoryStats.update();
 	};
 	
 	

@@ -1,19 +1,19 @@
 
 
-STFL.Views			= STFL.Views || {};
-STFL.Views.Statics	= STFL.Views.Statics || {};
+HLG.Views			= HLG.Views || {};
+HLG.Views.Statics	= HLG.Views.Statics || {};
 
 
-STFL.Views.Statics.Footer = ( function( window ) {
+HLG.Views.Statics.Footer = ( function( window ) {
 	'use strict';
 	
 	
 	function Footer() {
-		STFL.AbstractView.call( this );
+		HLG.AbstractView.call( this );
 	}
 	
 	
-	Footer.prototype				= Object.create( STFL.AbstractView.prototype );
+	Footer.prototype				= Object.create( HLG.AbstractView.prototype );
 	Footer.prototype.constructor	= Footer;
 	
 	
@@ -25,7 +25,7 @@ STFL.Views.Statics.Footer = ( function( window ) {
 	
 	
 	Footer.prototype.bindEvents = function() {
-		STFL.AbstractView.prototype.bindEvents.call( this );
+		HLG.AbstractView.prototype.bindEvents.call( this );
 		
 		this.$footerLink.on( 'click', $.proxy( this.changeUrl, this ) );
 	};

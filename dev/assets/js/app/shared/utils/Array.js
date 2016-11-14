@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.Array = ( function( window ) {
+HLG.Utils.Array = ( function( window ) {
 	'use strict';
 	
 	

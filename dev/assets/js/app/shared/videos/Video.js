@@ -1,11 +1,11 @@
 
 
-STFL.Video = ( function( window ) {
+HLG.Video = ( function( window ) {
 	'use strict';
 	
 	
 	function Video( id, url, poster, isFireLoadStart, isFireCanPlay, isFireCanPlayThrough ) {
-		STFL.AbstractView.call( this );
+		HLG.AbstractView.call( this );
 		
 		this.E = {
 			LOAD_START:			'loadStart',
@@ -31,7 +31,7 @@ STFL.Video = ( function( window ) {
 	}
 	
 	
-	Video.prototype				= Object.create( STFL.AbstractView.prototype );
+	Video.prototype				= Object.create( HLG.AbstractView.prototype );
 	Video.prototype.constructor	= Video;
 	
 	
@@ -121,7 +121,7 @@ STFL.Video = ( function( window ) {
 	
 	
 	var _loadStart = function() {
-		if ( this.isFireLoadStart && !this.isLoadStart && STFL.Device.IS_DESKTOP ) {
+		if ( this.isFireLoadStart && !this.isLoadStart && HLG.Device.IS_DESKTOP ) {
 			this.isLoadStart = true;
 			
 			this.dispatch( this.E.LOAD_START );
@@ -130,7 +130,7 @@ STFL.Video = ( function( window ) {
 	
 	
 	var _canPlay = function() {
-		if ( this.isFireCanPlay && !this.isCanPlay && STFL.Device.IS_DESKTOP ) {
+		if ( this.isFireCanPlay && !this.isCanPlay && HLG.Device.IS_DESKTOP ) {
 			this.isCanPlay	= true;
 			this.duration	= this.$video[0].duration;
 			
@@ -143,7 +143,7 @@ STFL.Video = ( function( window ) {
 		if ( this.isFireCanPlayThrough && !this.isCanPlayThrough ) {
 			this.isCanPlayThrough = true;
 			
-			if ( STFL.Device.IS_DESKTOP )
+			if ( HLG.Device.IS_DESKTOP )
 				this.dispatch( this.E.CAN_PLAY_THROUGH );
 		}
 	};

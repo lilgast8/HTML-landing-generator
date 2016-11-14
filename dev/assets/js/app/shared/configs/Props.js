@@ -1,6 +1,6 @@
 
 
-STFL.Props = ( function( window ) {
+HLG.Props = ( function( window ) {
 	'use strict';
 	
 	

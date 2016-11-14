@@ -1,11 +1,11 @@
 
 
-STFL.Loader = ( function( window ) {
+HLG.Loader = ( function( window ) {
 	'use strict';
 	
 	
 	function Loader( isOnProgress, isOnFileLoad ) {
-		STFL.CustomEvent.call( this );
+		HLG.CustomEvent.call( this );
 		
 		this.isOnProgress = isOnProgress;
 		this.isOnFileLoad = isOnFileLoad;
@@ -25,7 +25,7 @@ STFL.Loader = ( function( window ) {
 	}
 	
 	
-	Loader.prototype				= Object.create( STFL.CustomEvent.prototype );
+	Loader.prototype				= Object.create( HLG.CustomEvent.prototype );
 	Loader.prototype.constructor	= Loader;
 	
 	

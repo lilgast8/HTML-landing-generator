@@ -1,11 +1,11 @@
 
 
-STFL.AbstractView = ( function( window ) {
+HLG.AbstractView = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractView() {
-		STFL.CustomEvent.call( this );
+		HLG.CustomEvent.call( this );
 		
 		this.E		= {
 			SHOW:	'show',
@@ -21,7 +21,7 @@ STFL.AbstractView = ( function( window ) {
 	}
 	
 	
-	AbstractView.prototype				= Object.create( STFL.CustomEvent.prototype );
+	AbstractView.prototype				= Object.create( HLG.CustomEvent.prototype );
 	AbstractView.prototype.constructor	= AbstractView;
 	
 	
@@ -53,14 +53,14 @@ STFL.AbstractView = ( function( window ) {
 	AbstractView.prototype.bindEvents = function() {
 		// console.log( 'AbstractView.bindEvents() — ', this.constructor.name );
 		
-		STFL.MainView.bind( STFL.MainView.E.RESIZE, this.resize, this );
+		HLG.MainView.bind( HLG.MainView.E.RESIZE, this.resize, this );
 	};
 	
 	
 	AbstractView.prototype.unbindEvents = function() {
 		// console.log( 'AbstractView.unbindEvents() — ', this.constructor.name );
 		
-		STFL.MainView.unbind( STFL.MainView.E.RESIZE, this.resize, this );
+		HLG.MainView.unbind( HLG.MainView.E.RESIZE, this.resize, this );
 	};
 	
 	
@@ -142,7 +142,7 @@ STFL.AbstractView = ( function( window ) {
 	 *								 but if you need to force a specific url you can directly pass a string
 	 */
 	AbstractView.prototype.changeUrl = function( e ) {
-		if ( STFL.Props.HAS_PUSHSTATE ) { // if pushstate supported
+		if ( HLG.Props.HAS_PUSHSTATE ) { // if pushstate supported
 			var url;
 			
 			if ( typeof e == 'object' ) {
@@ -153,19 +153,19 @@ STFL.AbstractView = ( function( window ) {
 			else if ( typeof e == 'string' )
 				url = e;
 			
-			STFL.Router.updateUrl( url );
+			HLG.Router.updateUrl( url );
 		}
 	};
 	
 	
 	AbstractView.prototype.updateSearch = function() {
-		if ( !STFL.Config.IS_PROD )
+		if ( !HLG.Config.IS_PROD )
 			console.warn( 'You need to override the updateSearch() method from AbstractView in the current page view.' );
 	};
 	
 	
 	AbstractView.prototype.updateHash = function() {
-		if ( !STFL.Config.IS_PROD )
+		if ( !HLG.Config.IS_PROD )
 			console.warn( 'You need to override the updateHash() method from AbstractView in the current page view.' );
 	};
 	

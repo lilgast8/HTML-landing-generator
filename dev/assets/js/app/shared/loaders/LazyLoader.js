@@ -1,11 +1,11 @@
 
 
-STFL.LazyLoader = ( function( window ) {
+HLG.LazyLoader = ( function( window ) {
 	'use strict';
 	
 	
 	function LazyLoader( $container, className, parentEl, stackSize, autoInit ) {
-		STFL.CustomEvent.call( this );
+		HLG.CustomEvent.call( this );
 		
 		this.$container		= $container;
 		this.CLASS_NAME		= className;
@@ -21,7 +21,7 @@ STFL.LazyLoader = ( function( window ) {
 	}
 	
 	
-	LazyLoader.prototype				= Object.create( STFL.CustomEvent.prototype );
+	LazyLoader.prototype				= Object.create( HLG.CustomEvent.prototype );
 	LazyLoader.prototype.constructor	= LazyLoader;
 	
 	
@@ -40,7 +40,7 @@ STFL.LazyLoader = ( function( window ) {
 	
 	
 	LazyLoader.prototype.initEl = function() {
-		this.loaderImg = new STFL.Loader( false, true );
+		this.loaderImg = new HLG.Loader( false, true );
 		
 		var src;
 		

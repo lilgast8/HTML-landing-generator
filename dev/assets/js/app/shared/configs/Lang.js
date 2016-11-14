@@ -1,6 +1,6 @@
 
 
-STFL.Lang = ( function( window ) {
+HLG.Lang = ( function( window ) {
 	'use strict';
 	
 	
@@ -11,7 +11,7 @@ STFL.Lang = ( function( window ) {
 	
 	Lang.prototype.init = function() {
 		// _setGlobalInfos.call( this );
-		// STFL.Router.setUrl( true, null );
+		// HLG.Router.setUrl( true, null );
 		// _setCurrentLang.call( this );
 		// _checkDefaultLang.call( this );
 		// _setLangLinks.call( this );
@@ -20,7 +20,7 @@ STFL.Lang = ( function( window ) {
 	
 	var _setGlobalInfos = function() {
 		// all lang
-		this.ALL_LANG = STFL.Config.ALL_LANG;
+		this.ALL_LANG = HLG.Config.ALL_LANG;
 		
 		// default lang
 		this.DEFAULT_LANG = this.ALL_LANG[0];
@@ -34,10 +34,10 @@ STFL.Lang = ( function( window ) {
 	
 	
 	/*var _setCurrentLang = function() {
-		if ( !this.MULTI_LANG || STFL.Router.URL.path.length === 0 )
+		if ( !this.MULTI_LANG || HLG.Router.URL.path.length === 0 )
 			this.LANG = this.DEFAULT_LANG;
 		else
-			this.LANG = STFL.Router.URL.pathParams[0];
+			this.LANG = HLG.Router.URL.pathParams[0];
 	};*/
 	
 	

@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.String = ( function( window ) {
+HLG.Utils.String = ( function( window ) {
 	'use strict';
 	
 	
@@ -36,7 +36,7 @@ STFL.Utils.String = ( function( window ) {
 	
 	window.STF_str_getPath = function( string, baseUrl ) {
 		if ( baseUrl === null || baseUrl === undefined )
-			baseUrl = STFL.Path.URL.base;
+			baseUrl = HLG.Path.URL.base;
 		
 		var path	= string.replace( baseUrl, '' );
 		

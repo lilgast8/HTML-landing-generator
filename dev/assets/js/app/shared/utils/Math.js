@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.Math = ( function( window ) {
+HLG.Utils.Math = ( function( window ) {
 	'use strict';
 	
 	

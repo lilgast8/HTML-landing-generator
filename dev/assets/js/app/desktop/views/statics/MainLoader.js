@@ -1,24 +1,24 @@
 
 
-STFL.Views			= STFL.Views || {};
-STFL.Views.Statics	= STFL.Views.Statics || {};
+HLG.Views			= HLG.Views || {};
+HLG.Views.Statics	= HLG.Views.Statics || {};
 
 
-STFL.Views.Statics.MainLoader = ( function( window ) {
+HLG.Views.Statics.MainLoader = ( function( window ) {
 	'use strict';
 	
 	
 	function MainLoader() {
-		STFL.AbstractMainLoader.call( this );
+		HLG.AbstractMainLoader.call( this );
 	}
 	
 	
-	MainLoader.prototype				= Object.create( STFL.AbstractMainLoader.prototype );
+	MainLoader.prototype				= Object.create( HLG.AbstractMainLoader.prototype );
 	MainLoader.prototype.constructor	= MainLoader;
 	
 	
 	/*MainLoader.prototype.init = function() {
-		STFL.AbstractMainLoader.prototype.init.call( this );
+		HLG.AbstractMainLoader.prototype.init.call( this );
 	};*/
 	
 	
@@ -60,7 +60,7 @@ STFL.Views.Statics.MainLoader = ( function( window ) {
 		var posX = percentage - 100;
 		
 		this.$percentage[0].innerHTML					= parseInt( percentage ) + ' %';
-		this.$progress[0].style[ STFL.Props.TRANSFORM ]	= 'translate(' + posX + '%, 0%)';
+		this.$progress[0].style[ HLG.Props.TRANSFORM ]	= 'translate(' + posX + '%, 0%)';
 	};
 	
 	
@@ -103,7 +103,7 @@ STFL.Views.Statics.MainLoader = ( function( window ) {
 	
 	var _onHideComplete = function() {
 		this.$percentage[0].innerHTML					= '0 %';
-		this.$progress[0].style[ STFL.Props.TRANSFORM ]	= 'translate(-100%, 0%)';
+		this.$progress[0].style[ HLG.Props.TRANSFORM ]	= 'translate(-100%, 0%)';
 		
 		this.$loader[0].style.display					= 'none';
 		

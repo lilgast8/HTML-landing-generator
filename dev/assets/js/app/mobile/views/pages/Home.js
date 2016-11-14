@@ -1,34 +1,34 @@
 
 
-STFL.Views		= STFL.Views || {};
-STFL.Views.Pages	= STFL.Views.Pages || {};
+HLG.Views		= HLG.Views || {};
+HLG.Views.Pages	= HLG.Views.Pages || {};
 
 
-STFL.Views.Pages.Home = ( function( window ) {
+HLG.Views.Pages.Home = ( function( window ) {
 	'use strict';
 	
 	
 	function Home() {
-		STFL.AbstractPageView.call( this );
+		HLG.AbstractPageView.call( this );
 	}
 	
 	
-	Home.prototype				= Object.create( STFL.AbstractPageView.prototype );
+	Home.prototype				= Object.create( HLG.AbstractPageView.prototype );
 	Home.prototype.constructor	= Home;
 	
 	
 	Home.prototype.init = function() {
-		STFL.AbstractPageView.prototype.init.call( this );
+		HLG.AbstractPageView.prototype.init.call( this );
 	};
 	
 	
 	Home.prototype.bindEvents = function() {
-		STFL.AbstractPageView.prototype.bindEvents.call( this );
+		HLG.AbstractPageView.prototype.bindEvents.call( this );
 	};
 	
 	
 	Home.prototype.unbindEvents = function() {
-		STFL.AbstractPageView.prototype.unbindEvents.call( this );
+		HLG.AbstractPageView.prototype.unbindEvents.call( this );
 	};
 	
 	

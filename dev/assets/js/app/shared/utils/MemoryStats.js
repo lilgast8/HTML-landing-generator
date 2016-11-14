@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.MemoryStats = ( function( window ) {
+HLG.Utils.MemoryStats = ( function( window ) {
 	'use strict';
 	
 	

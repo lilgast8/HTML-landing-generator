@@ -1,18 +1,18 @@
 
 
-STFL.AbstractPageView = ( function( window ) {
+HLG.AbstractPageView = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractPageView() {
-		STFL.AbstractView.call( this );
+		HLG.AbstractView.call( this );
 		
 		this.imgToLazyloadClassName	= 'img-lazyload'; // class name of images to lazyload
 		this.lazyloadParentEl		= null; // selector of parent of images to lazyload
 	}
 	
 	
-	AbstractPageView.prototype				= Object.create( STFL.AbstractView.prototype );
+	AbstractPageView.prototype				= Object.create( HLG.AbstractView.prototype );
 	AbstractPageView.prototype.constructor	= AbstractPageView;
 	
 	
@@ -26,7 +26,7 @@ STFL.AbstractPageView = ( function( window ) {
 	AbstractPageView.prototype.initEl = function() {
 		// console.log( 'AbstractPageView.initEl() — ', this.constructor.name );
 		
-		this.lazyLoader = new STFL.LazyLoader( this.$page, this.imgToLazyloadClassName, this.lazyloadParentEl, 1, true );
+		this.lazyLoader = new HLG.LazyLoader( this.$page, this.imgToLazyloadClassName, this.lazyloadParentEl, 1, true );
 	};
 	
 	
@@ -48,7 +48,7 @@ STFL.AbstractPageView = ( function( window ) {
 	
 	
 	AbstractPageView.prototype.show = function() {
-		// if ( STFL.PagesController.isFirstLoad )
+		// if ( HLG.PagesController.isFirstLoad )
 		// 	this.tl.showPage.progress(1);
 			
 		// else
@@ -62,7 +62,7 @@ STFL.AbstractPageView = ( function( window ) {
 	
 	
 	AbstractPageView.prototype.destroy = function() {
-		STFL.AbstractView.prototype.destroy.call( this );
+		HLG.AbstractView.prototype.destroy.call( this );
 		
 		if ( this.lazyLoader !== undefined )
 			this.lazyLoader.destroy();

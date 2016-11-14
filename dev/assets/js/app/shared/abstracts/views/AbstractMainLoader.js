@@ -1,11 +1,11 @@
 
 
-STFL.AbstractMainLoader = ( function( window ) {
+HLG.AbstractMainLoader = ( function( window ) {
 	'use strict';
 	
 	
 	function AbstractMainLoader() {
-		STFL.AbstractView.call( this );
+		HLG.AbstractView.call( this );
 		
 		this.E = {
 			PROGRESS:	'progress',
@@ -17,12 +17,12 @@ STFL.AbstractMainLoader = ( function( window ) {
 	}
 	
 	
-	AbstractMainLoader.prototype				= Object.create( STFL.AbstractView.prototype );
+	AbstractMainLoader.prototype				= Object.create( HLG.AbstractView.prototype );
 	AbstractMainLoader.prototype.constructor	= AbstractMainLoader;
 	
 	
 	AbstractMainLoader.prototype.init = function() {
-		STFL.AbstractView.prototype.init.call( this );
+		HLG.AbstractView.prototype.init.call( this );
 		
 		_instanceAssetsLoader.call( this );
 	};
@@ -39,12 +39,12 @@ STFL.AbstractMainLoader = ( function( window ) {
 	
 	
 	AbstractMainLoader.prototype.resize = function() {
-		STFL.AbstractView.prototype.resize.call( this );
+		HLG.AbstractView.prototype.resize.call( this );
 	};
 	
 	
 	var _instanceAssetsLoader = function() {
-		this.assetsLoader = new STFL.Loader( true, true );
+		this.assetsLoader = new HLG.Loader( true, true );
 		this.assetsLoader.init();
 		
 		this.assetsLoader.bind( this.assetsLoader.E.PROGRESS, this.onProgress, this );

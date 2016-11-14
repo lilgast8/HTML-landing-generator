@@ -1,9 +1,9 @@
 
 
-STFL.Utils = STFL.Utils || {};
+HLG.Utils = HLG.Utils || {};
 
 
-STFL.Utils.DatGUI = ( function( window ) {
+HLG.Utils.DatGUI = ( function( window ) {
 	'use strict';
 	
 	
@@ -23,12 +23,12 @@ STFL.Utils.DatGUI = ( function( window ) {
 			width : 300
 		} );
 		
-		var text		= this.gui.add( STFL.Utils.DatGUI, 'var1', 10, 100 ).name( 'TEXT' );
-		var slider		= this.gui.add( STFL.Utils.DatGUI, 'var2', 10, 100 ).step(1).name( 'SLIDER' );
-		var select		= this.gui.add( STFL.Utils.DatGUI, 'var3', [ 'option 1', 'option 2', 'option 3' ] ).name( 'SELECT' );
-		var checkBox	= this.gui.add( STFL.Utils.DatGUI, 'var4' ).name( 'CHECKBOX' );
-		var color		= this.gui.addColor(STFL.Utils.DatGUI, 'var5').name( 'COLOR' );
-		this.gui.add( STFL.Utils.DatGUI, '_function' ).name( 'FUNCTION' );
+		var text		= this.gui.add( HLG.Utils.DatGUI, 'var1', 10, 100 ).name( 'TEXT' );
+		var slider		= this.gui.add( HLG.Utils.DatGUI, 'var2', 10, 100 ).step(1).name( 'SLIDER' );
+		var select		= this.gui.add( HLG.Utils.DatGUI, 'var3', [ 'option 1', 'option 2', 'option 3' ] ).name( 'SELECT' );
+		var checkBox	= this.gui.add( HLG.Utils.DatGUI, 'var4' ).name( 'CHECKBOX' );
+		var color		= this.gui.addColor(HLG.Utils.DatGUI, 'var5').name( 'COLOR' );
+		this.gui.add( HLG.Utils.DatGUI, '_function' ).name( 'FUNCTION' );
 		
 		text.onChange( _changeText.bind( this ) );
 		slider.onChange( _changeSlider.bind( this ) );

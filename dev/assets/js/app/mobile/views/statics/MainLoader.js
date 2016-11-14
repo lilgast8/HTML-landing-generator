@@ -1,24 +1,24 @@
 
 
-STFL.Views			= STFL.Views || {};
-STFL.Views.Statics	= STFL.Views.Statics || {};
+HLG.Views			= HLG.Views || {};
+HLG.Views.Statics	= HLG.Views.Statics || {};
 
 
-STFL.Views.Statics.MainLoader = ( function( window ) {
+HLG.Views.Statics.MainLoader = ( function( window ) {
 	'use strict';
 	
 	
 	function MainLoader() {
-		STFL.AbstractMainLoader.call( this );
+		HLG.AbstractMainLoader.call( this );
 	}
 	
 	
-	MainLoader.prototype				= Object.create( STFL.AbstractMainLoader.prototype );
+	MainLoader.prototype				= Object.create( HLG.AbstractMainLoader.prototype );
 	MainLoader.prototype.constructor	= MainLoader;
 	
 	
 	/*MainLoader.prototype.init = function() {
-		STFL.AbstractMainLoader.prototype.init.call( this );
+		HLG.AbstractMainLoader.prototype.init.call( this );
 	};*/
 	
 	

@@ -1,6 +1,6 @@
 
 
-STFL.Path = ( function( window ) {
+HLG.Path = ( function( window ) {
 	'use strict';
 	
 	
@@ -15,7 +15,7 @@ STFL.Path = ( function( window ) {
 	
 	
 	var _setPaths = function() {
-		// var baseUrl = STFL.Config.ENVS.base_url;
+		// var baseUrl = HLG.Config.ENVS.base_url;
 		// var baseUrl = BASE_URL;
 		
 		// url paths

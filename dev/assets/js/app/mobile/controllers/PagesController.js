@@ -1,11 +1,11 @@
 
 
-STFL.PagesController = ( function( window ) {
+HLG.PagesController = ( function( window ) {
 	'use strict';
 	
 	
 	function PagesController() {
-		STFL.AbstractPagesController.call( this );
+		HLG.AbstractPagesController.call( this );
 		
 		// this.LOADING_MODE			= null;
 		// this.DYNAMIC_IMG_TO_LOAD	= null;
@@ -13,7 +13,7 @@ STFL.PagesController = ( function( window ) {
 	}
 	
 	
-	PagesController.prototype				= Object.create( STFL.AbstractPagesController.prototype );
+	PagesController.prototype				= Object.create( HLG.AbstractPagesController.prototype );
 	PagesController.prototype.constructor	= PagesController;
 	
 	
@@ -43,14 +43,14 @@ STFL.PagesController = ( function( window ) {
 	
 	
 	PagesController.prototype.manageMenuLinks = function() {
-		this.updateMenuLinks( STFL.Views.Statics.Header.$menuLink );
-		this.updateMenuLinks( STFL.Views.Statics.Footer.$footerLink );
+		this.updateMenuLinks( HLG.Views.Statics.Header.$menuLink );
+		this.updateMenuLinks( HLG.Views.Statics.Footer.$footerLink );
 	};
 	
 	
 	PagesController.prototype.manageLangLinks = function() {
-		this.changeLangLinks( STFL.Views.Statics.Header.$headerLgLink );
-		this.changeLangLinks( STFL.Views.Statics.Footer.$footerLgLink );
+		this.changeLangLinks( HLG.Views.Statics.Header.$headerLgLink );
+		this.changeLangLinks( HLG.Views.Statics.Footer.$footerLgLink );
 	};
 	
 	
