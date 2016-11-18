@@ -13,7 +13,8 @@ var helpers		= require( './gulp/utils/helpers' );
 /* Init */
 gulp.task( 'init', [
 	'htaccess',
-	'rename-js-app'
+	'rename-js-app',
+	'set-css-wrapper'
 ] );
 
 

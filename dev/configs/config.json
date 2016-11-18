@@ -1,19 +1,20 @@
 {
 	
-	"ENV":		{
-					"fallbackresource":	"/dev/",
-					"base_url":			"http://html-landing-generator:8888/dev/"
-				},
-	"HTMLIFY":	{
-					"fr": [
-						"cube",
-						"osmose"
-					],
-					"en": [
-						"cube",
-						"osmose"
-					]
-				},
-	"TLP_NAME":	"template"
+	"ENV":			{
+						"fallbackresource":	"/dev/",
+						"base_url":			"http://html-landing-generator:8888/dev/"
+					},
+	"HTMLIFY":		{
+						"fr": [
+							"cube",
+							"osmose"
+						],
+						"en": [
+							"cube",
+							"osmose"
+						]
+					},
+	"TLP_NAME":		"template",
+	"CSS_WRAPPER":	"hlg"
 	
 }

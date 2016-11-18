@@ -7,21 +7,23 @@ class Config
 	
 	protected static $instance;
 	
-	const CONFIG_FILE_PATH		= 'configs/config.json';
+	const CONFIG_FILE_PATH	= 'configs/config.json';
 	
-	static $ENV					= null;
-	static $ENVS				= null;
-	static $HTMLIFY				= null;
-	static $TLP_NAME			= null;
+	static $ENV				= null;
+	static $ENVS			= null;
+	static $HTMLIFY			= null;
+	static $TLP_NAME		= null;
+	static $CSS_WRAPPER		= null;
 	
-	private $jsFiles			= null;
+	private $jsFiles		= null;
 	
-	private $params				= null;
+	private $params			= null;
 	
 	
 	protected function __construct()
 	{
 		$this->setConfig();
+		$this->setParams();
 	}
 	
 	
@@ -56,10 +58,10 @@ class Config
 	}
 	
 	
-	public function init()
+	/*public function init()
 	{
 		$this->setParams();
-	}
+	}*/
 	
 	
 	public function getJsFilesFile()
@@ -82,8 +84,9 @@ class Config
 	{
 		$this->params = new stdClass();
 		
-		$this->params->ENV		= self::$ENV;
-		$this->params->ALL_LANG	= self::$ALL_LANG;
+		// $this->params->ENV			= self::$ENV;
+		// $this->params->ALL_LANG		= self::$ALL_LANG;
+		$this->params->CSS_WRAPPER	= self::$CSS_WRAPPER;
 	}
 	
 	
