@@ -11,7 +11,7 @@ HLG.Utils.DOM = ( function( window ) {
 		if ( el.classList )
 			el.classList.add( classToAdd );
 		else {
-			if ( !hasClass( el, classToAdd ) )
+			if ( !STF_dom_hasClass( el, classToAdd ) )
 				el.className += ' ' + classToAdd;
 		}
 	};
