@@ -158,7 +158,7 @@ HLG.AbstractView = ( function( window ) {
 	};
 	
 	
-	AbstractView.prototype.updateSearch = function() {
+	/*AbstractView.prototype.updateSearch = function() {
 		if ( !HLG.Config.IS_PROD )
 			console.warn( 'You need to override the updateSearch() method from AbstractView in the current page view.' );
 	};
@@ -167,7 +167,7 @@ HLG.AbstractView = ( function( window ) {
 	AbstractView.prototype.updateHash = function() {
 		if ( !HLG.Config.IS_PROD )
 			console.warn( 'You need to override the updateHash() method from AbstractView in the current page view.' );
-	};
+	};*/
 	
 	
 	return AbstractView;

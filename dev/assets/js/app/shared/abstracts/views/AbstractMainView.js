@@ -123,8 +123,8 @@ HLG.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.raf = function() {
-		if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
-			HLG.Utils.FPSStats.begin();
+		// if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+		// 	HLG.Utils.FPSStats.begin();
 		
 		
 		_setRafProps.call( this );
@@ -132,11 +132,11 @@ HLG.AbstractMainView = ( function( window ) {
 		this.dispatch( this.E.RAF );
 		
 		
-		if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
-			HLG.Utils.FPSStats.end();
+		// if ( HLG.Config.HAS_FPS_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+		// 	HLG.Utils.FPSStats.end();
 		
-		if ( HLG.Config.HAS_MEMORY_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
-			HLG.Utils.MemoryStats.update();
+		// if ( HLG.Config.HAS_MEMORY_STATS && ( HLG.Config.IS_DEV || HLG.Config.IS_PREPROD_LOCAL ) )
+		// 	HLG.Utils.MemoryStats.update();
 	};
 	
 	

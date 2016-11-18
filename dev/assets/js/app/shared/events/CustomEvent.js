@@ -12,7 +12,7 @@ HLG.CustomEvent = ( function( window ) {
 	
 	CustomEvent.prototype.bind = function( name, fct, context ) {
 		if ( !name || !fct ) {
-			if ( !HLG.Config.IS_PROD ) {
+			/*if ( !HLG.Config.IS_PROD ) {
 				var missingParams;
 				
 				if ( !name && !fct )
@@ -23,13 +23,13 @@ HLG.CustomEvent = ( function( window ) {
 					missingParams = 'function';
 				
 				console.warn( 'You must to provide a ' + missingParams + ' to the custom event you want to bind.' );
-			}
+			}*/
 			
 			return;
 		}
 		
-		if ( !context && !HLG.Config.IS_PROD )
-			console.warn( 'Bind "' + name + '" custom event without context.' );
+		// if ( !context && !HLG.Config.IS_PROD )
+		// 	console.warn( 'Bind "' + name + '" custom event without context.' );
 		
 		if ( this.e[ name ] === undefined ) // if the custom event doesn't exist, create it
 			this.e[ name ] = new signals.Signal();
@@ -40,8 +40,8 @@ HLG.CustomEvent = ( function( window ) {
 	
 	CustomEvent.prototype.unbind = function( name, fct, context ) {
 		if ( !name ) {
-			if ( !HLG.Config.IS_PROD )
-				console.warn( 'You must to define the name of the custom event you want to unbind.' );
+			// if ( !HLG.Config.IS_PROD )
+			// 	console.warn( 'You must to define the name of the custom event you want to unbind.' );
 			
 			return;
 		}
@@ -63,8 +63,8 @@ HLG.CustomEvent = ( function( window ) {
 	
 	CustomEvent.prototype.dispatch = function( name, params ) {
 		if ( this.e[ name ] === undefined ) { // if the event is not registred
-			if ( !HLG.Config.IS_PROD )
-				console.warn( 'Trying to dispath "' + name + '" custom event which is undefined.' );
+			// if ( !HLG.Config.IS_PROD )
+			// 	console.warn( 'Trying to dispath "' + name + '" custom event which is undefined.' );
 			
 			return;
 		}
