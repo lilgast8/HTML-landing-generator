@@ -23,12 +23,19 @@ HLG.Device = ( function( window ) {
 	
 	
 	Device.prototype.init = function() {
-		// _setDevice.call( this );
+		_setDevice.call( this );
 	};
 	
 	var _setDevice = function() {
-		for ( var varName in STF_Device )
-			this[ varName ] = STF_Device[ varName ];
+		this.DEVICE				= Detectizr.device.type;
+		
+		this.IS_DESKTOP			= this.DEVICE == 'desktop';
+		this.IS_TABLET			= this.DEVICE == 'tablet';
+		this.IS_MOBILE			= this.DEVICE == 'mobile';
+		
+		this.BROWSER			= Detectizr.browser.name;
+ 		this.BROWSER_VERSION	= parseFloat( Detectizr.browser.major + '.' + Detectizr.browser.minor );
+ 		this.IS_IE				= this.BROWSER == 'ie' ? true : false;
 	};
 	
 	
