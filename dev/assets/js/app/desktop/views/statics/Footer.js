@@ -18,16 +18,16 @@ HLG.Views.Statics.Footer = ( function( window ) {
 	
 	
 	Footer.prototype.initDOM = function() {
-		this.$footer		= $( document.getElementById( 'footer' ) );
-		this.$footerLgLink	= this.$footer.find( '.footer-lang-link' );
-		this.$footerLink	= this.$footer.find( '.footer-link' );
+		// this.$footer		= WLD.MainView.$mainCont.find( '.footer' );
+		// this.$footerLgLink	= this.$footer.find( '.footer-lang-link' );
+		// this.$footerLink	= this.$footer.find( '.footer-link' );
 	};
 	
 	
 	Footer.prototype.bindEvents = function() {
 		HLG.AbstractView.prototype.bindEvents.call( this );
 		
-		this.$footerLink.on( 'click', $.proxy( this.changeUrl, this ) );
+		// this.$footerLink.on( 'click', $.proxy( this.changeUrl, this ) );
 	};
 	
 	

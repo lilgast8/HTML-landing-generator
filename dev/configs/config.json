@@ -15,6 +15,6 @@
 						]
 					},
 	"TLP_NAME":		"template",
-	"CSS_WRAPPER":	"hlg"
+	"CSS_WRAPPER":	"__hlg__"
 	
 }

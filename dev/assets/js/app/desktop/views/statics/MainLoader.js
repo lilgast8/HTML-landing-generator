@@ -23,7 +23,7 @@ HLG.Views.Statics.MainLoader = ( function( window ) {
 	
 	
 	MainLoader.prototype.initDOM = function() {
-		this.$loader		= $( document.getElementById( 'main-loader' ) );
+		this.$loader		= HLG.MainView.$mainCont.find( '.main-loader' );
 		this.$loaderCont	= this.$loader.find( '.main-loader-container' );
 		this.$percentage	= this.$loader.find( '.main-loader-percentage' );
 		this.$progress		= this.$loader.find( '.main-loader-progress' );

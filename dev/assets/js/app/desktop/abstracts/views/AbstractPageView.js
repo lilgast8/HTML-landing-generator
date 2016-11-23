@@ -19,7 +19,7 @@ HLG.AbstractPageView = ( function( window ) {
 	AbstractPageView.prototype.initDOM = function() {
 		// console.log( 'AbstractPageView.initDOM() — ', this.constructor.name );
 		
-		this.$page = $( document.getElementById( 'page' ) );
+		this.$page = HLG.MainView.$pageCont.find( '.page' );
 	};
 	
 	

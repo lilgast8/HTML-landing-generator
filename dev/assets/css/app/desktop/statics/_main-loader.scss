@@ -6,7 +6,7 @@
 /*********************************/
 
 
-#main-loader {
+.main-loader {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -23,7 +23,7 @@
 	}
 }
 
-.no-js #main-loader { display: none; }
+.no-js .main-loader { display: none; }
 
 .main-loader-container {
 	position: absolute;

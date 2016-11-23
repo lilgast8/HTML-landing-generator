@@ -12,20 +12,31 @@ gulp.task( 'set-css-wrapper', function() {
 	var configFile		= fs.readFileSync( paths.env.dev + paths.configs.configFile, 'utf8' );
 	var config			= JSON.parse( configFile );
 	
-	var filePath		= paths.env.dev + paths.assets.css.app.desktopFile;
 	
-	var data			= fs.readFileSync( filePath, 'utf8' );
-	var startPos		= data.indexOf( '#' );
-	var endPos			= data.indexOf( ' {' );
+	// css
+	renameCSSWrapper(	paths.env.dev + paths.assets.css.app.desktopFile,
+						'.', ' {',
+						'.' + config.CSS_WRAPPER,
+						'css' );
 	
-	var stringToReplace	= data.substring( startPos, endPos );
-	var newString		= '#' + config.CSS_WRAPPER;
-	
-	data				= data.replace( new RegExp( stringToReplace, 'g' ), newString );
-	
-	fs.writeFileSync( filePath, data, 'utf8' );
-	
-	
-	console.log( gutil.colors.cyan( 'CSS wrapper renamed from ' ), gutil.colors.bold( gutil.colors.magenta( stringToReplace ) ), gutil.colors.cyan( ' to ' ), gutil.colors.bold( gutil.colors.magenta( newString ) ) );
+	// js
+	renameCSSWrapper(	paths.env.dev + paths.assets.js.app.dir + 'shared/abstracts/views/AbstractMainView.js',
+						'this.$hlgWrap =', 'CSS_WRAPPER',
+						"this.$hlgWrap = $( '." + config.CSS_WRAPPER +"' ); // ",
+						'js' );
 	
 } );
+
+
+function renameCSSWrapper( filePath, startString, endString, newString, type ) {
+	var data			= fs.readFileSync( filePath, 'utf8' );
+	var startPos		= data.indexOf( startString );
+	var endPos			= data.indexOf( endString );
+	
+	var stringToReplace	= data.substring( startPos, endPos );
+	
+	data				= data.replace( stringToReplace, newString );
+	
+	
+	fs.writeFileSync( filePath, data, 'utf8' );
+}

@@ -61,8 +61,11 @@ HLG.AbstractMainView = ( function( window ) {
 	AbstractMainView.prototype.initDOM = function() {
 		this.$window	= $( window );
 		this.$body		= $( document.body );
-		this.$mainCont	= $( document.getElementById( 'main-container' ) );
-		this.$pageCont	= $( document.getElementById( 'page-container' ) );
+		// don't remove or change following line
+		this.$hlgWrap = $( '.__hlg__' ); // CSS_WRAPPER
+		// don't remove or change previous line
+		this.$mainCont	= this.$hlgWrap.find( '.main-container' );
+		this.$pageCont	= this.$hlgWrap.find( '.page-container' );
 	};
 	
 	
