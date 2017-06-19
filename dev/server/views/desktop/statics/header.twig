@@ -15,6 +15,7 @@
 	{# <meta name="author" content="{{ metas.author }}" />
 	<meta name="designer" content="{{ metas.designer }}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> #}
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
 	
 	{# {% for lang, altLangUrl in Router.ALT_LANG_URL %}
 	<link rel="alternate" href="{{ altLangUrl }}" hreflang="{{ lang }}" />
@@ -48,7 +49,7 @@
 
 
 <!-- Main container -->
-<div class="main-container preload {{ Router.LANDING_TYPE }}">
+<div class="main-container preload {{ Router.LANDING_TYPE }}" data-assets-base-url="assets/">
 	
 	{% include 'main-loader.twig' %}
 	

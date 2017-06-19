@@ -70,7 +70,7 @@ HLG.AbstractMainView = ( function( window ) {
 	
 	
 	AbstractMainView.prototype.initEl = function() {
-		
+		HLG.Path.overwriteSpecialPaths();
 	};
 	
 	

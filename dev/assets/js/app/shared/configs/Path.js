@@ -37,6 +37,11 @@ HLG.Path = ( function( window ) {
 	};
 	
 	
+	Path.prototype.overwriteSpecialPaths = function() {
+		this.URL.assets = HLG.MainView.$mainCont[0].getAttribute( 'data-assets-base-url' );
+	};
+	
+	
 	return new Path();
 	
 	
