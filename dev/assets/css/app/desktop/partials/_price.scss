@@ -1,0 +1,88 @@
+
+
+
+/***************************/
+/* -------- PRICE -------- */
+/***************************/
+
+
+.price {
+	position: absolute;
+	height: 58px;
+	// padding: 0 10px 20px 0;
+	padding-bottom: 20px;
+	font: bold 57px/57px $RC;
+	// @include skewX(-18deg);
+	overflow: hidden;
+	z-index: 5;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		// left: -19px;
+		// top: 40px;
+		width: 30px;
+		height: 30px;
+		background-color: #f7c500;
+		// @include transform(skewX(18deg) rotate(53deg));
+	}
+}
+
+.price-txt {
+	height: 58px;
+	// padding: 1px 8px 0 20px;
+	// margin-left: -10px;
+	@include box-sizing(border-box);
+	// @include skewX(18deg);
+	// @include background(linear-gradient(left bottom, #f7c500 0%, #fff800 100%));
+}
+
+.price-centime {
+	position: relative;
+	font: bold 27px/27px $RC;
+}
+
+.price-currency {
+	position: absolute;
+	left: 0;
+	top: -18px;
+	font: bold 24px/24px $RC;
+}
+
+.price-left {
+	padding-right: 10px;
+	@include skewX(-18deg);
+	
+	&:before {
+		left: -19px;
+		top: 40px;
+		@include transform(skewX(18deg) rotate(53deg));
+	}
+	
+	.price-txt {
+		padding: 1px 8px 0 20px;
+		margin-left: -10px;
+		@include skewX(18deg);
+		@include background(linear-gradient(left bottom, #f7c500 0%, #fff800 100%));
+	}
+}
+
+.price-right {
+	padding-left: 10px;
+	@include skewX(18deg);
+	
+	&:before {
+		right: -19px;
+		top: 40px;
+		@include transform(skewX(-18deg) rotate(-53deg));
+	}
+	
+	.price-txt {
+		padding: 1px 20px 0 8px;
+		margin-right: -10px;
+		@include skewX(-18deg);
+		@include background(linear-gradient(right bottom, #f7c500 0%, #fff800 100%));
+	}
+}
+
+

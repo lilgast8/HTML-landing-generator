@@ -2,6 +2,9 @@
 
 
 
+@import 'shared/utilities/_fonts';
+
+
 .__hlg__ {
 
 
@@ -12,7 +15,6 @@
 
 
 @import 'shared/utilities/_reset';
-@import 'shared/utilities/_fonts';
 @import 'shared/utilities/_variables';
 @import 'shared/utilities/_easing';
 @import 'shared/utilities/_functions';
@@ -65,7 +67,8 @@
 /******************************/
 
 
-// @import 'desktop/partials/_PARTIAL';
+// @import 'desktop/partials/_button';
+// @import 'desktop/partials/_price';
 
 
 
@@ -76,11 +79,7 @@
 /***************************/
 
 
-@import 'desktop/pages/_error-404';
-@import 'desktop/pages/_not-available';
-@import 'desktop/pages/_legal-notices';
 @import 'desktop/pages/_home';
-@import 'desktop/pages/_about';
 
 
 }

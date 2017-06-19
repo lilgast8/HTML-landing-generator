@@ -25,7 +25,7 @@ gulp.task( 'sass:dev', [ 'delete' ], function() {
 	if ( options.cssSrcPath === null )
 		options.cssSrcPath = [
 			paths.env.dev + paths.assets.css.app.desktopFile,
-			paths.env.dev + paths.assets.css.app.mobileFile
+			// paths.env.dev + paths.assets.css.app.mobileFile
 		];
 	
 	

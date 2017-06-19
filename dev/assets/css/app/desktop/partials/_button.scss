@@ -1,0 +1,54 @@
+
+
+
+/****************************/
+/* -------- BUTTON -------- */
+/****************************/
+
+
+.btn {
+	display: inline-block;
+	position: relative;
+	padding: 0px 50px 0 20px;
+	height: 40px;
+	font: normal 15px/15px $RC;
+	color: $black;
+	text-transform: uppercase;
+	text-decoration: none;
+	@include background(linear-gradient(top, #fff800 0%, #f7c500 100%));
+	overflow: hidden;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		left: calc(100% - 30px);
+		top: 0px;
+		width: calc(100% + 20px);
+		height: 100%;
+		background-color: $white;
+		@include skewX(-15deg);
+		opacity: 0.3;
+		@include transition(all 0.5s $easeOutQuart);
+	}
+	
+	&:hover {
+		&:before {
+			@include transform(translate(calc(-100% + 40px), 0) skewX(-15deg));
+		}
+	}
+}
+
+.btn-txt {
+	position: relative;
+	margin-top: 13px;
+}
+
+.btn-arrow {
+	position: absolute;
+	right: 10px;
+	top: 14px;
+	width: 7px;
+	height: 12px;
+}
+
+
