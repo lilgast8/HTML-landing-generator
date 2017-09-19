@@ -1,14 +1,17 @@
-var gulp	= require( 'gulp' );
-var path	= require( 'path' );
+var gulp			= require( 'gulp' );
+var path			= require( 'path' );
 
-var options	= require( '../utils/options' );
-var paths	= require( '../utils/paths' );
+var options			= require( '../utils/options' );
+var cssSupports		= require( '../utils/css-supports' );
+var paths			= require( '../utils/paths' );
 
-var plumber	= require( 'gulp-plumber' );
-var gutil	= require( 'gulp-util' );
-var sass	= require( 'gulp-ruby-sass' );
-var notify	= require( 'gulp-notify' );
-var rename	= require( 'gulp-rename' );
+var plumber			= require( 'gulp-plumber' );
+var gutil			= require( 'gulp-util' );
+var sass			= require( 'gulp-sass' );
+var sourcemaps		= require( 'gulp-sourcemaps' );
+var autoprefixer	= require( 'gulp-autoprefixer' );
+var notify			= require( 'gulp-notify' );
+var rename			= require( 'gulp-rename' );
 
 
 
@@ -23,24 +26,25 @@ gulp.task( 'sass', [ 'sass:dev' ], function() {
 gulp.task( 'sass:dev', [ 'delete' ], function() {
 	
 	if ( options.cssSrcPath === null )
-		options.cssSrcPath = [
-			paths.env.dev + paths.assets.css.app.desktopFile,
-			// paths.env.dev + paths.assets.css.app.mobileFile
-		];
+		options.cssSrcPath = paths.env.dev + paths.assets.css.app.allSCSS;
 	
 	
-	return sass( options.cssSrcPath, {
-			style:				'compressed',
-			// style:				'expanded',
+	return gulp.src( options.cssSrcPath )
+		.pipe( plumber() )
+		.pipe( sourcemaps.init() )
+		.pipe( sass.sync( {
+			outputStyle:		'compressed',
 			precision:			3,
-			compass:			true,
 			emitCompileError:	true
-		} )
-		.on( 'error', function( error ) {
-			console.log( gutil.colors.red( error ) );
-			notify().write( options.devicePath + ': ' + error.message );
-		} )
+		} ).on( 'error', function( error ) {
+			var file	= error.relativePath.substr( error.relativePath.indexOf( '/assets/' ) + 8 );
+			var msg		= 'CSS error: ' + file + ' on line ' + error.line + ', column ' + error.column;
+			notify().write( msg );
+			console.log( gutil.colors.red( error.message ) );
+		} ) )
+		.pipe( autoprefixer( cssSupports ) )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( sourcemaps.write( './maps' ) )
 		.pipe( gulp.dest( paths.env.dev + paths.assets.css.dir ) );
 	
 });
