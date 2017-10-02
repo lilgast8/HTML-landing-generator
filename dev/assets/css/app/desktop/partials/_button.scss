@@ -15,7 +15,7 @@
 	color: $black;
 	text-transform: uppercase;
 	text-decoration: none;
-	@include background(linear-gradient(top, #fff800 0%, #f7c500 100%));
+	background: linear-gradient(to bottom, #fff800 0%, #f7c500 100%);
 	overflow: hidden;
 	
 	&:before {
@@ -26,14 +26,14 @@
 		width: calc(100% + 20px);
 		height: 100%;
 		background-color: $white;
-		@include skewX(-15deg);
+		transform: skewX(-15deg);
 		opacity: 0.3;
-		@include transition(all 0.5s $easeOutQuart);
+		transition: all 0.5s $easeOutQuart;
 	}
 	
 	&:hover {
 		&:before {
-			@include transform(translate(calc(-100% + 40px), 0) skewX(-15deg));
+			transform: translate(calc(-100% + 40px), 0) skewX(-15deg);
 		}
 	}
 }
