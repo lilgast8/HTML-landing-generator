@@ -11,7 +11,7 @@
 	height: 58px;
 	// padding: 0 10px 20px 0;
 	padding-bottom: 20px;
-	font: bold 57px/57px $RC;
+	font: bold 30px/30px $RC;
 	// @include skewX(-18deg);
 	overflow: hidden;
 	z-index: 5;
@@ -29,59 +29,59 @@
 }
 
 .price-txt {
-	height: 58px;
+	height: 42px;
 	// padding: 1px 8px 0 20px;
 	// margin-left: -10px;
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 	// @include skewX(18deg);
-	// @include background(linear-gradient(left bottom, #f7c500 0%, #fff800 100%));
+	// @include background(linear-gradient(to bottom, #f7c500 0%, #fff800 100%));
 }
 
 .price-centime {
 	position: relative;
-	font: bold 27px/27px $RC;
+	font: bold 20px/20px $RC;
 }
 
 .price-currency {
-	position: absolute;
+	// position: absolute;
 	left: 0;
 	top: -18px;
-	font: bold 24px/24px $RC;
+	font: bold 30px/30px $RC;
 }
 
 .price-left {
 	padding-right: 10px;
-	@include skewX(-18deg);
+	transform: skewX(-18deg);
 	
 	&:before {
 		left: -19px;
-		top: 40px;
-		@include transform(skewX(18deg) rotate(53deg));
+		top: 20px;
+		transform: skewX(18deg) rotate(53deg);
 	}
 	
 	.price-txt {
-		padding: 1px 8px 0 20px;
+		padding: 4px 10px 0 28px;
 		margin-left: -10px;
-		@include skewX(18deg);
-		@include background(linear-gradient(left bottom, #f7c500 0%, #fff800 100%));
+		transform: skewX(18deg);
+		background: linear-gradient(to bottom, #f7c500 0%, #fff800 100%);
 	}
 }
 
 .price-right {
 	padding-left: 10px;
-	@include skewX(18deg);
+	transform: skewX(18deg);
 	
 	&:before {
 		right: -19px;
 		top: 40px;
-		@include transform(skewX(-18deg) rotate(-53deg));
+		transform: skewX(-18deg) rotate(-53deg);
 	}
 	
 	.price-txt {
 		padding: 1px 20px 0 8px;
 		margin-right: -10px;
-		@include skewX(-18deg);
-		@include background(linear-gradient(right bottom, #f7c500 0%, #fff800 100%));
+		transform: skewX(-18deg);
+		background: linear-gradient(to bottom, #f7c500 0%, #fff800 100%);
 	}
 }
 
