@@ -196,7 +196,7 @@ HLG.AbstractPagesController = ( function( window ) {
 	
 	
 	var _showNonLoadedImages = function() {
-		var $imgsCont = this.isFirstLoad ? HLG.MainView.$body : HLG.MainView.$pageCont;
+		var $imgsCont = this.$hlgWrap;
 		
 		var $imgs = $imgsCont.find( 'img' ).filter( function() {
 			return this.getAttribute( 'data-lazyload' ) != 'true' && this.getAttribute( 'data-src' ) != 'preloaded';
