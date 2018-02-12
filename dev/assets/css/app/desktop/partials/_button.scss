@@ -9,46 +9,87 @@
 .btn {
 	display: inline-block;
 	position: relative;
-	padding: 0px 50px 0 20px;
+	padding: 0px 40px 0 20px;
 	height: 40px;
-	font: normal 15px/15px $RC;
-	color: $black;
+	font: 700 15px/15px $RC;
+	color: #333333;
 	text-transform: uppercase;
 	text-decoration: none;
-	background: linear-gradient(to bottom, #fff800 0%, #f7c500 100%);
+	background: #ffea28;
 	overflow: hidden;
-	
+	border-radius: 3px;
+	transition: background 0.5s $easeOutQuart;
+
 	&:before {
-		content: '';
-		position: absolute;
-		left: calc(100% - 30px);
-		top: 0px;
-		width: calc(100% + 20px);
+		content: "";
+		width: 0;
+		width: 105%;
 		height: 100%;
-		background-color: $white;
-		transform: skewX(-15deg);
-		opacity: 0.3;
+		background-color: #fdd835;
+		position: absolute;
+		right: -6%;
+		bottom: -75%;
+		transform-origin: 100% 50%;
+		transform: rotate(-10deg);
 		transition: all 0.5s $easeOutQuart;
 	}
 	
-	&:hover {
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #fdd835;
+		bottom: -160%;
+		right: 0;
+		transition: all 0.5s $easeOutQuart;
+	}
+
+	&:hover {		
 		&:before {
-			transform: translate(calc(-100% + 40px), 0) skewX(-15deg);
+			transform: translate3d(0,-155%,0) rotate(-5deg);
 		}
+		&:after {
+			transform: translate3d(0,-155%,0);
+		}
+	}		
+	
+	&.blue {
+		color: $white;
+		background-color: #0082c3;
+		
+		&:before {
+			background-color: #0074af;
+		}
+		
+		.btn-arrow {
+			fill: $white;
+		}
+	}
+	
+	&.gray {
+		background-color: #cccccc;
+		
+		&:before {
+			background-color: #b7b7b7;
+		}
+			
 	}
 }
 
 .btn-txt {
 	position: relative;
 	margin-top: 13px;
+	z-index: 2;
 }
 
 .btn-arrow {
 	position: absolute;
-	right: 10px;
+	z-index: 3;
+	right: 17px;
 	top: 14px;
 	width: 7px;
 	height: 12px;
+	fill: #333333;
 }
-
-
