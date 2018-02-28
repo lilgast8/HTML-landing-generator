@@ -196,6 +196,7 @@ HLG.AbstractPagesController = ( function( window ) {
 	
 	
 	var _showNonLoadedImages = function() {
+		var $imgsCont = HLG.MainView.$hlgWrap;
 		var $imgsCont = this.isFirstLoad ? HLG.MainView.$body : HLG.MainView.$pageCont;
 		
 		var $imgs = $imgsCont.find( 'img' ).filter( function() {
