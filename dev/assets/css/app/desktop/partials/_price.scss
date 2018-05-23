@@ -6,11 +6,11 @@
 /***************************/
 
 
-.price {
+.hlg-price {
 	position: absolute;
 	height: 58px;
 	padding-bottom: 20px;
-	font: bold 57px/57px $RC;
+	font: bold 30px/1.4 $RC;
 	overflow: hidden;
 	z-index: 5;
 	
@@ -23,34 +23,34 @@
 	}
 }
 
-.price-txt {
+.hlg-price-txt {
 	height: 42px;
 	box-sizing: border-box;
 }
 
-.price-centime {
+.hlg-price-centime {
 	position: relative;
 	font: bold 27px/27px $RC;
 }
 
-.price-currency {
+.hlg-price-currency {
 	position: absolute;
 	left: 0;
 	top: -18px;
 	font: bold 24px/24px $RC;
 }
 
-.price-left {
+.hlg-price-left {
 	padding-right: 10px;
 	transform: skewX(-18deg);
 	
 	&:before {
 		left: -19px;
-		top: 40px;
+		top: 22px;
 		transform: skewX(18deg) rotate(53deg);
 	}
 	
-	.price-txt {
+	.hlg-price-txt {
 		padding: 1px 8px 0 20px;
 		margin-left: -10px;
 		transform: skewX(18deg);
@@ -58,17 +58,17 @@
 	}
 }
 
-.price-right {
+.hlg-price-right {
 	padding-left: 10px;
 	transform: skewX(18deg);
 	
 	&:before {
 		right: -19px;
-		top: 40px;
+		top: 22px;
 		transform: skewX(-18deg) rotate(-53deg);
 	}
 	
-	.price-txt {
+	.hlg-price-txt {
 		padding: 1px 20px 0 8px;
 		margin-right: -10px;
 		transform: skewX(-18deg);
