@@ -6,12 +6,12 @@
 /****************************/
 
 
-.btn {
+.hlg-btn {
 	display: inline-block;
 	position: relative;
 	padding: 0px 40px 0 20px;
 	height: 40px;
-	font: 700 15px/15px $RC;
+	font: 700 15px/1 $RC;
 	color: #333333;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -63,7 +63,7 @@
 			background-color: #0074af;
 		}
 		
-		.btn-arrow {
+		.hlg-btn-arrow {
 			fill: $white;
 		}
 	}
@@ -78,13 +78,13 @@
 	}
 }
 
-.btn-txt {
+.hlg-btn-txt {
 	position: relative;
 	margin-top: 13px;
 	z-index: 2;
 }
 
-.btn-arrow {
+.hlg-btn-arrow {
 	position: absolute;
 	z-index: 3;
 	right: 17px;
